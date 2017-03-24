@@ -13,6 +13,7 @@
 		9765E86C1E8599410019C772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86B1E8599410019C772 /* Assets.xcassets */; };
 		9765E86F1E8599410019C772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86D1E8599410019C772 /* LaunchScreen.storyboard */; };
 		9765E8791E85A0100019C772 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8781E85A0100019C772 /* APIConfig.swift */; };
+		9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87A1E85A09E0019C772 /* APIManager.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		9765E86E1E8599410019C772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9765E8701E8599410019C772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9765E8781E85A0100019C772 /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		9765E87A1E85A09E0019C772 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				9765E8781E85A0100019C772 /* APIConfig.swift */,
+				9765E87A1E85A09E0019C772 /* APIManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */,
 				9765E8671E8599410019C772 /* ViewController.swift in Sources */,
 				9765E8651E8599410019C772 /* AppDelegate.swift in Sources */,
 				9765E8791E85A0100019C772 /* APIConfig.swift in Sources */,

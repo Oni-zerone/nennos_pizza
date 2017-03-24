@@ -6,13 +6,11 @@
 //  Copyright © 2017 StudiOUT. All rights reserved.
 //
 
-import Foundation
-
 struct APIConfig {
     
     //MARK: URL parameters
     
     public static var scheme: String!
     public static var host: String!
-    
+    public static var basePath: String!
 }
