@@ -32,4 +32,14 @@ struct Pizza {
             }))
         }
     }
+    
+    lazy private(set) var price:Double = {
+        
+        var totalPrice = basePrice
+        
+        self.ingredients.forEach({ (ingredient) in
+            totalPrice += ingredient.price
+        })
+        return totalPrice
+    }()
 }
