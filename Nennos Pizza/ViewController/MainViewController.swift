@@ -13,8 +13,14 @@ class MainViewController: UIViewController {
     //Model
     fileprivate var pizzas: Array<Pizza> = [] {
         
+        willSet {
+            self.tableView.beginUpdates()
+            self.tableView.deleteSections(IndexSet(integer: 0), with: .none)
+        }
+        
         didSet {
-            self.tableView.reloadData()
+            self.tableView.insertSections(IndexSet(integer: 0), with: .none)
+            self.tableView.endUpdates()
         }
     }
     
@@ -31,7 +37,8 @@ class MainViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+        self.pizzas = Array<Pizza>()
     }
     
 }
