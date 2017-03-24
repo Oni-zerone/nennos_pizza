@@ -70,7 +70,7 @@ struct APIManager {
     
     static internal func URLForResource(resourcePath: String) -> URL? {
         
-        let fullPath = "\(APIConfig.scheme!)://\(APIConfig.host!)/\(APIConfig.basePath)/\(resourcePath)"
+        let fullPath = "\(APIConfig.scheme!)://\(APIConfig.host!)/\(APIConfig.basePath!)/\(resourcePath)"
         
         return URL(string:fullPath)
     }
