@@ -10,7 +10,7 @@ import Foundation
 
 fileprivate typealias IngredientsManager = APIManager
 
-extension APIManager {
+extension IngredientsManager {
     
     static func getIngredients(session: URLSession = APIConfig.session, completion: @escaping(Array<Ingredient>?, Error?) -> ()) {
         
