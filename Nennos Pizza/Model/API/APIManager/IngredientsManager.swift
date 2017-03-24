@@ -41,7 +41,7 @@ extension IngredientsManager {
         task.resume()
     }
     
-    static func getIngredients(for pizza:Pizza, completion: @escaping(Array<Ingredient>?, Error) -> ()) {
+    static func getIngredients(for pizza:Pizza, completion: @escaping(Array<Ingredient>?, Error?) -> ()) {
         
         APIManager.getIngredients { (ingredients, error) in
 
@@ -51,9 +51,9 @@ extension IngredientsManager {
             
             let pizzaIngredients = ingredients?.filter({ (ingredient) -> Bool in
                 
-                return self.ingredientIds.index(of: ingredient.id) != nil
+                return pizza.ingredientIds.index(of: ingredient.id) != nil
             })
-            return completion(pizzaIngredients)
+            return completion(pizzaIngredients, nil)
         }
     }
 }

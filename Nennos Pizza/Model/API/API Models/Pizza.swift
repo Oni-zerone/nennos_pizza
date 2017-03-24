@@ -33,3 +33,18 @@ struct Pizza {
         self.ingredientIds = ingredients
     }
 }
+
+extension Pizza: Hashable {
+    
+    var hashValue: Int {
+        
+        get {
+            return self.name.hash
+        }
+    }
+    
+    public static func ==(lhs: Pizza, rhs: Pizza) -> Bool {
+        
+        return lhs.ingredientIds == rhs.ingredientIds;
+    }
+}
