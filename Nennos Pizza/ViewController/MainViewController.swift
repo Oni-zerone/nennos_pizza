@@ -30,6 +30,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupTableView()
+        
         Model.shared.getPizzas { (pizzas) in
             self.pizzas = pizzas
         }
@@ -39,6 +41,12 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
 
         self.pizzas = Array<Pizza>()
+    }
+    
+    func setupTableView() {
+        
+        self.tableView.estimatedRowHeight = 178
+        self.tableView.register(UINib(nibName: String(describing: MainTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: MainTableViewCell.self))
     }
     
 }
@@ -55,7 +63,19 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainTableViewCell.self), for: indexPath) as? MainTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+}
+
+extension MainViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
     }
     
 }
