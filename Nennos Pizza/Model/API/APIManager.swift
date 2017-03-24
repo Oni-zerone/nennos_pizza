@@ -26,9 +26,7 @@ struct APIManager {
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
                 
                 guard let dictionary = jsonObject as? Dictionary<String, Any> else {
-                    return completion(nil, NSError(domain: APIManager.ErrorDomain,
-                                                   code: 500,
-                                                   userInfo: [NSLocalizedDescriptionKey : "invalid response"]))
+                    return completion(nil, NSError.invalidResponse())
                 }
                 
                 return completion(dictionary, nil)
@@ -54,9 +52,7 @@ struct APIManager {
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
                 
                 guard let array = jsonObject as? Array<Any> else {
-                    return completion(nil, NSError(domain: APIManager.ErrorDomain,
-                                                   code: 500,
-                                                   userInfo: [NSLocalizedDescriptionKey : "invalid response"]))
+                    return completion(nil, NSError.invalidResponse())
                 }
                 
                 return completion(array, nil)
@@ -71,11 +67,8 @@ struct APIManager {
     static internal func URLForResource(resourcePath: String) -> URL? {
         
         let fullPath = "\(APIConfig.scheme!)://\(APIConfig.host!)/\(APIConfig.basePath!)/\(resourcePath)"
-        
         return URL(string:fullPath)
     }
-    
-    
 }
 
 extension NSError {
@@ -92,5 +85,12 @@ extension NSError {
         return NSError(domain: APIManager.ErrorDomain,
                        code: 500,
                        userInfo: [NSLocalizedDescriptionKey : "invalid content"])
+    }
+    
+    static internal func invalidResponse() -> NSError {
+    
+        return NSError(domain: APIManager.ErrorDomain,
+                       code: 500,
+                       userInfo: [NSLocalizedDescriptionKey : "invalid response"])
     }
 }
