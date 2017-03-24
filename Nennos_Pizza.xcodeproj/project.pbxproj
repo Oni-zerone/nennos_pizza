@@ -12,16 +12,20 @@
 		9765E86A1E8599410019C772 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9765E8681E8599410019C772 /* Main.storyboard */; };
 		9765E86C1E8599410019C772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86B1E8599410019C772 /* Assets.xcassets */; };
 		9765E86F1E8599410019C772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86D1E8599410019C772 /* LaunchScreen.storyboard */; };
+		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9765E8611E8599410019C772 /* Nennos Pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nennos Pizza.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_Pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		613B549F56FB5090C519857B /* Pods-Nennos_Pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.release.xcconfig"; sourceTree = "<group>"; };
+		9765E8611E8599410019C772 /* Nennos_Pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nennos_Pizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9765E8641E8599410019C772 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9765E8661E8599410019C772 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9765E8691E8599410019C772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9765E86B1E8599410019C772 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9765E86E1E8599410019C772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9765E8701E8599410019C772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,24 +33,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80A7F2A872FE250C3EF94E79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */,
+				613B549F56FB5090C519857B /* Pods-Nennos_Pizza.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B384650EF3273DB9F8176EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9765E8581E8599410019C772 = {
 			isa = PBXGroup;
 			children = (
 				9765E8631E8599410019C772 /* Nennos Pizza */,
 				9765E8621E8599410019C772 /* Products */,
+				80A7F2A872FE250C3EF94E79 /* Pods */,
+				8B384650EF3273DB9F8176EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		9765E8621E8599410019C772 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9765E8611E8599410019C772 /* Nennos Pizza.app */,
+				9765E8611E8599410019C772 /* Nennos_Pizza.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 		9765E8631E8599410019C772 /* Nennos Pizza */ = {
 			isa = PBXGroup;
 			children = (
+				9765E8761E859A5E0019C772 /* Model */,
 				9765E8641E8599410019C772 /* AppDelegate.swift */,
 				9765E8661E8599410019C772 /* ViewController.swift */,
 				9765E8681E8599410019C772 /* Main.storyboard */,
@@ -64,24 +89,34 @@
 			path = "Nennos Pizza";
 			sourceTree = "<group>";
 		};
+		9765E8761E859A5E0019C772 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9765E8601E8599410019C772 /* Nennos Pizza */ = {
+		9765E8601E8599410019C772 /* Nennos_Pizza */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9765E8731E8599410019C772 /* Build configuration list for PBXNativeTarget "Nennos Pizza" */;
+			buildConfigurationList = 9765E8731E8599410019C772 /* Build configuration list for PBXNativeTarget "Nennos_Pizza" */;
 			buildPhases = (
+				C10196BB184345CAF199171F /* [CP] Check Pods Manifest.lock */,
 				9765E85D1E8599410019C772 /* Sources */,
 				9765E85E1E8599410019C772 /* Frameworks */,
 				9765E85F1E8599410019C772 /* Resources */,
+				EBE4E18B21F6C598D3BC1203 /* [CP] Embed Pods Frameworks */,
+				87A1FF88D945EB9F4F36B878 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Nennos Pizza";
+			name = Nennos_Pizza;
 			productName = "Nennos Pizza";
-			productReference = 9765E8611E8599410019C772 /* Nennos Pizza.app */;
+			productReference = 9765E8611E8599410019C772 /* Nennos_Pizza.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +136,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9765E85C1E8599410019C772 /* Build configuration list for PBXProject "Nennos Pizza" */;
+			buildConfigurationList = 9765E85C1E8599410019C772 /* Build configuration list for PBXProject "Nennos_Pizza" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -114,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9765E8601E8599410019C772 /* Nennos Pizza */,
+				9765E8601E8599410019C772 /* Nennos_Pizza */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +166,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87A1FF88D945EB9F4F36B878 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C10196BB184345CAF199171F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EBE4E18B21F6C598D3BC1203 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9765E85D1E8599410019C772 /* Sources */ = {
@@ -257,12 +340,13 @@
 		};
 		9765E8741E8599410019C772 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6RS7DS4QV5;
 				INFOPLIST_FILE = "Nennos Pizza/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.studiout.streamago.Nennos-Pizza";
+				PRODUCT_BUNDLE_IDENTIFIER = it.studiout.streamago.NennosPizza;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -270,12 +354,13 @@
 		};
 		9765E8751E8599410019C772 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 613B549F56FB5090C519857B /* Pods-Nennos_Pizza.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6RS7DS4QV5;
 				INFOPLIST_FILE = "Nennos Pizza/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.studiout.streamago.Nennos-Pizza";
+				PRODUCT_BUNDLE_IDENTIFIER = it.studiout.streamago.NennosPizza;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -284,7 +369,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9765E85C1E8599410019C772 /* Build configuration list for PBXProject "Nennos Pizza" */ = {
+		9765E85C1E8599410019C772 /* Build configuration list for PBXProject "Nennos_Pizza" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9765E8711E8599410019C772 /* Debug */,
@@ -293,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9765E8731E8599410019C772 /* Build configuration list for PBXNativeTarget "Nennos Pizza" */ = {
+		9765E8731E8599410019C772 /* Build configuration list for PBXNativeTarget "Nennos_Pizza" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9765E8741E8599410019C772 /* Debug */,
