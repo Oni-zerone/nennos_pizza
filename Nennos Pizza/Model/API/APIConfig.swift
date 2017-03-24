@@ -6,6 +6,8 @@
 //  Copyright © 2017 StudiOUT. All rights reserved.
 //
 
+import Foundation
+
 struct APIConfig {
     
     //MARK: URL parameters
@@ -13,4 +15,9 @@ struct APIConfig {
     public static var scheme: String!
     public static var host: String!
     public static var basePath: String!
+    
+    static let session = {
+        
+        return URLSession(configuration: URLSessionConfiguration.default)
+    }()
 }
