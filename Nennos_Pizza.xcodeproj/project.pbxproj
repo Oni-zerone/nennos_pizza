@@ -101,6 +101,7 @@
 				9765E8641E8599410019C772 /* AppDelegate.swift */,
 				9765E8761E859A5E0019C772 /* Model */,
 				9765E8921E85D7130019C772 /* ViewController */,
+				9765E8951E85D8A20019C772 /* Views */,
 				9765E8681E8599410019C772 /* Main.storyboard */,
 				9765E86B1E8599410019C772 /* Assets.xcassets */,
 				9765E86D1E8599410019C772 /* LaunchScreen.storyboard */,
@@ -157,6 +158,13 @@
 				9765E8931E85D7410019C772 /* MainViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9765E8951E85D8A20019C772 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
