@@ -13,7 +13,7 @@ struct Pizza {
     static var basePrice: Double = 0
     
     let name: String
-    private(set) var ingredients: Array<Ingredient>
+    let ingredientIds: Array<Int>
     let imageUrl: String?
     
     init?(resource: Dictionary<String, Any>) {
@@ -23,23 +23,13 @@ struct Pizza {
         }
         self.name = name
         self.imageUrl = resource["imageUrl"] as? String
-        self.ingredients = Array<Ingredient>()
+        var ingredients = Array<Int>()
         
-        if let ingredients = resource["ingredients"] as? Array<Dictionary<String, Any >> {
+        if let items = resource["ingredients"] as? Array<Int> {
 
-            self.ingredients.append(contentsOf: ingredients.flatMap({ (ingredient) -> Ingredient? in
-                return Ingredient(resource: ingredient)
-            }))
+            ingredients.append(contentsOf: items);
         }
+        
+        self.ingredientIds = ingredients
     }
-    
-    lazy private(set) var price:Double = {
-        
-        var totalPrice = basePrice
-        
-        self.ingredients.forEach({ (ingredient) in
-            totalPrice += ingredient.price
-        })
-        return totalPrice
-    }()
 }
