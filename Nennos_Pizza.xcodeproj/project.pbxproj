@@ -12,6 +12,15 @@
 		9765E86A1E8599410019C772 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9765E8681E8599410019C772 /* Main.storyboard */; };
 		9765E86C1E8599410019C772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86B1E8599410019C772 /* Assets.xcassets */; };
 		9765E86F1E8599410019C772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86D1E8599410019C772 /* LaunchScreen.storyboard */; };
+		9765E8791E85A0100019C772 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8781E85A0100019C772 /* APIConfig.swift */; };
+		9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87A1E85A09E0019C772 /* APIManager.swift */; };
+		9765E87E1E85A2470019C772 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87D1E85A2470019C772 /* Pizza.swift */; };
+		9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87F1E85A2A70019C772 /* Ingredient.swift */; };
+		9765E8821E85ADEE0019C772 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8811E85ADEE0019C772 /* Drink.swift */; };
+		9765E8841E85B3260019C772 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8831E85B3260019C772 /* APIRequest.swift */; };
+		9765E8871E85B6D10019C772 /* IngredientsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8861E85B6D10019C772 /* IngredientsManager.swift */; };
+		9765E8891E85B77A0019C772 /* PizzasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8881E85B77A0019C772 /* PizzasManager.swift */; };
+		9765E88B1E85BC490019C772 /* DrinksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E88A1E85BC490019C772 /* DrinksManager.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +34,15 @@
 		9765E86B1E8599410019C772 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9765E86E1E8599410019C772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9765E8701E8599410019C772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9765E8781E85A0100019C772 /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		9765E87A1E85A09E0019C772 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		9765E87D1E85A2470019C772 /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		9765E87F1E85A2A70019C772 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		9765E8811E85ADEE0019C772 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		9765E8831E85B3260019C772 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		9765E8861E85B6D10019C772 /* IngredientsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsManager.swift; sourceTree = "<group>"; };
+		9765E8881E85B77A0019C772 /* PizzasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzasManager.swift; sourceTree = "<group>"; };
+		9765E88A1E85BC490019C772 /* DrinksManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksManager.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,8 +110,42 @@
 		9765E8761E859A5E0019C772 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9765E8771E859FE80019C772 /* API */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9765E8771E859FE80019C772 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9765E8781E85A0100019C772 /* APIConfig.swift */,
+				9765E87A1E85A09E0019C772 /* APIManager.swift */,
+				9765E8851E85B6710019C772 /* API Manager */,
+				9765E87C1E85A1F20019C772 /* API Models */,
+				9765E8831E85B3260019C772 /* APIRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9765E87C1E85A1F20019C772 /* API Models */ = {
+			isa = PBXGroup;
+			children = (
+				9765E87F1E85A2A70019C772 /* Ingredient.swift */,
+				9765E87D1E85A2470019C772 /* Pizza.swift */,
+				9765E8811E85ADEE0019C772 /* Drink.swift */,
+			);
+			path = "API Models";
+			sourceTree = "<group>";
+		};
+		9765E8851E85B6710019C772 /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9765E8861E85B6D10019C772 /* IngredientsManager.swift */,
+				9765E8881E85B77A0019C772 /* PizzasManager.swift */,
+				9765E88A1E85BC490019C772 /* DrinksManager.swift */,
+			);
+			name = "API Manager";
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +272,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */,
 				9765E8671E8599410019C772 /* ViewController.swift in Sources */,
 				9765E8651E8599410019C772 /* AppDelegate.swift in Sources */,
+				9765E87E1E85A2470019C772 /* Pizza.swift in Sources */,
+				9765E8871E85B6D10019C772 /* IngredientsManager.swift in Sources */,
+				9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */,
+				9765E8821E85ADEE0019C772 /* Drink.swift in Sources */,
+				9765E8841E85B3260019C772 /* APIRequest.swift in Sources */,
+				9765E88B1E85BC490019C772 /* DrinksManager.swift in Sources */,
+				9765E8891E85B77A0019C772 /* PizzasManager.swift in Sources */,
+				9765E8791E85A0100019C772 /* APIConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +446,7 @@
 				9765E8751E8599410019C772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
