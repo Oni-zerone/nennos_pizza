@@ -16,6 +16,7 @@
 		9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87A1E85A09E0019C772 /* APIManager.swift */; };
 		9765E87E1E85A2470019C772 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87D1E85A2470019C772 /* Pizza.swift */; };
 		9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87F1E85A2A70019C772 /* Ingredient.swift */; };
+		9765E8821E85ADEE0019C772 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8811E85ADEE0019C772 /* Drink.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		9765E87A1E85A09E0019C772 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		9765E87D1E85A2470019C772 /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
 		9765E87F1E85A2A70019C772 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		9765E8811E85ADEE0019C772 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 			children = (
 				9765E87F1E85A2A70019C772 /* Ingredient.swift */,
 				9765E87D1E85A2470019C772 /* Pizza.swift */,
+				9765E8811E85ADEE0019C772 /* Drink.swift */,
 			);
 			path = "API Models";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				9765E8651E8599410019C772 /* AppDelegate.swift in Sources */,
 				9765E87E1E85A2470019C772 /* Pizza.swift in Sources */,
 				9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */,
+				9765E8821E85ADEE0019C772 /* Drink.swift in Sources */,
 				9765E8791E85A0100019C772 /* APIConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
