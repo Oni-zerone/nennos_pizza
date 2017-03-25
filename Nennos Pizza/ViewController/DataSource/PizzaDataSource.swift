@@ -8,6 +8,17 @@
 
 import UIKit
 
+import Alamofire
+import AlamofireImage
+
+protocol PizzaCell {
+    
+    func set(price: Double)
+    func set(name: String)
+    func set(ingredients: String)
+    func set(image:UIImage)
+}
+
 class PizzaDataSource : NSObject, UITableViewDataSource {
     
     //Model
@@ -47,26 +58,26 @@ class PizzaDataSource : NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+
+        let pizza = pizzas[indexPath.row]
         
-        if pizzas.count <= indexPath.row {
-            return cell
+        if let pizzaCell = cell as? PizzaCell {
+
+            pizzaCell.set(name: pizza.name)
+            tableView.setIngredients(for: pizza, at: indexPath)
+            tableView.setImage(for: pizza, at: indexPath)
+            tableView.setPrice(for: pizza, at: indexPath)
         }
-        
-        return self.prepare(cell, with: pizzas[indexPath.row])
+        return cell
     }
     
-    private func prepare(_ cell: UITableViewCell, with pizza:Pizza) -> UITableViewCell {
-        
-        
-        guard let pizzaCell = cell as? PizzaCell else {
-            return cell
-        }
-        
-        if let imagePath = pizza.imageUrl,
-            let URL = URL(string: imagePath) {
-            
-            cell.pizzaImageView.af_setImage(withURL: URL)
-        }
+}
+
+fileprivate typealias PizzaTable = UITableView
+
+extension PizzaTable {
+    
+    func setIngredients(for pizza:Pizza, at indexPath:IndexPath) {
         
         Model.shared.getIngredients(for: pizza) { (ingredients) in
             
@@ -81,23 +92,42 @@ class PizzaDataSource : NSObject, UITableViewDataSource {
                 ingredientsString += "."
             }
             
-            guard let cell = tableView.cellForRow(at: indexPath) as? MainTableViewCell else {
+            guard let cell = self.cellForRow(at: indexPath) as? PizzaCell else {
+                return
+            }
+            cell.set(ingredients: ingredientsString)
+        }
+    }
+    
+    func setImage(for pizza: Pizza, at indexPath: IndexPath) {
+        
+        guard let imageUrl = pizza.imageUrl else {
+            
+            return
+        }
+        
+        Alamofire.request(imageUrl).responseImage { (responseImage) in
+            
+            guard let image = responseImage.value,
+                let cell = self.cellForRow(at: indexPath) as? PizzaCell else {
+                
+                    return
+            }
+            
+            cell.set(image: image)
+        }
+    }
+    
+    func setPrice(for pizza: Pizza, at indexPath: IndexPath) {
+        
+        Model.shared.getPrice(for: pizza) { (pizzaPrice) in
+            
+            guard let cell = self.cellForRow(at: indexPath) as? PizzaCell else {
+                
                 return
             }
             
-            cell.ingredientsLabel.text = ingredientsString;
+            cell.set(price: pizzaPrice)
         }
-        
-        return cell
     }
-}
-
-
-
-protocol PizzaCell {
-    
-    var pizzaNameLabel: UILabel? { get }
-    var ingredientsLabel: UILabel? { get }
-    var pizzaImageView: UIImageView? { get }
-    
 }
