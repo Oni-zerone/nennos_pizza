@@ -53,10 +53,12 @@ class PizzaViewController: UIViewController {
     
     private func setupTableView() {
         
-        self.tableView.estimatedRowHeight = 178
-        let cellName = String(describing: IngredientTableViewCell.self)
+        self.tableView.estimatedRowHeight = 44
         
-        self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main), forCellReuseIdentifier: cellName)
+        let cellName = String(describing: IngredientTableViewCell.self)
+        self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main),
+                                forCellReuseIdentifier: cellName)
+        
         self.ingredientDataSource = IngredientDataSource(with: cellName, tableView: self.tableView)
     }
     
@@ -78,4 +80,27 @@ class PizzaViewController: UIViewController {
             self.tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: UITableViewScrollPosition.none)
         })
     }
+}
+
+extension PizzaViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        guard let header = view as? UITableViewHeaderFooterView else {
+            return
+        }
+        
+        if let textLabel = header.textLabel {
+            textLabel.font = UIFont.titleFont
+            textLabel.textColor = UIColor.textColor
+        }
+        
+        header.backgroundView?.backgroundColor = UIColor.white
+    }
+    
 }
