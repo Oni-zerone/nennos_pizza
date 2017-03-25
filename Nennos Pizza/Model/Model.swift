@@ -49,18 +49,14 @@ class Model: NSObject {
         }
     }
     
-    func getPizzas(completion: @escaping (Array<Pizza>) -> ()) {
+    func getCachedPizzas(completion: @escaping (Array<Pizza>) -> ()) {
     
         if let pizzas = self.pizzas {
             
-            DispatchQueue.main.async {
                 completion(pizzas)
-            }
             return
         }
         
-        Model.queue.async {
-
             APIManager.getPizzas(completion: { (items, error) in
                 
                 let pizzas = items ?? Array<Pizza>()
@@ -68,11 +64,8 @@ class Model: NSObject {
                     self.pizzas = pizzas
                 }
                 
-                DispatchQueue.main.async {
-                    completion(pizzas)
-                }
+                completion(pizzas)
             })
-        }
     }
     
     func getIngredients(completion: @escaping (Array<Ingredient>) -> ()) {
@@ -153,6 +146,19 @@ class Model: NSObject {
 fileprivate typealias ModelInterface = Model
 
 extension ModelInterface {
+    
+    func getPizzas(completion: @escaping (Array<Pizza>) -> ()) {
+    
+        Model.queue.async {
+            
+            self.getCachedPizzas { (ingredients) in
+                
+                DispatchQueue.main.async {
+                    completion(ingredients)
+                }
+            }
+        }
+    }
     
     func getIngredients(for pizza:Pizza, completion: @escaping (Array<Ingredient>) -> ()) {
         
