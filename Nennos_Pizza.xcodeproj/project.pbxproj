@@ -167,6 +167,7 @@
 		9765E8951E85D8A20019C772 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9765E89C1E85ED280019C772 /* Controls */,
 				9765E8961E85E02B0019C772 /* TableViewCell */,
 			);
 			path = View;
@@ -187,6 +188,13 @@
 				9765E8991E85E06B0019C772 /* MainTableViewCell.xib */,
 			);
 			name = MainTableCell;
+			sourceTree = "<group>";
+		};
+		9765E89C1E85ED280019C772 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
