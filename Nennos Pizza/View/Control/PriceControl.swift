@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PriceControl: UIControl {
+@IBDesignable class PriceControl: UIControl {
 
     private weak var cartImageView: UIImageView!
     private weak var pricelabel: UILabel!
@@ -19,7 +19,19 @@ class PriceControl: UIControl {
         }
     }
     
-    var currency : String?
+    @IBInspectable var currency : String?
+
+    @IBInspectable var cartImage: UIImage? {
+        
+        set {
+            self.cartImageView.image = newValue?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }
+        
+        get {
+            return self.cartImageView.image
+        }
+    }
+
     
     var price: Double? {
         

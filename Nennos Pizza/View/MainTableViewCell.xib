@@ -49,6 +49,9 @@
                                     <constraint firstAttribute="height" constant="28" id="Ssq-wm-5cX"/>
                                     <constraint firstAttribute="width" constant="64" id="wQv-by-N26"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="currency" value="$"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
