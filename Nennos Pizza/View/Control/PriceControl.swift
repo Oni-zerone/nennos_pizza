@@ -11,11 +11,11 @@ import UIKit
 @IBDesignable class PriceControl: UIControl {
 
     private weak var cartImageView: UIImageView!
-    private weak var pricelabel: UILabel!
+    private weak var priceLabel: UILabel!
     
     override var tintColor: UIColor! {
         didSet {
-            self.pricelabel.textColor = self.tintColor
+            self.priceLabel.textColor = self.tintColor
         }
     }
     
@@ -23,64 +23,59 @@ import UIKit
 
     @IBInspectable var cartImage: UIImage? {
         
-        set {
-            self.cartImageView.image = newValue?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        }
-        
-        get {
-            return self.cartImageView.image
+        didSet {
+            self.cartImageView.image = self.cartImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         }
     }
 
-    
     var price: Double? {
         
         didSet {
 
             guard let price = self.price else {
                 
-                self.pricelabel.text = ""
+                self.priceLabel.text = ""
                 return
             }
             
-            var priceString = String()
+            var priceString = currency ?? String()
+            priceString += String(format: " %.2f", price)
             
-            if let currency = self.currency {
-                priceString += "\(currency) "
-            }
-            
-            priceString += String(format: "%.2f", price)
-            self.pricelabel.text = priceString
+            self.priceLabel.text = priceString
         }
     }
     
     required override init(frame: CGRect) {
+
         super.init(frame: frame);
-        
-        setupLayout();
+        setupLayout()
     }
 
     required init?(coder aDecoder: NSCoder) {
+
         super.init(coder: aDecoder);
-        
-        setupLayout();
+        setupLayout()
     }
     
     private func setupLayout() {
         
         //Setup cartImageView
-        let cartImageView = UIImageView()
+        print(self.cartImage?.description ?? "NO CART IMAGE")
+        let cartImageView = UIImageView(image: self.cartImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate))
         cartImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(cartImageView)
+        self.cartImageView = cartImageView
+        
         
         //Setup priceLabel
         let priceLabel = UILabel()
         priceLabel.textAlignment = .right
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(priceLabel)
+        self.priceLabel = priceLabel
         
         //Setup constaints
-        let views = ["cartImageView" : cartImageView, "priceLabel" : priceLabel]
+        let views = ["cartImageView" : cartImageView, "priceLabel" : priceLabel] as Dictionary<String, UIView>
         let hConstraints = NSLayoutConstraint.constraints(withVisualFormat:"H:|-8-[cartImageView]-4-[priceLabel(>=30)]-8-|",
                                                           options: NSLayoutFormatOptions(rawValue: 0),
                                                           metrics: nil,
