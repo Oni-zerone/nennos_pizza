@@ -43,6 +43,8 @@ class IngredientTableViewCell: UITableViewCell {
         self.detailLabel.text = ""
         self.titleLabel.font = UIFont.detailFont
         self.titleLabel.textColor = UIColor.textColor
+        
+        self.checkImageView.tintColor = UIColor.primaryColor
     }
     
 }
