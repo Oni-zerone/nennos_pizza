@@ -27,6 +27,7 @@
 		97692B611E86B250005DAF71 /* NennoColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B601E86B250005DAF71 /* NennoColors.swift */; };
 		97692B631E86B37A005DAF71 /* NennoFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B621E86B37A005DAF71 /* NennoFonts.swift */; };
 		97692B661E86BF35005DAF71 /* PizzaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B651E86BF35005DAF71 /* PizzaDataSource.swift */; };
+		97692B681E86DE7A005DAF71 /* MainPizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */; };
 		9780CE8D1E868266001EF13E /* PriceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780CE8C1E868266001EF13E /* PriceControl.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		97692B601E86B250005DAF71 /* NennoColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NennoColors.swift; sourceTree = "<group>"; };
 		97692B621E86B37A005DAF71 /* NennoFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NennoFonts.swift; sourceTree = "<group>"; };
 		97692B651E86BF35005DAF71 /* PizzaDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaDataSource.swift; sourceTree = "<group>"; };
+		97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPizzaCell.swift; sourceTree = "<group>"; };
 		9780CE8C1E868266001EF13E /* PriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceControl.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				97692B651E86BF35005DAF71 /* PizzaDataSource.swift */,
+				97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				97692B661E86BF35005DAF71 /* PizzaDataSource.swift in Sources */,
 				9765E88B1E85BC490019C772 /* DrinksManager.swift in Sources */,
 				9780CE8D1E868266001EF13E /* PriceControl.swift in Sources */,
+				97692B681E86DE7A005DAF71 /* MainPizzaCell.swift in Sources */,
 				9765E8891E85B77A0019C772 /* PizzasManager.swift in Sources */,
 				9765E8791E85A0100019C772 /* APIConfig.swift in Sources */,
 			);

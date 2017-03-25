@@ -70,12 +70,12 @@ extension MainViewController: UITableViewDataSource {
         }
         
         let pizza = self.pizzas[indexPath.row]
-        cell.pizzaLabel.text = pizza.name
+        cell.titleLabel.text = pizza.name
 
         if let imagePath = pizza.imageUrl,
             let URL = URL(string: imagePath) {
             
-            cell.pizzaImageView.af_setImage(withURL: URL)
+            cell.mainImageView.af_setImage(withURL: URL)
         }
         
         Model.shared.getIngredients(for: pizza) { (ingredients) in
@@ -95,7 +95,7 @@ extension MainViewController: UITableViewDataSource {
                 return
             }
             
-            cell.ingredientsLabel.text = ingredientsString;
+            cell.descriptionLabel.text = ingredientsString;
         }
         
         return cell

@@ -11,10 +11,10 @@ import UIKit
 class MainTableViewCell: UITableViewCell {
 
     //View
-    @IBOutlet weak var pizzaLabel: UILabel!
-    @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBOutlet weak var pizzaImageView: UIImageView!
+    @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var detailsContainerView: UIView!
     @IBOutlet weak var buyButton: PriceControl!
 
@@ -62,11 +62,15 @@ class MainTableViewCell: UITableViewCell {
     
     private func prepareCell() {
         
-        self.pizzaLabel.font = UIFont.titleFont
-        self.ingredientsLabel.font = UIFont.textFont
-        self.pizzaLabel.text = ""
-        self.ingredientsLabel.text = ""
-        self.pizzaImageView.image = nil
+        self.titleLabel.font = UIFont.titleFont
+        self.titleLabel.textColor = UIColor.textColor
+        self.titleLabel.text = ""
+        
+        self.descriptionLabel.font = UIFont.textFont
+        self.descriptionLabel.textColor = UIColor.textColor
+        self.descriptionLabel.text = ""
+        
+        self.mainImageView.image = nil
     }
     
     @IBAction func buyPressedAction(_ sender: Any) {
