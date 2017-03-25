@@ -42,7 +42,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-Vg-Ocq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-Vg-Ocq" customClass="PriceControl" customModule="Nennos_Pizza" customModuleProvider="target">
                                 <rect key="frame" x="244" y="29" width="64" height="28"/>
                                 <color key="backgroundColor" red="0.027450980390000001" green="0.83137254900000002" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
