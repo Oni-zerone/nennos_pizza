@@ -11,50 +11,54 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="KGk-i7-Jjw" customClass="MainTableViewCell" customModule="Nennos_Pizza" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="189" id="KGk-i7-Jjw" customClass="MainTableViewCell" customModule="Nennos_Pizza" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Backgound" translatesAutoresizingMaskIntoConstraints="NO" id="wAV-3w-T0d">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" image="Backgound" translatesAutoresizingMaskIntoConstraints="NO" id="wAV-3w-T0d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="178" id="rNB-XZ-KUY"/>
+                            <constraint firstAttribute="height" constant="178" id="Bts-FK-f8g"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anL-Js-pRc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="anL-Js-pRc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHP-nG-6zL">
-                        <rect key="frame" x="0.0" y="108" width="320" height="69"/>
+                        <rect key="frame" x="0.0" y="108" width="320" height="70"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-So-mA1">
-                                <rect key="frame" x="12" y="12" width="0.0" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-So-mA1">
+                                <rect key="frame" x="12" y="12" width="51" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmm-AW-fRW">
-                                <rect key="frame" x="12" y="57" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmm-AW-fRW">
+                                <rect key="frame" x="12" y="41" width="36" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-Vg-Ocq" customClass="PriceControl" customModule="Nennos_Pizza" customModuleProvider="target">
-                                <rect key="frame" x="234" y="33" width="74" height="24"/>
+                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-Vg-Ocq" customClass="PriceControl" customModule="Nennos_Pizza" customModuleProvider="target">
+                                <rect key="frame" x="234" y="34" width="74" height="24"/>
                                 <color key="backgroundColor" red="1" green="0.80392156862745101" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="currency" value="$"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="cartImage" value="Cart"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buyPressedAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="69C-94-oyR"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="1YT-CA-LWr"/>
+                            <constraint firstItem="IzS-Vg-Ocq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oNv-So-mA1" secondAttribute="trailing" constant="10" id="2Yw-Ip-6sp"/>
                             <constraint firstItem="IzS-Vg-Ocq" firstAttribute="bottom" secondItem="mmm-AW-fRW" secondAttribute="bottom" id="62g-Ak-2Gw"/>
                             <constraint firstItem="mmm-AW-fRW" firstAttribute="leading" secondItem="XHP-nG-6zL" secondAttribute="leading" constant="12" id="7pI-7Y-n1b"/>
                             <constraint firstItem="mmm-AW-fRW" firstAttribute="leading" secondItem="oNv-So-mA1" secondAttribute="leading" id="L2e-S1-wWU"/>
@@ -81,12 +85,13 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buyButton" destination="IzS-Vg-Ocq" id="bcX-gg-T1I"/>
                 <outlet property="detailsContainerView" destination="XHP-nG-6zL" id="CSo-pN-Kvp"/>
                 <outlet property="ingredientsLabel" destination="mmm-AW-fRW" id="QMu-37-dbQ"/>
                 <outlet property="pizzaImageView" destination="anL-Js-pRc" id="7PP-TS-He3"/>
                 <outlet property="pizzaLabel" destination="oNv-So-mA1" id="iXo-x5-pLD"/>
             </connections>
-            <point key="canvasLocation" x="43" y="14"/>
+            <point key="canvasLocation" x="43" y="24.5"/>
         </tableViewCell>
     </objects>
     <resources>

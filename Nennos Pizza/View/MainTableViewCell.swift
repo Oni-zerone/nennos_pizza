@@ -16,19 +16,19 @@ class MainTableViewCell: UITableViewCell {
     
     @IBOutlet weak var pizzaImageView: UIImageView!
     @IBOutlet weak var detailsContainerView: UIView!
+    @IBOutlet weak var buyButton: PriceControl!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.addBlurEffect()
+        self.prepareCell()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.pizzaLabel.text = ""
-        self.ingredientsLabel.text = ""
-        self.pizzaImageView.image = nil
+        self.prepareCell()
     }
     
 
@@ -58,5 +58,18 @@ class MainTableViewCell: UITableViewCell {
         self.detailsContainerView.addConstraints(vConstraints)
         
         self.detailsContainerView.sendSubview(toBack: blurEffectView)
+    }
+    
+    private func prepareCell() {
+        
+        self.pizzaLabel.font = UIFont.titleFont
+        self.ingredientsLabel.font = UIFont.textFont
+        self.pizzaLabel.text = ""
+        self.ingredientsLabel.text = ""
+        self.pizzaImageView.image = nil
+    }
+    
+    @IBAction func buyPressedAction(_ sender: Any) {
+        
     }
 }
