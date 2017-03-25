@@ -56,5 +56,9 @@ class PriceControl: UIControl {
         self.addConstraint(priceLabelConstraint)
         self.addConstraints(vCartConstraints)
         self.addConstraints(hConstraints)
+        
+        //Setup background radius
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 4
     }
 }
