@@ -9,14 +9,14 @@
 import UIKit
 
 class Model: NSObject {
-
+    
     static let queue = DispatchQueue(label: "it.studiout.nenno.modelQueue", attributes: .concurrent)
-
+    
     static var shared = {
         
         return Model()
     }()
-
+    
     private var ingredients: Array<Ingredient>?
     private var pizzas: Array<Pizza>?
     private var drinks: Array<Drink>?
@@ -24,74 +24,67 @@ class Model: NSObject {
     private var pizzaIngredients = Dictionary<Pizza, Array<Ingredient>>()
     private var pizzaPrices = Dictionary<Pizza, Double>()
     
-    func getDrinks(completion: @escaping (Array<Drink>) -> ()) {
+    fileprivate func getCachedPizzas(completion: @escaping (Array<Pizza>) -> ()) {
         
-        if let drinks = self.drinks {
-            DispatchQueue.main.async {
-                completion(drinks)
-            }
-            return
-        }
-        
-        Model.queue.async {
-            
-            APIManager.getDrinks(completion: { (items, error) in
-                
-                let drinks = items ?? Array<Drink>()
-                
-                if drinks.count > 0 {
-                    self.drinks = drinks
-                }
-                DispatchQueue.main.async {
-                    completion(drinks)
-                }
-            })
-        }
-    }
-    
-    func getCachedPizzas(completion: @escaping (Array<Pizza>) -> ()) {
-    
         if let pizzas = self.pizzas {
             
-                completion(pizzas)
+            completion(pizzas)
             return
         }
         
-            APIManager.getPizzas(completion: { (items, error) in
-                
-                let pizzas = items ?? Array<Pizza>()
-                if pizzas.count > 0 {
+        APIManager.getPizzas(completion: { (items, error) in
+            
+            let pizzas = items ?? Array<Pizza>()
+            if pizzas.count > 0 {
+                Model.queue.sync {
                     self.pizzas = pizzas
                 }
-                
-                completion(pizzas)
-            })
+            }
+            
+            completion(pizzas)
+        })
     }
     
-    func getIngredients(completion: @escaping (Array<Ingredient>) -> ()) {
+    fileprivate func getCachedIngredients(completion: @escaping (Array<Ingredient>) -> ()) {
         
         if let ingredients = self.ingredients {
             
-            DispatchQueue.main.async {
-                completion(ingredients)
-            }
+            completion(ingredients)
             return
         }
         
-        Model.queue.async {
+        APIManager.getIngredients(completion: { (items, error) in
             
-            APIManager.getIngredients(completion: { (items, error) in
-                
-                let ingredients = items ?? Array<Ingredient>()
-                if ingredients.count > 0 {
+            let ingredients = items ?? Array<Ingredient>()
+            if ingredients.count > 0 {
+                Model.queue.sync {
                     self.ingredients = ingredients
                 }
-                
-                DispatchQueue.main.async {
-                    completion(ingredients)
-                }
-            })
+            }
+            
+            completion(ingredients)
+        })
+    }
+    
+    func getCachedDrinks(completion: @escaping (Array<Drink>) -> ()) {
+        
+        if let drinks = self.drinks {
+            
+            completion(drinks)
+            return
         }
+        
+        APIManager.getDrinks(completion: { (items, error) in
+            
+            let drinks = items ?? Array<Drink>()
+            
+            if drinks.count > 0 {
+                Model.queue.sync {
+                    self.drinks = drinks
+                }
+            }
+            completion(drinks)
+        })
     }
     
     fileprivate func  getCachedIngredients(for pizza:Pizza, completion: @escaping (Array<Ingredient>) -> ()) {
@@ -106,13 +99,14 @@ class Model: NSObject {
             
             let ingredients = items ?? Array<Ingredient>()
             if ingredients.count > 0 {
-                self.pizzaIngredients[pizza] = ingredients
+                Model.queue.sync {
+                    self.pizzaIngredients[pizza] = ingredients
+                }
             }
             
             completion(ingredients)
         })
     }
-
     
     fileprivate func getCachedPrice(for pizza:Pizza, completion: @escaping (Double) -> ()) {
         
@@ -126,11 +120,13 @@ class Model: NSObject {
             let price = self.calculatePrice(with: ingredients)
             
             completion(price)
-            self.pizzaPrices[pizza] = price
+            Model.queue.sync {
+                self.pizzaPrices[pizza] = price
+            }
         }
     }
     
-    private func calculatePrice(with ingredients:Array<Ingredient>) -> Double {
+    func calculatePrice(with ingredients:Array<Ingredient>) -> Double {
         
         var price = Pizza.basePrice
         
@@ -148,7 +144,7 @@ fileprivate typealias ModelInterface = Model
 extension ModelInterface {
     
     func getPizzas(completion: @escaping (Array<Pizza>) -> ()) {
-    
+        
         Model.queue.async {
             
             self.getCachedPizzas { (ingredients) in
@@ -157,6 +153,19 @@ extension ModelInterface {
                     completion(ingredients)
                 }
             }
+        }
+    }
+    
+    func getIngredients(completion: @escaping (Array<Ingredient>) -> ()) {
+        
+        Model.queue.async {
+            
+            self.getCachedIngredients(completion: { (ingredients) in
+                
+                DispatchQueue.main.async {
+                    completion(ingredients)
+                }
+            })
         }
     }
     
@@ -181,6 +190,18 @@ extension ModelInterface {
                 
                 DispatchQueue.main.async {
                     completion(ingredients)
+                }
+            })
+        }
+    }
+    
+    func getDrinks(completion: @escaping (Array<Drink>) -> ()) {
+        
+        Model.queue.async {
+            
+            self.getCachedDrinks(completion: { (drinks) in
+                DispatchQueue.main.async {
+                    completion(drinks)
                 }
             })
         }
