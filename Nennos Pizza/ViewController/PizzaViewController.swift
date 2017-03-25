@@ -11,13 +11,18 @@ import UIKit
 class PizzaViewController: UIViewController {
 
     //Model
-    var ingredientDataSource: IngredientDataSource!
+    var ingredientDataSource: IngredientDataSource?
     
     var pizza: Pizza? {
         
         didSet {
             
-            self.title = pizza?.name
+            guard let pizza = self.pizza else {
+                return
+            }
+            
+            self.title = pizza.name
+            self.selectIngredients()
         }
     }
     
@@ -36,7 +41,8 @@ class PizzaViewController: UIViewController {
         
         Model.shared.getIngredients { (ingredients) in
             
-            self.ingredientDataSource.ingredients = ingredients
+            self.ingredientDataSource?.ingredients = ingredients
+            self.selectIngredients()
         }
     }
     
@@ -52,5 +58,24 @@ class PizzaViewController: UIViewController {
         
         self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main), forCellReuseIdentifier: cellName)
         self.ingredientDataSource = IngredientDataSource(with: cellName, tableView: self.tableView)
+    }
+    
+    func selectIngredients() {
+        
+        guard let pizza = self.pizza,
+         let ingredients = self.ingredientDataSource?.ingredients else {
+            return
+        }
+        
+        pizza.ingredientIds.forEach({ (ingredientId) in
+            
+            guard let index = ingredients.index(where: { (ingredient) -> Bool in
+                return ingredient.id == ingredientId
+            }) else {
+                return
+            }
+            
+            self.tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: UITableViewScrollPosition.none)
+        })
     }
 }
