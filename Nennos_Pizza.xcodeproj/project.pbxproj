@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9723D8121E870A44008C9AB6 /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723D8101E870A44008C9AB6 /* TableViewHeader.swift */; };
+		9723D8131E870A44008C9AB6 /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9723D8111E870A44008C9AB6 /* TableViewHeader.xib */; };
+		9723D8151E871324008C9AB6 /* PizzaHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723D8141E871324008C9AB6 /* PizzaHeader.swift */; };
 		9765E8651E8599410019C772 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8641E8599410019C772 /* AppDelegate.swift */; };
 		9765E86A1E8599410019C772 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9765E8681E8599410019C772 /* Main.storyboard */; };
 		9765E86C1E8599410019C772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86B1E8599410019C772 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 /* Begin PBXFileReference section */
 		5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_Pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		613B549F56FB5090C519857B /* Pods-Nennos_Pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.release.xcconfig"; sourceTree = "<group>"; };
+		9723D8101E870A44008C9AB6 /* TableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeader.swift; sourceTree = "<group>"; };
+		9723D8111E870A44008C9AB6 /* TableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewHeader.xib; sourceTree = "<group>"; };
+		9723D8141E871324008C9AB6 /* PizzaHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaHeader.swift; sourceTree = "<group>"; };
 		9765E8611E8599410019C772 /* Nennos_Pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nennos_Pizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9765E8641E8599410019C772 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9765E8691E8599410019C772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +105,15 @@
 				5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9723D80D1E8709D4008C9AB6 /* TableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				9723D8101E870A44008C9AB6 /* TableViewHeader.swift */,
+				9723D8111E870A44008C9AB6 /* TableViewHeader.xib */,
+			);
+			path = TableHeader;
 			sourceTree = "<group>";
 		};
 		9765E8581E8599410019C772 = {
@@ -192,6 +207,7 @@
 			children = (
 				9765E89C1E85ED280019C772 /* Control */,
 				9765E8961E85E02B0019C772 /* TableViewCell */,
+				9723D8141E871324008C9AB6 /* PizzaHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +215,7 @@
 		9765E8961E85E02B0019C772 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				9723D80D1E8709D4008C9AB6 /* TableHeader */,
 				9765E8971E85E0340019C772 /* MainTableCell */,
 				97692B6F1E86EF7C005DAF71 /* IngredientCell */,
 			);
@@ -330,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9723D8131E870A44008C9AB6 /* TableViewHeader.xib in Resources */,
 				97692B731E86EFA0005DAF71 /* IngredientTableViewCell.xib in Resources */,
 				9765E86F1E8599410019C772 /* LaunchScreen.storyboard in Resources */,
 				9765E86C1E8599410019C772 /* Assets.xcassets in Resources */,
@@ -395,6 +413,8 @@
 			files = (
 				97692B6A1E86E510005DAF71 /* PizzaViewController.swift in Sources */,
 				97692B751E86F697005DAF71 /* DetailIngredientCell.swift in Sources */,
+				9723D8121E870A44008C9AB6 /* TableViewHeader.swift in Sources */,
+				9723D8151E871324008C9AB6 /* PizzaHeader.swift in Sources */,
 				9765E89A1E85E06B0019C772 /* MainTableViewCell.swift in Sources */,
 				97692B721E86EFA0005DAF71 /* IngredientTableViewCell.swift in Sources */,
 				9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */,
