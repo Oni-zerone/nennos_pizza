@@ -19,6 +19,29 @@ class PriceControl: UIControl {
         }
     }
     
+    var currency : String?
+    
+    var price: Double? {
+        
+        didSet {
+
+            guard let price = self.price else {
+                
+                self.pricelabel.text = ""
+                return
+            }
+            
+            var priceString = String()
+            
+            if let currency = self.currency {
+                priceString += "\(currency) "
+            }
+            
+            priceString += String(format: "%.2f", price)
+            self.pricelabel.text = priceString
+        }
+    }
+    
     required override init(frame: CGRect) {
         super.init(frame: frame);
         
@@ -31,7 +54,6 @@ class PriceControl: UIControl {
         setupLayout();
     }
     
-    
     private func setupLayout() {
         
         //Setup cartImageView
@@ -41,6 +63,7 @@ class PriceControl: UIControl {
         
         //Setup priceLabel
         let priceLabel = UILabel()
+        priceLabel.textAlignment = .right
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(priceLabel)
         
