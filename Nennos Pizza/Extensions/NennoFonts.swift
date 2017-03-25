@@ -12,6 +12,7 @@ extension UIFont {
     
     static let titleFont = UIFont.systemFont(ofSize: 24, weight: UIFontWeightBold)
     static let textFont = UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)
-    
+
+    static let detailFont = UIFont.systemFont(ofSize: 17, weight: UIFontWeightRegular)
     static let buttonFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightBold)
 }

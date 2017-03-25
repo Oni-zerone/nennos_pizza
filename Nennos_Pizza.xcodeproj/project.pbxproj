@@ -29,6 +29,10 @@
 		97692B661E86BF35005DAF71 /* PizzaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B651E86BF35005DAF71 /* PizzaDataSource.swift */; };
 		97692B681E86DE7A005DAF71 /* MainPizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */; };
 		97692B6A1E86E510005DAF71 /* PizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B691E86E510005DAF71 /* PizzaViewController.swift */; };
+		97692B6C1E86E92A005DAF71 /* IngredientDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B6B1E86E92A005DAF71 /* IngredientDataSource.swift */; };
+		97692B721E86EFA0005DAF71 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B701E86EFA0005DAF71 /* IngredientTableViewCell.swift */; };
+		97692B731E86EFA0005DAF71 /* IngredientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97692B711E86EFA0005DAF71 /* IngredientTableViewCell.xib */; };
+		97692B751E86F697005DAF71 /* DetailIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B741E86F697005DAF71 /* DetailIngredientCell.swift */; };
 		9780CE8D1E868266001EF13E /* PriceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780CE8C1E868266001EF13E /* PriceControl.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +64,10 @@
 		97692B651E86BF35005DAF71 /* PizzaDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaDataSource.swift; sourceTree = "<group>"; };
 		97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPizzaCell.swift; sourceTree = "<group>"; };
 		97692B691E86E510005DAF71 /* PizzaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaViewController.swift; sourceTree = "<group>"; };
+		97692B6B1E86E92A005DAF71 /* IngredientDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientDataSource.swift; sourceTree = "<group>"; };
+		97692B701E86EFA0005DAF71 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		97692B711E86EFA0005DAF71 /* IngredientTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientTableViewCell.xib; sourceTree = "<group>"; };
+		97692B741E86F697005DAF71 /* DetailIngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailIngredientCell.swift; sourceTree = "<group>"; };
 		9780CE8C1E868266001EF13E /* PriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceControl.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				9765E8971E85E0340019C772 /* MainTableCell */,
+				97692B6F1E86EF7C005DAF71 /* IngredientCell */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -225,10 +234,37 @@
 		97692B641E86BEEA005DAF71 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				97692B6D1E86EE72005DAF71 /* MainTableView */,
+				97692B6B1E86E92A005DAF71 /* IngredientDataSource.swift */,
+				97692B6E1E86EE7A005DAF71 /* PizzaDetail */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		97692B6D1E86EE72005DAF71 /* MainTableView */ = {
+			isa = PBXGroup;
+			children = (
 				97692B651E86BF35005DAF71 /* PizzaDataSource.swift */,
 				97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */,
 			);
-			path = DataSource;
+			name = MainTableView;
+			sourceTree = "<group>";
+		};
+		97692B6E1E86EE7A005DAF71 /* PizzaDetail */ = {
+			isa = PBXGroup;
+			children = (
+				97692B741E86F697005DAF71 /* DetailIngredientCell.swift */,
+			);
+			name = PizzaDetail;
+			sourceTree = "<group>";
+		};
+		97692B6F1E86EF7C005DAF71 /* IngredientCell */ = {
+			isa = PBXGroup;
+			children = (
+				97692B701E86EFA0005DAF71 /* IngredientTableViewCell.swift */,
+				97692B711E86EFA0005DAF71 /* IngredientTableViewCell.xib */,
+			);
+			name = IngredientCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97692B731E86EFA0005DAF71 /* IngredientTableViewCell.xib in Resources */,
 				9765E86F1E8599410019C772 /* LaunchScreen.storyboard in Resources */,
 				9765E86C1E8599410019C772 /* Assets.xcassets in Resources */,
 				9765E89B1E85E06B0019C772 /* MainTableViewCell.xib in Resources */,
@@ -357,7 +394,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				97692B6A1E86E510005DAF71 /* PizzaViewController.swift in Sources */,
+				97692B751E86F697005DAF71 /* DetailIngredientCell.swift in Sources */,
 				9765E89A1E85E06B0019C772 /* MainTableViewCell.swift in Sources */,
+				97692B721E86EFA0005DAF71 /* IngredientTableViewCell.swift in Sources */,
 				9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */,
 				9765E8651E8599410019C772 /* AppDelegate.swift in Sources */,
 				97692B631E86B37A005DAF71 /* NennoFonts.swift in Sources */,
@@ -369,6 +408,7 @@
 				97692B611E86B250005DAF71 /* NennoColors.swift in Sources */,
 				9765E8821E85ADEE0019C772 /* Drink.swift in Sources */,
 				9765E8841E85B3260019C772 /* APIRequest.swift in Sources */,
+				97692B6C1E86E92A005DAF71 /* IngredientDataSource.swift in Sources */,
 				97692B661E86BF35005DAF71 /* PizzaDataSource.swift in Sources */,
 				9765E88B1E85BC490019C772 /* DrinksManager.swift in Sources */,
 				9780CE8D1E868266001EF13E /* PriceControl.swift in Sources */,

@@ -22,7 +22,6 @@ protocol PizzaCell {
 class PizzaDataSource : NSObject, UITableViewDataSource {
     
     //Model
-    var cellIdentifier: String
     var pizzas: Array<Pizza> = [] {
         
         willSet {
@@ -35,6 +34,7 @@ class PizzaDataSource : NSObject, UITableViewDataSource {
             self.tableView?.endUpdates()
         }
     }
+    let cellIdentifier: String
     
     //View
     private weak var tableView: UITableView?

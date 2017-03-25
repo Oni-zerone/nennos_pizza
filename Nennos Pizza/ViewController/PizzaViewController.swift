@@ -11,7 +11,19 @@ import UIKit
 class PizzaViewController: UIViewController {
 
     //Model
-    var pizza: Pizza!
+    var ingredientDataSource: IngredientDataSource!
+    
+    var pizza: Pizza? {
+        
+        didSet {
+            
+            self.title = pizza?.name
+        }
+    }
+    
+    
+    //View
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var pizzaLabel: UILabel!
     
@@ -19,18 +31,26 @@ class PizzaViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        self.pizzaLabel.text = pizza.name
+        self.setupTableView()
+        
+        Model.shared.getIngredients { (ingredients) in
+            
+            self.ingredientDataSource.ingredients = ingredients
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
+    private func setupTableView() {
+        
+        self.tableView.estimatedRowHeight = 178
+        let cellName = String(describing: IngredientTableViewCell.self)
+        
+        self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main), forCellReuseIdentifier: cellName)
+        self.ingredientDataSource = IngredientDataSource(with: cellName, tableView: self.tableView)
+    }
 }
