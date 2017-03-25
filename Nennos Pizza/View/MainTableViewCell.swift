@@ -59,5 +59,4 @@ class MainTableViewCell: UITableViewCell {
         
         self.detailsContainerView.sendSubview(toBack: blurEffectView)
     }
-    
 }
