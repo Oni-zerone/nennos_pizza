@@ -29,7 +29,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Nenno's Pizza"
+        
         self.setupTableView()
         
         Model.shared.getPizzas { (pizzas) in
@@ -65,6 +66,28 @@ extension MainViewController: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainTableViewCell.self), for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
+        }
+        
+        let pizza = self.pizzas[indexPath.row]
+        cell.pizzaLabel.text = pizza.name
+        Model.shared.getIngredients(for: pizza) { (ingredients) in
+            
+            var ingredientsString = String()
+            ingredients.forEach({ (ingredient) in
+                if(ingredientsString.characters.count > 0) {
+                    ingredientsString += ", "
+                }
+                ingredientsString += ingredient.name
+            })
+            if(ingredientsString.characters.count > 0) {
+                ingredientsString += "."
+            }
+            
+            guard let cell = tableView.cellForRow(at: indexPath) as? MainTableViewCell else {
+                return
+            }
+            
+            cell.ingredientsLabel.text = ingredientsString;
         }
         
         return cell
