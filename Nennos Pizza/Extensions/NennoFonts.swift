@@ -10,8 +10,8 @@ import UIKit
 
 extension UIFont {
     
-    static let titleFont = UIFont(name: "SFUIText-Bold", size: 24)
-    static let textFont = UIFont(name: "SFUIText-Regular", size: 14)
+    static let titleFont = UIFont.systemFont(ofSize: 24, weight: UIFontWeightBold)
+    static let textFont = UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)
     
-    static let buttonFont = UIFont(name: "SFUIText-Bold", size: 16)
+    static let buttonFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightBold)
 }
