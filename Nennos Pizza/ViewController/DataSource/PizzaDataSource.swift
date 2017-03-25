@@ -39,10 +39,13 @@ class PizzaDataSource : NSObject, UITableViewDataSource {
     //View
     private weak var tableView: UITableView?
     
-    required init(with identifier: String) {
+    required init(with identifier: String, tableView: UITableView) {
         
         self.cellIdentifier = identifier
+        self.tableView = tableView
+        
         super.init()
+        tableView.dataSource = self
     }
     
     //MARK: TableViewDatasource

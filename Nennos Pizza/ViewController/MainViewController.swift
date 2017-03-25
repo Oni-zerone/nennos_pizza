@@ -12,18 +12,7 @@ import AlamofireImage
 class MainViewController: UIViewController {
 
     //Model
-    fileprivate var pizzas: Array<Pizza> = [] {
-        
-        willSet {
-            self.tableView.beginUpdates()
-            self.tableView.deleteSections(IndexSet(integer: 0), with: .none)
-        }
-        
-        didSet {
-            self.tableView.insertSections(IndexSet(integer: 0), with: .none)
-            self.tableView.endUpdates()
-        }
-    }
+    var pizzaDataSource: PizzaDataSource?
     
     //Views
     @IBOutlet weak var tableView: UITableView!
@@ -35,70 +24,23 @@ class MainViewController: UIViewController {
         self.setupTableView()
         
         Model.shared.getPizzas { (pizzas) in
-            self.pizzas = pizzas
+            self.pizzaDataSource?.pizzas = pizzas
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
-        self.pizzas = Array<Pizza>()
+        self.pizzaDataSource?.pizzas = Array<Pizza>()
     }
     
     func setupTableView() {
         
         self.tableView.estimatedRowHeight = 178
-        self.tableView.register(UINib(nibName: String(describing: MainTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: MainTableViewCell.self))
-    }
-    
-}
-
-extension MainViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.pizzas.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellName = String(describing: MainTableViewCell.self)
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainTableViewCell.self), for: indexPath) as? MainTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        let pizza = self.pizzas[indexPath.row]
-        cell.titleLabel.text = pizza.name
-
-        if let imagePath = pizza.imageUrl,
-            let URL = URL(string: imagePath) {
-            
-            cell.mainImageView.af_setImage(withURL: URL)
-        }
-        
-        Model.shared.getIngredients(for: pizza) { (ingredients) in
-            
-            var ingredientsString = String()
-            ingredients.forEach({ (ingredient) in
-                if(ingredientsString.characters.count > 0) {
-                    ingredientsString += ", "
-                }
-                ingredientsString += ingredient.name
-            })
-            if(ingredientsString.characters.count > 0) {
-                ingredientsString += "."
-            }
-            
-            guard let cell = tableView.cellForRow(at: indexPath) as? MainTableViewCell else {
-                return
-            }
-            
-            cell.descriptionLabel.text = ingredientsString;
-        }
-        
-        return cell
+        self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main), forCellReuseIdentifier: cellName)
+        self.pizzaDataSource = PizzaDataSource(with: cellName, tableView: self.tableView)
     }
 }
 
