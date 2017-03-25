@@ -59,28 +59,16 @@ import UIKit
     
     private func setupLayout() {
         
-        //Setup cartImageView
-        print(self.cartImage?.description ?? "NO CART IMAGE")
-        let cartImageView = UIImageView(image: self.cartImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate))
-        cartImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(cartImageView)
-        self.cartImageView = cartImageView
-        
-        
-        //Setup priceLabel
-        let priceLabel = UILabel()
-        priceLabel.textAlignment = .right
-        priceLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(priceLabel)
-        self.priceLabel = priceLabel
+        setupCartImageView()
+        setupPriceLabel()
         
         //Setup constaints
         let views = ["cartImageView" : cartImageView, "priceLabel" : priceLabel] as Dictionary<String, UIView>
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat:"H:|-8-[cartImageView]-4-[priceLabel(>=30)]-8-|",
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat:"H:|-8-[cartImageView(24)]-4-[priceLabel(>=30)]-8-|",
                                                           options: NSLayoutFormatOptions(rawValue: 0),
                                                           metrics: nil,
                                                           views:views)
-        let vCartConstraints = NSLayoutConstraint.constraints(withVisualFormat:"V:|-0-[cartImageView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        let vCartConstraints = NSLayoutConstraint.constraints(withVisualFormat:"V:|-0-[cartImageView(24)]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
         let priceLabelConstraint = NSLayoutConstraint(item: priceLabel, attribute: .bottom, relatedBy: .equal, toItem: cartImageView, attribute: .bottom, multiplier: 1, constant: 0)
         
         self.addConstraint(priceLabelConstraint)
@@ -90,5 +78,24 @@ import UIKit
         //Setup background radius
         self.clipsToBounds = true
         self.layer.cornerRadius = 4
+    }
+    
+    private func setupCartImageView() {
+
+        let cartImageView = UIImageView(image: self.cartImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate))
+        cartImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(cartImageView)
+        self.cartImageView = cartImageView
+    }
+    
+    private func setupPriceLabel() {
+        
+        let priceLabel = UILabel()
+        priceLabel.textAlignment = .right
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        priceLabel.textColor = self.tintColor
+        priceLabel.font = UIFont.buttonFont
+        self.addSubview(priceLabel)
+        self.priceLabel = priceLabel
     }
 }
