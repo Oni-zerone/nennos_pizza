@@ -23,6 +23,14 @@ class MainTableViewCell: UITableViewCell {
         self.addBlurEffect()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.pizzaLabel.text = ""
+        self.ingredientsLabel.text = ""
+        self.pizzaImageView.image = nil
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
