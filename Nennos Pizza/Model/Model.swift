@@ -19,8 +19,10 @@ class Model: NSObject {
 
     private var ingredients: Array<Ingredient>?
     private var pizzas: Array<Pizza>?
-    private var pizzaIngredients = Dictionary<Pizza, Array<Ingredient>>()
     private var drinks: Array<Drink>?
+    
+    private var pizzaIngredients = Dictionary<Pizza, Array<Ingredient>>()
+    private var pizzaPrices = Dictionary<Pizza, Double>()
     
     func getDrinks(completion: @escaping (Array<Drink>) -> ()) {
         
@@ -99,25 +101,77 @@ class Model: NSObject {
         }
     }
     
-    func getIngredients(for pizza:Pizza, completion: @escaping (Array<Ingredient>) -> ()) {
-        
+    fileprivate func  getCachedIngredients(for pizza:Pizza, completion: @escaping (Array<Ingredient>) -> ()) {
         
         if let ingredients = self.pizzaIngredients[pizza] {
             
-            DispatchQueue.main.async {
-                completion(ingredients)
-            }
+            completion(ingredients)
             return
         }
         
+        APIManager.getIngredients(for: pizza, completion: { (items, error) in
+            
+            let ingredients = items ?? Array<Ingredient>()
+            if ingredients.count > 0 {
+                self.pizzaIngredients[pizza] = ingredients
+            }
+            
+            completion(ingredients)
+        })
+    }
+
+    
+    fileprivate func getCachedPrice(for pizza:Pizza, completion: @escaping (Double) -> ()) {
+        
+        if let price = self.pizzaPrices[pizza] {
+            completion(price)
+            return
+        }
+        
+        getCachedIngredients(for: pizza) { (ingredients) in
+            
+            let price = self.calculatePrice(with: ingredients)
+            
+            completion(price)
+            self.pizzaPrices[pizza] = price
+        }
+    }
+    
+    private func calculatePrice(with ingredients:Array<Ingredient>) -> Double {
+        
+        var price = Pizza.basePrice
+        
+        ingredients.forEach { (ingredient) in
+            
+            price += ingredient.price
+        }
+        
+        return price
+    }
+}
+
+fileprivate typealias ModelInterface = Model
+
+extension ModelInterface {
+    
+    func getIngredients(for pizza:Pizza, completion: @escaping (Array<Ingredient>) -> ()) {
+        
         Model.queue.async {
             
-            APIManager.getIngredients(for: pizza, completion: { (items, error) in
-              
-                let ingredients = items ?? Array<Ingredient>()
-                if ingredients.count > 0 {
-                    self.pizzaIngredients[pizza] = ingredients
+            self.getCachedIngredients(for: pizza) { (ingredients) in
+                
+                DispatchQueue.main.async {
+                    completion(ingredients)
                 }
+            }
+        }
+    }
+    
+    func getPrice(for pizza: Pizza, completion: @escaping(Double) -> ()) {
+        
+        Model.queue.async {
+            
+            self.getCachedPrice(for: pizza, completion: { (ingredients) in
                 
                 DispatchQueue.main.async {
                     completion(ingredients)
