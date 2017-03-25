@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MainViewController: UIViewController {
 
@@ -70,6 +71,13 @@ extension MainViewController: UITableViewDataSource {
         
         let pizza = self.pizzas[indexPath.row]
         cell.pizzaLabel.text = pizza.name
+
+        if let imagePath = pizza.imageUrl,
+            let URL = URL(string: imagePath) {
+            
+            cell.pizzaImageView.af_setImage(withURL: URL)
+        }
+        
         Model.shared.getIngredients(for: pizza) { (ingredients) in
             
             var ingredientsString = String()
