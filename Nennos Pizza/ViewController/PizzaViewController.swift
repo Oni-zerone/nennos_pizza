@@ -24,7 +24,7 @@ class PizzaViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.pizzaLabel.text = pizza.nam
+        self.pizzaLabel.text = pizza.name
     }
     
     override func didReceiveMemoryWarning() {
