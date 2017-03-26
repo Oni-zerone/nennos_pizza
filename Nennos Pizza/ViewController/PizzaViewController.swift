@@ -62,6 +62,7 @@ class PizzaViewController: UIViewController {
         self.tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: cellName)
         
         self.ingredientDataSource = PricedItemDataSource<Ingredient>(with: cellName, tableView: self.tableView)
+        self.ingredientDataSource?.title = "Ingredients"
     }
     
     func setupHeader() {

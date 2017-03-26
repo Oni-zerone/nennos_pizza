@@ -10,6 +10,8 @@ import UIKit
 
 class PricedItemDataSource<Item: PricedItem>: BaseDataSource<Item> {
     
+    var title: String?
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
@@ -28,7 +30,7 @@ class PricedItemDataSource<Item: PricedItem>: BaseDataSource<Item> {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section == 0 {
-            return "Ingredients"
+            return self.title
         }
         
         return nil
