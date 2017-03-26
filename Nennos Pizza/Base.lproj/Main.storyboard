@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-Yz-Csg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
                                     <segue destination="OTo-4o-dTQ" kind="embed" id="7pU-ev-rGT"/>
                                 </connections>
@@ -31,7 +31,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sy7-Yz-Csg" firstAttribute="leading" secondItem="epE-yz-meu" secondAttribute="leading" id="cC0-4O-yxs"/>
-                            <constraint firstItem="sy7-Yz-Csg" firstAttribute="top" secondItem="epE-yz-meu" secondAttribute="top" id="pmc-xF-V48"/>
+                            <constraint firstItem="sy7-Yz-Csg" firstAttribute="top" secondItem="epE-yz-meu" secondAttribute="top" constant="20" id="pmc-xF-V48"/>
                             <constraint firstItem="Tie-3A-HKd" firstAttribute="top" secondItem="sy7-Yz-Csg" secondAttribute="bottom" id="u3L-OR-HuJ"/>
                             <constraint firstAttribute="trailing" secondItem="sy7-Yz-Csg" secondAttribute="trailing" id="wQi-b2-WUM"/>
                         </constraints>
@@ -67,11 +67,11 @@
                         <viewControllerLayoutGuide type="bottom" id="YhJ-yD-xMy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Aw8-k8-u5D">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="583"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ni6-jo-3uU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="50G-qn-6TT" id="aMe-7M-6tm"/>
@@ -105,11 +105,11 @@
                         <viewControllerLayoutGuide type="bottom" id="lbk-fu-JAq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wy9-dG-PLp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="583"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6G-vB-g6k" customClass="BigPriceControl" customModule="Nennos_Pizza" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="553.5" width="375" height="49.5"/>
+                                <rect key="frame" x="0.0" y="533.5" width="375" height="49.5"/>
                                 <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -120,7 +120,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="16w-C3-eMv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="553.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="533.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
