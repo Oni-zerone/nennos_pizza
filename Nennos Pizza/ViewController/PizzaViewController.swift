@@ -59,8 +59,7 @@ class PizzaViewController: UIViewController {
         self.tableView.estimatedRowHeight = 44
         
         let cellName = String(describing: IngredientTableViewCell.self)
-        self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main),
-                                forCellReuseIdentifier: cellName)
+        self.tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: cellName)
         
         self.ingredientDataSource = IngredientDataSource(with: cellName, tableView: self.tableView)
     }
