@@ -37,14 +37,23 @@ class CartViewController: UIViewController {
     
     func setupTableView() {
         
-        self.tableView.estimatedRowHeight = 178
-        let cellName = String(describing: MainTableViewCell.self)
-        
-        self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main), forCellReuseIdentifier: cellName)
+        self.tableView.estimatedRowHeight = 44
+        let cellName = String(describing: CartTableViewCell.self)
+        self.tableView.register(CartTableViewCell.self, forCellReuseIdentifier: cellName)
+
         self.dataSource = CartDatasource(with: cellName, tableView: self.tableView)
     }
     
     @IBAction func checkoutAction(_ sender: Any) {
         
     }
+}
+
+extension CartViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+    }
+    
 }
