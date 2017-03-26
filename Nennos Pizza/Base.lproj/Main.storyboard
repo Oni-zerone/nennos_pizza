@@ -88,7 +88,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1I3-LG-Rqu">
                         <barButtonItem key="backBarButtonItem" title=" " id="MyY-hV-rph"/>
-                        <barButtonItem key="leftBarButtonItem" image="Cart" id="sbf-hY-oSG">
+                        <barButtonItem key="leftBarButtonItem" image="NavigationBar/Cart" id="sbf-hY-oSG">
                             <connections>
                                 <segue destination="0zG-AV-AjG" kind="show" id="mmU-Aw-ct1"/>
                             </connections>
@@ -195,7 +195,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WpA-na-5Hc">
                         <barButtonItem key="backBarButtonItem" title=" " id="YSp-xN-lLF"/>
-                        <barButtonItem key="rightBarButtonItem" title="Drinks" id="Cib-n6-2dL">
+                        <barButtonItem key="rightBarButtonItem" image="NavigationBar/Drinks" id="Cib-n6-2dL">
                             <connections>
                                 <segue destination="mP1-gV-WkO" kind="show" id="gGH-yj-6tJ"/>
                             </connections>
@@ -248,7 +248,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cart" width="24" height="24"/>
+        <image name="NavigationBar/Cart" width="24" height="24"/>
+        <image name="NavigationBar/Drinks" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="0.88235294117647056" green="0.30196078431372547" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
 </document>
