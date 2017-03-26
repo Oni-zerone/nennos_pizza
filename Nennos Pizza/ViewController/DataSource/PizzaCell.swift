@@ -15,4 +15,6 @@ protocol PizzaCell {
     func set(name: String)
     func set(ingredients: String)
     func set(image:UIImage)
+    
+    func set(delegate: AnyObject?)
 }
