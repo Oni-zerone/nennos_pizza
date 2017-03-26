@@ -11,5 +11,5 @@ import Foundation
 protocol ShippableItem {
     
     var name: String { get }
-    func getPrice(completion: (Double) -> ())
+    func getPrice(completion: @escaping (Double) -> ())
 }
