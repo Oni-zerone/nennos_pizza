@@ -11,6 +11,11 @@ import Foundation
 struct Cart {
     
     var pizzas = Array<Pizza>()
+    
+    struct Notifications {
+        
+        static let didAddPizza = Notification.Name("it.studiout.NennosPizza.Cart.didAddPizza")
+    }
 }
 
 fileprivate typealias MutableCart = Cart
@@ -20,6 +25,10 @@ extension MutableCart {
     mutating func insert(pizza: Pizza) {
         
         self.pizzas.append(pizza)
+
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: Cart.Notifications.didAddPizza, object: nil)
+        }
     }
     
     mutating func removePizza(at index: Int) -> Bool {

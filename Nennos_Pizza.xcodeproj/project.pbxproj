@@ -40,6 +40,7 @@
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
 		97BFCCFB1E880EC300E00EA5 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */; };
 		97BFCCFF1E8816E200E00EA5 /* PizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */; };
+		97BFCD071E8827F100E00EA5 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD061E8827F100E00EA5 /* NotificationViewController.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaCell.swift; sourceTree = "<group>"; };
+		97BFCD061E8827F100E00EA5 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 		9765E8921E85D7130019C772 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				97BFCD061E8827F100E00EA5 /* NotificationViewController.swift */,
 				9765E8931E85D7410019C772 /* MainViewController.swift */,
 				97692B691E86E510005DAF71 /* PizzaViewController.swift */,
 				97692B641E86BEEA005DAF71 /* DataSource */,
@@ -445,6 +448,7 @@
 				9765E88B1E85BC490019C772 /* DrinksManager.swift in Sources */,
 				9780CE8D1E868266001EF13E /* PriceControl.swift in Sources */,
 				97692B681E86DE7A005DAF71 /* MainPizzaCell.swift in Sources */,
+				97BFCD071E8827F100E00EA5 /* NotificationViewController.swift in Sources */,
 				9765E8891E85B77A0019C772 /* PizzasManager.swift in Sources */,
 				9765E8791E85A0100019C772 /* APIConfig.swift in Sources */,
 			);

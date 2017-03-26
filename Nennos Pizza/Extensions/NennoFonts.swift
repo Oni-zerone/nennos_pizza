@@ -15,4 +15,5 @@ extension UIFont {
 
     static let detailFont = UIFont.systemFont(ofSize: 17, weight: UIFontWeightRegular)
     static let buttonFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightBold)
+    static let notificationFont = UIFont.systemFont(ofSize: 12, weight: UIFontWeightSemibold)
 }
