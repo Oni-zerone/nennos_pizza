@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension IngredientTableViewCell: IngredientCell {
+extension IngredientTableViewCell: PricedItemCell {
     
     func set(name: String) {
         
