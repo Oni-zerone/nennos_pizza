@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class BigPriceControl: UIControl {
 
-    fileprivate let baseString = "Add to cart"
+    fileprivate let baseString = "ADD TO CART"
     fileprivate weak var priceLabel: UILabel!
     
     @IBInspectable var currency: String?
@@ -35,6 +35,7 @@ import UIKit
         label.textColor = self.tintColor
         label.font = UIFont.buttonFont
         label.textAlignment = .center
+        label.text = self.baseString
         
         self.addSubview(label)
         
@@ -43,13 +44,13 @@ import UIKit
         let hConstraints = NSLayoutConstraint.constraints(withVisualFormat:"|-margin-[view]-margin-|",
                                                           options: NSLayoutFormatOptions(rawValue: 0),
                                                           metrics: metrics,
-                                                          views: ["view" : label]);
+                                                          views: ["view" : label])
         let vConstraints = NSLayoutConstraint.constraints(withVisualFormat:"V:|-margin-[view]-margin-|",
                                                           options: NSLayoutFormatOptions(rawValue: 0),
                                                           metrics: metrics,
-                                                          views: ["view" : label]);
-        self.addConstraints(hConstraints);
-        self.addConstraints(vConstraints);
+                                                          views: ["view" : label])
+        self.addConstraints(hConstraints)
+        self.addConstraints(vConstraints)
         
     }
     
