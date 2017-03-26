@@ -9,7 +9,29 @@
 import UIKit
 
 class NotificationViewController: UIViewController {
-
+    
+    private var notificationsCount: UInt = 0 {
+        
+        didSet {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        
+        get {
+            return self.notificationsCount > 0;
+        }
+        
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        
+        get {
+            return .slide;
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,6 +107,7 @@ class NotificationViewController: UIViewController {
     func animateNotificaitonView(_ notificationView: UIView) {
         
         self.view.layoutIfNeeded()
+        self.notificationsCount += 1
         
         UIView.animateKeyframes(withDuration: 3.2, delay: 0, options: .allowUserInteraction, animations: {
             
@@ -98,6 +121,7 @@ class NotificationViewController: UIViewController {
             })
             
         }) { (finished) in
+            self.notificationsCount -= 1
             notificationView.removeFromSuperview()
         }
     }
