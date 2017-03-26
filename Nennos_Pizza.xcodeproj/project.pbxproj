@@ -222,7 +222,6 @@
 			children = (
 				9765E8971E85E0340019C772 /* MainTableCell */,
 				97BFCD081E88405C00E00EA5 /* DetailCell */,
-				97692B6F1E86EF7C005DAF71 /* IngredientCell */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -290,7 +289,7 @@
 				97692B701E86EFA0005DAF71 /* IngredientTableViewCell.swift */,
 				97692B711E86EFA0005DAF71 /* IngredientTableViewCell.xib */,
 			);
-			name = IngredientCell;
+			path = IngredientCell;
 			sourceTree = "<group>";
 		};
 		97BFCCF91E880EB200E00EA5 /* Model */ = {
@@ -307,6 +306,7 @@
 			children = (
 				97BFCD0B1E8840F000E00EA5 /* DetailTableViewCell.swift */,
 				97BFCD091E88407D00E00EA5 /* DetailTableViewCell.xib */,
+				97692B6F1E86EF7C005DAF71 /* IngredientCell */,
 			);
 			path = DetailCell;
 			sourceTree = "<group>";
