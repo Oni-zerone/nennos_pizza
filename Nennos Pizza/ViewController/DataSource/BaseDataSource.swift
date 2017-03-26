@@ -14,9 +14,7 @@ class BaseDataSource<Item>: NSObject, UITableViewDataSource {
     var items: Array<Item> = [] {
         
         didSet {
-            if(oldValue.count < 1) {
                 self.tableView?.reloadData()
-            }
         }
     }
     
