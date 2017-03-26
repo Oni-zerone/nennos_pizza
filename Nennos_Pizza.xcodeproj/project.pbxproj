@@ -46,6 +46,7 @@
 		97ADD52E1E887EE40030B622 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD52D1E887EE40030B622 /* DrinkTableViewCell.swift */; };
 		97ADD5301E887FD90030B622 /* PricedDrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD52F1E887FD90030B622 /* PricedDrinkCell.swift */; };
 		97ADD5331E8880A40030B622 /* PricedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5321E8880A40030B622 /* PricedItem.swift */; };
+		97ADD5351E8886640030B622 /* ShippableDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5341E8886640030B622 /* ShippableDrink.swift */; };
 		97BFCCF31E87BD1A00E00EA5 /* BigPriceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */; };
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
@@ -103,6 +104,7 @@
 		97ADD52D1E887EE40030B622 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		97ADD52F1E887FD90030B622 /* PricedDrinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricedDrinkCell.swift; sourceTree = "<group>"; };
 		97ADD5321E8880A40030B622 /* PricedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PricedItem.swift; path = ../../PriceableItem/PricedItem.swift; sourceTree = "<group>"; };
+		97ADD5341E8886640030B622 /* ShippableDrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippableDrink.swift; sourceTree = "<group>"; };
 		97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigPriceControl.swift; sourceTree = "<group>"; };
 		97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceableItem.swift; sourceTree = "<group>"; };
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			children = (
 				97ADD5131E8859400030B622 /* ShippableItem.swift */,
 				97ADD5191E885AC50030B622 /* ShippablePizza.swift */,
+				97ADD5341E8886640030B622 /* ShippableDrink.swift */,
 			);
 			path = ShippableItem;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				97ADD52E1E887EE40030B622 /* DrinkTableViewCell.swift in Sources */,
 				9765E8821E85ADEE0019C772 /* Drink.swift in Sources */,
 				97ADD5241E8867450030B622 /* DetailCartCell.swift in Sources */,
+				97ADD5351E8886640030B622 /* ShippableDrink.swift in Sources */,
 				9765E8841E85B3260019C772 /* APIRequest.swift in Sources */,
 				97692B6C1E86E92A005DAF71 /* PricedItemDataSource.swift in Sources */,
 				97692B661E86BF35005DAF71 /* PizzaDataSource.swift in Sources */,

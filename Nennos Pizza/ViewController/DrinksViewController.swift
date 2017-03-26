@@ -45,3 +45,23 @@ class DrinksViewController: UIViewController {
         self.dataSource = PricedItemDataSource<Drink>(with: cellName, tableView: self.tableView)
     }
 }
+
+extension DrinksViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let index = indexPath.row
+        guard self.dataSource.items.count > index else {
+            
+            return
+        }
+        
+        Model.shared.cart.insert(item: self.dataSource.items[index])
+        self.tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
