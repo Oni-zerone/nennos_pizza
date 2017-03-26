@@ -117,7 +117,7 @@ extension MainViewController: MainTableViewCellDelegate {
             return
         }
         
-        Model.shared.cart.insert(pizza: self.pizzaDataSource.items[indexPath.row])
+        Model.shared.cart.insert(item: self.pizzaDataSource.items[indexPath.row])
     }
     
 }

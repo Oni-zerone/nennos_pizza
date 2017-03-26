@@ -121,7 +121,7 @@ class PizzaViewController: UIViewController {
             return
         }
         
-        Model.shared.cart.insert(pizza: pizza)
+        Model.shared.cart.insert(item: pizza)
     }
 }
 

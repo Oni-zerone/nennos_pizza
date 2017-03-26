@@ -10,11 +10,11 @@ import Foundation
 
 struct Cart {
     
-    var pizzas = Array<Pizza>()
+    var items = Array<ShippableItem>()
     
     struct Notifications {
         
-        static let didAddPizza = Notification.Name("it.studiout.NennosPizza.Cart.didAddPizza")
+        static let didAddItem = Notification.Name("it.studiout.NennosPizza.Cart.didAddItem")
     }
 }
 
@@ -22,22 +22,22 @@ fileprivate typealias MutableCart = Cart
 
 extension MutableCart {
     
-    mutating func insert(pizza: Pizza) {
+    mutating func insert(item: ShippableItem) {
         
-        self.pizzas.append(pizza)
+        self.items.append(item)
 
         DispatchQueue.main.async {
-            NotificationCenter.default.post(name: Cart.Notifications.didAddPizza, object: nil)
+            NotificationCenter.default.post(name: Cart.Notifications.didAddItem, object: nil)
         }
     }
     
-    mutating func removePizza(at index: Int) -> Bool {
+    mutating func removeItem(at index: Int) -> Bool {
         
-        guard self.pizzas.count > index else {
+        guard self.items.count > index else {
             return false
         }
         
-        self.pizzas.remove(at: index)
+        self.items.remove(at: index)
         return true
     }
 }
