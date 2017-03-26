@@ -11,8 +11,21 @@ import Foundation
 protocol PriceableItem {
     
     var currency: String? { get }
-    var priceString: String { get set }
+    func setPrice(with string: String)
     
     func set(price: Double)
+}
+
+extension PriceableItem {
     
+    func set(price: Double) {
+        
+        if price <= 0 {
+            return setPrice(with: "")
+        }
+        
+        var priceString = currency ?? String()
+        priceString += String(format: " %.2f", price)
+        return setPrice(with: priceString)
+    }
 }
