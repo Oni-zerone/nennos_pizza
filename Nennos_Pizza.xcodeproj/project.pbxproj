@@ -35,6 +35,7 @@
 		97692B731E86EFA0005DAF71 /* IngredientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97692B711E86EFA0005DAF71 /* IngredientTableViewCell.xib */; };
 		97692B751E86F697005DAF71 /* DetailIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B741E86F697005DAF71 /* DetailIngredientCell.swift */; };
 		9780CE8D1E868266001EF13E /* PriceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780CE8C1E868266001EF13E /* PriceControl.swift */; };
+		97BFCCF31E87BD1A00E00EA5 /* BigPriceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		97692B711E86EFA0005DAF71 /* IngredientTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientTableViewCell.xib; sourceTree = "<group>"; };
 		97692B741E86F697005DAF71 /* DetailIngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailIngredientCell.swift; sourceTree = "<group>"; };
 		9780CE8C1E868266001EF13E /* PriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceControl.swift; sourceTree = "<group>"; };
+		97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigPriceControl.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				9780CE8C1E868266001EF13E /* PriceControl.swift */,
+				97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				9765E8871E85B6D10019C772 /* IngredientsManager.swift in Sources */,
 				9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */,
 				97692B611E86B250005DAF71 /* NennoColors.swift in Sources */,
+				97BFCCF31E87BD1A00E00EA5 /* BigPriceControl.swift in Sources */,
 				9765E8821E85ADEE0019C772 /* Drink.swift in Sources */,
 				9765E8841E85B3260019C772 /* APIRequest.swift in Sources */,
 				97692B6C1E86E92A005DAF71 /* IngredientDataSource.swift in Sources */,
