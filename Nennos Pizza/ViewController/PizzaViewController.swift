@@ -12,35 +12,35 @@ class PizzaViewController: UIViewController {
 
     //Model
     var ingredientDataSource: IngredientDataSource?
-    
     var pizza: Pizza? {
         
         didSet {
-            
-            guard let pizza = self.pizza else {
-                return
+            if oldValue != nil {
+                self.setPrice(for: pizza!)
             }
-            
-            self.title = pizza.name
-            self.selectIngredients()
-            self.setHeaderImage()
         }
     }
-    
     
     //View
     weak var header: PizzaHeader?
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addToCartButton: BigPriceControl!
     
     @IBOutlet weak var pizzaLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         // Do any additional setup after loading the view.
+        guard let pizza = self.pizza else {
+            return
+        }
+        
+        self.title = pizza.name
         self.setupTableView()
         self.setupHeader()
-        
+
         //Load contents
         Model.shared.getIngredients { (ingredients) in
             
@@ -103,6 +103,27 @@ class PizzaViewController: UIViewController {
             
             self.tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: UITableViewScrollPosition.none)
         })
+        
+        self.setPrice(for: pizza)
+    }
+    
+    func setPrice(for pizza:Pizza) {
+        
+        
+        Model.shared.getPrice(for: pizza) { (price) in
+            
+            self.addToCartButton.set(price: price)
+        }
+    }
+    
+    @IBAction func addToCartAction(_ sender: Any) {
+        
+        guard let pizza = self.pizza else {
+            
+            return
+        }
+        
+        Model.shared.cart.insert(pizza: pizza)
     }
 }
 
@@ -118,13 +139,36 @@ extension PizzaViewController: UITableViewDelegate {
         guard let header = view as? UITableViewHeaderFooterView else {
             return
         }
+
+        header.backgroundView?.backgroundColor = UIColor.white
         
-        if let textLabel = header.textLabel {
-            textLabel.font = UIFont.titleFont
-            textLabel.textColor = UIColor.textColor
+        guard let textLabel = header.textLabel else {
+            return
         }
         
-        header.backgroundView?.backgroundColor = UIColor.white
+        textLabel.font = UIFont.titleFont
+        textLabel.textColor = UIColor.textColor
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let dataSource = self.ingredientDataSource,
+            dataSource.ingredients.count > indexPath.row else {
+                return
+        }
+        
+        let ingredient = dataSource.ingredients[indexPath.row]
+        self.pizza?.add(ingredient: ingredient)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        guard let dataSource = self.ingredientDataSource,
+            dataSource.ingredients.count > indexPath.row else {
+                return
+        }
+        
+        let ingredient = dataSource.ingredients[indexPath.row]
+        self.pizza?.remove(ingredient: ingredient)
+    }
 }

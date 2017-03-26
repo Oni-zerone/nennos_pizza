@@ -10,6 +10,8 @@ import UIKit
 
 extension MainTableViewCell: PizzaCell {
     
+    typealias Delegate = MainTableViewCellDelegate
+    
     func set(name: String) {
         
         self.titleLabel.text = name
@@ -27,6 +29,16 @@ extension MainTableViewCell: PizzaCell {
     
     func set(price: Double) {
         
-        self.buyButton.price = price
+        self.buyButton.set(price: price)
+    }
+    
+    func set(delegate: AnyObject?) {
+        
+        guard let cellDelegate = delegate as? MainTableViewCellDelegate else {
+            self.delegate = nil
+            return
+        }
+        
+        self.delegate = cellDelegate
     }
 }

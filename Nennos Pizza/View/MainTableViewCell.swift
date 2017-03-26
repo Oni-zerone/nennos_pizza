@@ -10,6 +10,9 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
 
+    //Model
+    weak var delegate: MainTableViewCellDelegate?
+    
     //View
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -75,5 +78,12 @@ class MainTableViewCell: UITableViewCell {
     
     @IBAction func buyPressedAction(_ sender: Any) {
         
+        self.delegate?.didPressedBuy(for: self)
     }
+}
+
+protocol MainTableViewCellDelegate: class {
+    
+    func didPressedBuy(for cell: MainTableViewCell)
+    
 }

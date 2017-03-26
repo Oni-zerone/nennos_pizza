@@ -11,17 +11,11 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-protocol PizzaCell {
-    
-    func set(price: Double)
-    func set(name: String)
-    func set(ingredients: String)
-    func set(image:UIImage)
-}
-
 class PizzaDataSource : NSObject, UITableViewDataSource {
     
     //Model
+    weak var cellDelegate: AnyObject?
+    
     var pizzas: Array<Pizza> = [] {
         
         willSet {
@@ -67,6 +61,7 @@ class PizzaDataSource : NSObject, UITableViewDataSource {
         if let pizzaCell = cell as? PizzaCell {
 
             pizzaCell.set(name: pizza.name)
+            pizzaCell.set(delegate: self.cellDelegate)
             tableView.setIngredients(for: pizza, at: indexPath)
             tableView.setImage(for: pizza, at: indexPath)
             tableView.setPrice(for: pizza, at: indexPath)
