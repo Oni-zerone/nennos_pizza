@@ -22,7 +22,7 @@ class Model: NSObject {
     private var drinks: Array<Drink>?
     
     private var pizzaIngredients = Dictionary<Pizza, Array<Ingredient>>()
-    private var pizzaPrices = Dictionary<Pizza, Double>()
+    private var pizzaPrices = Dictionary<Set<Int>, Double>()
     
     fileprivate func getCachedPizzas(completion: @escaping (Array<Pizza>) -> ()) {
         
@@ -110,7 +110,7 @@ class Model: NSObject {
     
     fileprivate func getCachedPrice(for pizza:Pizza, completion: @escaping (Double) -> ()) {
         
-        if let price = self.pizzaPrices[pizza] {
+        if let price = self.pizzaPrices[pizza.ingredientIds] {
             completion(price)
             return
         }
@@ -121,7 +121,7 @@ class Model: NSObject {
             
             completion(price)
             Model.queue.sync {
-                self.pizzaPrices[pizza] = price
+                self.pizzaPrices[pizza.ingredientIds] = price
             }
         }
     }
