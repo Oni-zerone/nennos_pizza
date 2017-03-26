@@ -291,7 +291,7 @@
 			children = (
 				97ADD50F1E8854E80030B622 /* BaseDataSource.swift */,
 				97692B6D1E86EE72005DAF71 /* MainTableView */,
-				97692B6E1E86EE7A005DAF71 /* PricedDetail */,
+				97692B6E1E86EE7A005DAF71 /* PricedItemDetail */,
 				97ADD51E1E8866C30030B622 /* CartDetail */,
 			);
 			path = DataSource;
@@ -306,7 +306,7 @@
 			name = MainTableView;
 			sourceTree = "<group>";
 		};
-		97692B6E1E86EE7A005DAF71 /* PricedDetail */ = {
+		97692B6E1E86EE7A005DAF71 /* PricedItemDetail */ = {
 			isa = PBXGroup;
 			children = (
 				97692B6B1E86E92A005DAF71 /* PricedItemDataSource.swift */,
@@ -314,7 +314,7 @@
 				97692B741E86F697005DAF71 /* PricedIngredientCell.swift */,
 				97ADD52F1E887FD90030B622 /* PricedDrinkCell.swift */,
 			);
-			name = PricedDetail;
+			name = PricedItemDetail;
 			sourceTree = "<group>";
 		};
 		97692B6F1E86EF7C005DAF71 /* IngredientCell */ = {
