@@ -47,6 +47,7 @@ class MainViewController: UIViewController {
         
         self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main), forCellReuseIdentifier: cellName)
         self.pizzaDataSource = PizzaDataSource(with: cellName, tableView: self.tableView)
+        self.pizzaDataSource.cellDelegate = self
     }
     
     
@@ -93,6 +94,20 @@ extension MainViewController: UITableViewDelegate {
         
         let pizza = self.pizzaDataSource.pizzas[indexPath.row]
         self.performSegue(withIdentifier: MainViewController.segue.showPizza, sender: pizza)
+    }
+    
+}
+
+extension MainViewController: MainTableViewCellDelegate {
+    
+    func didPressedBuy(for cell: MainTableViewCell) {
+        
+        guard let indexPath = self.tableView.indexPath(for: cell),
+              self.pizzaDataSource.pizzas.count > indexPath.row  else {
+            return
+        }
+        
+        Model.shared.cart.insert(pizza: self.pizzaDataSource.pizzas[indexPath.row])
     }
     
 }
