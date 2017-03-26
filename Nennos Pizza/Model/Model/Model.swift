@@ -10,7 +10,7 @@ import UIKit
 
 class Model: NSObject {
     
-    static let queue = DispatchQueue(label: "it.studiout.nenno.modelQueue", attributes: .concurrent)
+    internal static let queue = DispatchQueue(label: "it.studiout.nenno.modelQueue", attributes: .concurrent)
     
     static var shared = {
         
