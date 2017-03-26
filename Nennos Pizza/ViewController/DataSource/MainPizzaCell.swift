@@ -35,6 +35,7 @@ extension MainTableViewCell: PizzaCell {
     func set(delegate: AnyObject?) {
         
         guard let cellDelegate = delegate as? MainTableViewCellDelegate else {
+            self.delegate = nil
             return
         }
         
