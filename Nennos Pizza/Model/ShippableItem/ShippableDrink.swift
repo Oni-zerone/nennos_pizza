@@ -12,6 +12,9 @@ extension Drink: ShippableItem {
     
     func getPrice(completion: @escaping (Double) -> ()) {
         
-        return completion(self.price)
+        DispatchQueue.main.async {
+            completion(self.price)
+        }
+        return
     }    
 }
