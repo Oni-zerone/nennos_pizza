@@ -22,15 +22,16 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2v-By-vkK">
-                    <rect key="frame" x="43" y="11" width="78" height="21"/>
+                    <rect key="frame" x="43" y="12" width="78" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="w0d-KI-JpK">
-                    <rect key="frame" x="15" y="12" width="13" height="20"/>
+                    <rect key="frame" x="15" y="15.5" width="13" height="13"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="13" id="Eus-hl-7S4"/>
+                        <constraint firstAttribute="height" constant="13" id="tOR-bw-3ah"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqf-m5-Lu2">
@@ -39,21 +40,31 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udn-n4-Sbs">
+                    <rect key="frame" x="43" y="43" width="332" height="1"/>
+                    <color key="backgroundColor" red="0.78431372549019607" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="OHh-zF-64s"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="hqf-m5-Lu2" firstAttribute="top" secondItem="5MD-rV-iPP" secondAttribute="top" constant="12" id="B1n-OJ-954"/>
+                <constraint firstAttribute="bottom" secondItem="udn-n4-Sbs" secondAttribute="bottom" id="CKj-Xe-rWb"/>
                 <constraint firstAttribute="trailing" secondItem="hqf-m5-Lu2" secondAttribute="trailing" constant="15" id="Emz-xR-WdF"/>
                 <constraint firstItem="b2v-By-vkK" firstAttribute="leading" secondItem="w0d-KI-JpK" secondAttribute="trailing" constant="15" id="Ghh-Ff-UvY"/>
+                <constraint firstItem="b2v-By-vkK" firstAttribute="centerY" secondItem="w0d-KI-JpK" secondAttribute="centerY" id="JLP-Ye-5m6"/>
                 <constraint firstItem="w0d-KI-JpK" firstAttribute="leading" secondItem="5MD-rV-iPP" secondAttribute="leading" constant="15" id="Lm9-YQ-Bf1"/>
                 <constraint firstAttribute="bottom" secondItem="hqf-m5-Lu2" secondAttribute="bottom" constant="12" id="YqL-vf-ioZ"/>
-                <constraint firstAttribute="bottom" secondItem="w0d-KI-JpK" secondAttribute="bottom" constant="12" id="btD-Xy-oKJ"/>
                 <constraint firstItem="hqf-m5-Lu2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b2v-By-vkK" secondAttribute="trailing" constant="10" id="cmQ-BE-hYi"/>
                 <constraint firstItem="hqf-m5-Lu2" firstAttribute="baseline" secondItem="b2v-By-vkK" secondAttribute="baseline" id="cpa-OF-8Jv"/>
-                <constraint firstItem="w0d-KI-JpK" firstAttribute="top" secondItem="5MD-rV-iPP" secondAttribute="top" constant="12" id="eaR-g1-oTn"/>
+                <constraint firstItem="udn-n4-Sbs" firstAttribute="leading" secondItem="b2v-By-vkK" secondAttribute="leading" id="ju5-tZ-tS8"/>
+                <constraint firstItem="hqf-m5-Lu2" firstAttribute="top" secondItem="b2v-By-vkK" secondAttribute="top" id="qKf-JK-aJy"/>
+                <constraint firstAttribute="trailing" secondItem="udn-n4-Sbs" secondAttribute="trailing" id="ryC-eN-8Bz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-27.5" y="317"/>
+            <point key="canvasLocation" x="-29" y="327"/>
         </view>
     </objects>
     <resources>

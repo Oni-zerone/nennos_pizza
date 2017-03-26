@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol IngredientCell {
-    
-    func set(name: String)
-    func set(price: Double)
-}
-
 class IngredientDataSource: BaseDataSource<Ingredient> {
     
     

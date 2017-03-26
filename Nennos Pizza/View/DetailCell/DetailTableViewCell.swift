@@ -64,8 +64,8 @@ class DetailTableViewCell: UITableViewCell {
         self.titleLabel.textColor = UIColor.textColor
         
         self.detailLabel.text = ""
-        self.titleLabel.font = UIFont.detailFont
-        self.titleLabel.textColor = UIColor.textColor
+        self.detailLabel.font = UIFont.detailFont
+        self.detailLabel.textColor = UIColor.textColor
         
         self.itemImageView.tintColor = UIColor.primaryColor
     }
