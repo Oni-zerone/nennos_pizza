@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Ingredient {
+struct Ingredient: PricedItem {
     
     let id: Int
     let name: String

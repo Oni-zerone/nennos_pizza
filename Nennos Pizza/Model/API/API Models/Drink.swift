@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Drink {
+struct Drink: PricedItem {
     
     let id: Double
     let name: String
