@@ -11,14 +11,6 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-protocol PizzaCell {
-    
-    func set(price: Double)
-    func set(name: String)
-    func set(ingredients: String)
-    func set(image:UIImage)
-}
-
 class PizzaDataSource : NSObject, UITableViewDataSource {
     
     //Model
