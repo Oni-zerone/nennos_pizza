@@ -41,7 +41,7 @@
 		97BFCCFB1E880EC300E00EA5 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */; };
 		97BFCCFF1E8816E200E00EA5 /* PizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */; };
 		97BFCD071E8827F100E00EA5 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD061E8827F100E00EA5 /* NotificationViewController.swift */; };
-		97BFCD0A1E88407D00E00EA5 /* DetailCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BFCD091E88407D00E00EA5 /* DetailCellView.xib */; };
+		97BFCD0A1E88407D00E00EA5 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BFCD091E88407D00E00EA5 /* DetailTableViewCell.xib */; };
 		97BFCD0C1E8840F000E00EA5 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD0B1E8840F000E00EA5 /* DetailTableViewCell.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
@@ -85,7 +85,7 @@
 		97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaCell.swift; sourceTree = "<group>"; };
 		97BFCD061E8827F100E00EA5 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		97BFCD091E88407D00E00EA5 /* DetailCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCellView.xib; sourceTree = "<group>"; };
+		97BFCD091E88407D00E00EA5 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		97BFCD0B1E8840F000E00EA5 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -306,7 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				97BFCD0B1E8840F000E00EA5 /* DetailTableViewCell.swift */,
-				97BFCD091E88407D00E00EA5 /* DetailCellView.xib */,
+				97BFCD091E88407D00E00EA5 /* DetailTableViewCell.xib */,
 			);
 			path = DetailCell;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 				9765E86C1E8599410019C772 /* Assets.xcassets in Resources */,
 				9765E89B1E85E06B0019C772 /* MainTableViewCell.xib in Resources */,
 				9765E86A1E8599410019C772 /* Main.storyboard in Resources */,
-				97BFCD0A1E88407D00E00EA5 /* DetailCellView.xib in Resources */,
+				97BFCD0A1E88407D00E00EA5 /* DetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
