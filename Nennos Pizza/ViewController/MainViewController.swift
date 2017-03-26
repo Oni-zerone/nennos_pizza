@@ -34,6 +34,16 @@ class MainViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if let selectedRow = self.tableView.indexPathForSelectedRow {
+            
+            self.tableView.deselectRow(at: selectedRow, animated: animated)
+        }
+
+        super.viewWillAppear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
