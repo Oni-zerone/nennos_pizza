@@ -1,14 +1,14 @@
 //
-//  DetailIngredientCell.swift
+//  DetailCartCell.swift
 //  Nennos_Pizza
 //
-//  Created by Andrea Altea on 25/03/17.
+//  Created by Andrea Altea on 26/03/17.
 //  Copyright © 2017 StudiOUT. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-extension IngredientTableViewCell: IngredientCell {
+extension CartTableViewCell: CartCell {
     
     func set(name: String) {
         

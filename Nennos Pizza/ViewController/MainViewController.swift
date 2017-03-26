@@ -30,14 +30,24 @@ class MainViewController: UIViewController {
         self.setupTableView()
         
         Model.shared.getPizzas { (pizzas) in
-            self.pizzaDataSource.pizzas = pizzas
+            self.pizzaDataSource.items = pizzas
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if let selectedRow = self.tableView.indexPathForSelectedRow {
+            
+            self.tableView.deselectRow(at: selectedRow, animated: animated)
+        }
+
+        super.viewWillAppear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
-        self.pizzaDataSource.pizzas = Array<Pizza>()
+        self.pizzaDataSource.items = Array<Pizza>()
     }
     
     func setupTableView() {
@@ -88,11 +98,11 @@ extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard self.pizzaDataSource.pizzas.count > indexPath.row else {
+        guard self.pizzaDataSource.items.count > indexPath.row else {
             return
         }
         
-        let pizza = self.pizzaDataSource.pizzas[indexPath.row]
+        let pizza = self.pizzaDataSource.items[indexPath.row]
         self.performSegue(withIdentifier: MainViewController.segue.showPizza, sender: pizza)
     }
     
@@ -103,11 +113,11 @@ extension MainViewController: MainTableViewCellDelegate {
     func didPressedBuy(for cell: MainTableViewCell) {
         
         guard let indexPath = self.tableView.indexPath(for: cell),
-              self.pizzaDataSource.pizzas.count > indexPath.row  else {
+              self.pizzaDataSource.items.count > indexPath.row  else {
             return
         }
         
-        Model.shared.cart.insert(pizza: self.pizzaDataSource.pizzas[indexPath.row])
+        Model.shared.cart.insert(item: self.pizzaDataSource.items[indexPath.row])
     }
     
 }

@@ -44,7 +44,7 @@ class PizzaViewController: UIViewController {
         //Load contents
         Model.shared.getIngredients { (ingredients) in
             
-            self.ingredientDataSource?.ingredients = ingredients
+            self.ingredientDataSource?.items = ingredients
             self.selectIngredients()
         }
     }
@@ -59,8 +59,7 @@ class PizzaViewController: UIViewController {
         self.tableView.estimatedRowHeight = 44
         
         let cellName = String(describing: IngredientTableViewCell.self)
-        self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main),
-                                forCellReuseIdentifier: cellName)
+        self.tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: cellName)
         
         self.ingredientDataSource = IngredientDataSource(with: cellName, tableView: self.tableView)
     }
@@ -89,7 +88,7 @@ class PizzaViewController: UIViewController {
     func selectIngredients() {
         
         guard let pizza = self.pizza,
-         let ingredients = self.ingredientDataSource?.ingredients else {
+         let ingredients = self.ingredientDataSource?.items else {
             return
         }
         
@@ -109,8 +108,7 @@ class PizzaViewController: UIViewController {
     
     func setPrice(for pizza:Pizza) {
         
-        
-        Model.shared.getPrice(for: pizza) { (price) in
+        pizza.getPrice { (price) in
             
             self.addToCartButton.set(price: price)
         }
@@ -123,7 +121,7 @@ class PizzaViewController: UIViewController {
             return
         }
         
-        Model.shared.cart.insert(pizza: pizza)
+        Model.shared.cart.insert(item: pizza)
     }
 }
 
@@ -153,22 +151,22 @@ extension PizzaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let dataSource = self.ingredientDataSource,
-            dataSource.ingredients.count > indexPath.row else {
+            dataSource.items.count > indexPath.row else {
                 return
         }
         
-        let ingredient = dataSource.ingredients[indexPath.row]
+        let ingredient = dataSource.items[indexPath.row]
         self.pizza?.add(ingredient: ingredient)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         guard let dataSource = self.ingredientDataSource,
-            dataSource.ingredients.count > indexPath.row else {
+            dataSource.items.count > indexPath.row else {
                 return
         }
         
-        let ingredient = dataSource.ingredients[indexPath.row]
+        let ingredient = dataSource.items[indexPath.row]
         self.pizza?.remove(ingredient: ingredient)
     }
 }

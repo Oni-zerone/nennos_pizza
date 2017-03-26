@@ -11,52 +11,16 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class PizzaDataSource : NSObject, UITableViewDataSource {
+class PizzaDataSource : BaseDataSource<Pizza> {
     
     //Model
     weak var cellDelegate: AnyObject?
     
-    var pizzas: Array<Pizza> = [] {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        willSet {
-            self.tableView?.beginUpdates()
-            self.tableView?.deleteSections(IndexSet(integer: 0), with: .none)
-        }
-        
-        didSet {
-            self.tableView?.insertSections(IndexSet(integer: 0), with: .none)
-            self.tableView?.endUpdates()
-        }
-    }
-    let cellIdentifier: String
-    
-    //View
-    private weak var tableView: UITableView?
-    
-    required init(with identifier: String, tableView: UITableView) {
-        
-        self.cellIdentifier = identifier
-        self.tableView = tableView
-        
-        super.init()
-        tableView.dataSource = self
-    }
-    
-    //MARK: TableViewDatasource
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.pizzas.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
 
-        let pizza = pizzas[indexPath.row]
+        let pizza = items[indexPath.row]
         
         if let pizzaCell = cell as? PizzaCell {
 
@@ -68,12 +32,11 @@ class PizzaDataSource : NSObject, UITableViewDataSource {
         }
         return cell
     }
-    
 }
 
 fileprivate typealias PizzaTable = UITableView
 
-extension PizzaTable {
+fileprivate extension PizzaTable {
     
     func setIngredients(for pizza:Pizza, at indexPath:IndexPath) {
         
@@ -94,6 +57,7 @@ extension PizzaTable {
                 return
             }
             cell.set(ingredients: ingredientsString)
+            self.setNeedsUpdateConstraints()
         }
     }
     
@@ -113,19 +77,20 @@ extension PizzaTable {
             }
             
             cell.set(image: image)
+            self.setNeedsUpdateConstraints()
         }
     }
     
     func setPrice(for pizza: Pizza, at indexPath: IndexPath) {
         
-        Model.shared.getPrice(for: pizza) { (pizzaPrice) in
-            
+        pizza.getPrice { (price) in
             guard let cell = self.cellForRow(at: indexPath) as? PizzaCell else {
                 
                 return
             }
             
-            cell.set(price: pizzaPrice)
+            cell.set(price: price)
+            self.setNeedsUpdateConstraints()
         }
     }
 }

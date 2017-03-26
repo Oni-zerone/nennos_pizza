@@ -43,14 +43,14 @@ class NotificationViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didAddPizza(with:)),
-                                               name: Cart.Notifications.didAddPizza,
+                                               name: Cart.Notifications.didAddItem,
                                                object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self,
-                                                  name: Cart.Notifications.didAddPizza,
+                                                  name: Cart.Notifications.didAddItem,
                                                   object: nil)
     }
     
