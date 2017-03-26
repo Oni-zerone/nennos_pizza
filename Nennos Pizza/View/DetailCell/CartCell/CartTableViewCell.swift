@@ -24,7 +24,7 @@ class CartTableViewCell: DetailTableViewCell {
     
     func setupSubViews() {
         
-        self.itemImageView.image = #imageLiteral(resourceName: "Check").withRenderingMode(.alwaysTemplate)
+        self.itemImageView.image = #imageLiteral(resourceName: "Delete").withRenderingMode(.alwaysTemplate)
         self.selectionStyle = .none
     }
 }
