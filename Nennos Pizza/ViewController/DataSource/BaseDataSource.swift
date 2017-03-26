@@ -13,14 +13,10 @@ class BaseDataSource<Item>: NSObject, UITableViewDataSource {
     //Model
     var items: Array<Item> = [] {
         
-        willSet {
-            self.tableView?.beginUpdates()
-            self.tableView?.deleteSections(IndexSet(integer: 0), with: .none)
-        }
-        
         didSet {
-            self.tableView?.insertSections(IndexSet(integer: 0), with: .none)
-            self.tableView?.endUpdates()
+            if(oldValue.count < 1) {
+                self.tableView?.reloadData()
+            }
         }
     }
     

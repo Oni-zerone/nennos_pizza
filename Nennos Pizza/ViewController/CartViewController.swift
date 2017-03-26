@@ -55,5 +55,24 @@ extension CartViewController: UITableViewDelegate {
         
         return UITableViewAutomaticDimension
     }
+ 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard self.dataSource.items.count > indexPath.row else {
+            
+            return
+        }
+        
+        let index = indexPath.row
+        
+        if Model.shared.cart.removeItem(at: index) {
+            self.tableView.beginUpdates()
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.dataSource.items.remove(at: index)
+            self.tableView.endUpdates()
+        }
+        
+        
+    }
     
 }

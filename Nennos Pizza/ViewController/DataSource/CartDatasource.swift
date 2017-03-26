@@ -40,5 +40,4 @@ fileprivate extension UITableView {
             self.setNeedsUpdateConstraints()
         }
     }
-    
 }
