@@ -11,7 +11,7 @@ import UIKit
 class PizzaViewController: UIViewController {
 
     //Model
-    var ingredientDataSource: IngredientDataSource?
+    var ingredientDataSource: PricedItemDataSource<Ingredient>?
     var pizza: Pizza? {
         
         didSet {
@@ -61,7 +61,7 @@ class PizzaViewController: UIViewController {
         let cellName = String(describing: IngredientTableViewCell.self)
         self.tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: cellName)
         
-        self.ingredientDataSource = IngredientDataSource(with: cellName, tableView: self.tableView)
+        self.ingredientDataSource = PricedItemDataSource<Ingredient>(with: cellName, tableView: self.tableView)
     }
     
     func setupHeader() {

@@ -8,19 +8,18 @@
 
 import UIKit
 
-class IngredientDataSource: BaseDataSource<Ingredient> {
-    
+class PricedItemDataSource<Item: PricedItem>: BaseDataSource<Item> {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        if let ingredientCell = cell as? IngredientCell {
+        if let priceableCell = cell as? PricedItemCell {
             
-            let ingredient = self.items[indexPath.row]
+            let item = self.items[indexPath.row]
             
-            ingredientCell.set(name: ingredient.name)
-            ingredientCell.set(price: ingredient.price)
+            priceableCell.set(name: item.name)
+            priceableCell.set(price: item.price)
         }
         
         return cell

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IngredientCell {
+protocol PricedItemCell {
     
     func set(name: String)
     func set(price: Double)
