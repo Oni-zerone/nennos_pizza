@@ -41,6 +41,8 @@
 		97BFCCFB1E880EC300E00EA5 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */; };
 		97BFCCFF1E8816E200E00EA5 /* PizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */; };
 		97BFCD071E8827F100E00EA5 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD061E8827F100E00EA5 /* NotificationViewController.swift */; };
+		97BFCD0A1E88407D00E00EA5 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BFCD091E88407D00E00EA5 /* DetailTableViewCell.xib */; };
+		97BFCD0C1E8840F000E00EA5 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD0B1E8840F000E00EA5 /* DetailTableViewCell.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaCell.swift; sourceTree = "<group>"; };
 		97BFCD061E8827F100E00EA5 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		97BFCD091E88407D00E00EA5 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		97BFCD0B1E8840F000E00EA5 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				9765E8971E85E0340019C772 /* MainTableCell */,
-				97692B6F1E86EF7C005DAF71 /* IngredientCell */,
+				97BFCD081E88405C00E00EA5 /* DetailCell */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -229,6 +233,7 @@
 				9765E8991E85E06B0019C772 /* MainTableViewCell.xib */,
 			);
 			name = MainTableCell;
+			path = MainTableViewCell;
 			sourceTree = "<group>";
 		};
 		9765E89C1E85ED280019C772 /* Control */ = {
@@ -263,8 +268,8 @@
 		97692B6D1E86EE72005DAF71 /* MainTableView */ = {
 			isa = PBXGroup;
 			children = (
-				97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */,
 				97692B651E86BF35005DAF71 /* PizzaDataSource.swift */,
+				97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */,
 				97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */,
 			);
 			name = MainTableView;
@@ -284,7 +289,7 @@
 				97692B701E86EFA0005DAF71 /* IngredientTableViewCell.swift */,
 				97692B711E86EFA0005DAF71 /* IngredientTableViewCell.xib */,
 			);
-			name = IngredientCell;
+			path = IngredientCell;
 			sourceTree = "<group>";
 		};
 		97BFCCF91E880EB200E00EA5 /* Model */ = {
@@ -294,6 +299,16 @@
 				97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		97BFCD081E88405C00E00EA5 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				97BFCD0B1E8840F000E00EA5 /* DetailTableViewCell.swift */,
+				97BFCD091E88407D00E00EA5 /* DetailTableViewCell.xib */,
+				97692B6F1E86EF7C005DAF71 /* IngredientCell */,
+			);
+			path = DetailCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +379,7 @@
 				9765E86C1E8599410019C772 /* Assets.xcassets in Resources */,
 				9765E89B1E85E06B0019C772 /* MainTableViewCell.xib in Resources */,
 				9765E86A1E8599410019C772 /* Main.storyboard in Resources */,
+				97BFCD0A1E88407D00E00EA5 /* DetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +456,7 @@
 				97BFCCFB1E880EC300E00EA5 /* ModelInterface.swift in Sources */,
 				9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */,
 				97692B611E86B250005DAF71 /* NennoColors.swift in Sources */,
+				97BFCD0C1E8840F000E00EA5 /* DetailTableViewCell.swift in Sources */,
 				97BFCCF31E87BD1A00E00EA5 /* BigPriceControl.swift in Sources */,
 				9765E8821E85ADEE0019C772 /* Drink.swift in Sources */,
 				9765E8841E85B3260019C772 /* APIRequest.swift in Sources */,
