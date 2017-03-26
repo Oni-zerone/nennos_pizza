@@ -8,8 +8,9 @@
 
 import UIKit
 
+
 protocol PizzaCell {
-    
+
     func set(price: Double)
     func set(name: String)
     func set(ingredients: String)
