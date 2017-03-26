@@ -11,8 +11,14 @@ import AlamofireImage
 
 class MainViewController: UIViewController {
 
+    struct segue {
+
+        static let showPizza = "showPizza"
+    }
+    
+    
     //Model
-    var pizzaDataSource: PizzaDataSource?
+    var pizzaDataSource: PizzaDataSource!
     
     //Views
     @IBOutlet weak var tableView: UITableView!
@@ -24,14 +30,14 @@ class MainViewController: UIViewController {
         self.setupTableView()
         
         Model.shared.getPizzas { (pizzas) in
-            self.pizzaDataSource?.pizzas = pizzas
+            self.pizzaDataSource.pizzas = pizzas
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
-        self.pizzaDataSource?.pizzas = Array<Pizza>()
+        self.pizzaDataSource.pizzas = Array<Pizza>()
     }
     
     func setupTableView() {
@@ -42,6 +48,34 @@ class MainViewController: UIViewController {
         self.tableView.register(UINib(nibName: cellName , bundle: Bundle.main), forCellReuseIdentifier: cellName)
         self.pizzaDataSource = PizzaDataSource(with: cellName, tableView: self.tableView)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier {
+            
+        case MainViewController.segue.showPizza:
+            
+            guard let destination = segue.destination as? PizzaViewController,
+                let pizza = sender as? Pizza else {
+                
+                    return
+            }
+            
+            destination.pizza = pizza
+            break
+            
+        default:
+            
+            break
+        }
+        
+    }
+    
 }
 
 extension MainViewController: UITableViewDelegate {
@@ -49,6 +83,16 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard self.pizzaDataSource.pizzas.count > indexPath.row else {
+            return
+        }
+        
+        let pizza = self.pizzaDataSource.pizzas[indexPath.row]
+        self.performSegue(withIdentifier: MainViewController.segue.showPizza, sender: pizza)
     }
     
 }
