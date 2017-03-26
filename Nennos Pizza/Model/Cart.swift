@@ -27,7 +27,7 @@ extension MutableCart {
         self.pizzas.append(pizza)
 
         DispatchQueue.main.async {
-            NotificationCenter.default.post(name: Cart.Notifications.didAddPizza, object: self)
+            NotificationCenter.default.post(name: Cart.Notifications.didAddPizza, object: nil)
         }
     }
     
