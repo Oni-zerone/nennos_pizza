@@ -13,7 +13,7 @@ struct Pizza {
     static var basePrice: Double = 0
     
     let name: String
-    let ingredientIds: Array<Int>
+    fileprivate(set) var ingredientIds: Set<Int>
     let imageUrl: String?
     
     init?(resource: Dictionary<String, Any>) {
@@ -23,14 +23,7 @@ struct Pizza {
         }
         self.name = name
         self.imageUrl = resource["imageUrl"] as? String
-        var ingredients = Array<Int>()
-        
-        if let items = resource["ingredients"] as? Array<Int> {
-
-            ingredients.append(contentsOf: items);
-        }
-        
-        self.ingredientIds = ingredients
+        self.ingredientIds = Set((resource["ingredients"] as? Array<Int>) ?? Array<Int>())
     }
 }
 
@@ -46,5 +39,20 @@ extension Pizza: Hashable {
     public static func ==(lhs: Pizza, rhs: Pizza) -> Bool {
         
         return lhs.ingredientIds == rhs.ingredientIds;
+    }
+}
+
+fileprivate typealias MutablePizza = Pizza
+
+extension MutablePizza {
+    
+    mutating func add(ingredient: Ingredient) {
+        
+        self.ingredientIds.insert(ingredient.id)
+    }
+    
+    mutating func remove(ingredient: Ingredient) {
+        
+        self.ingredientIds.remove(ingredient.id)
     }
 }
