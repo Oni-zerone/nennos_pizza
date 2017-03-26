@@ -229,6 +229,7 @@
 				9765E8991E85E06B0019C772 /* MainTableViewCell.xib */,
 			);
 			name = MainTableCell;
+			path = MainTableViewCell;
 			sourceTree = "<group>";
 		};
 		9765E89C1E85ED280019C772 /* Control */ = {
