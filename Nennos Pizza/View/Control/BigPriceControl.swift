@@ -38,6 +38,7 @@ import UIKit
         label.text = self.baseString
         
         self.addSubview(label)
+        self.priceLabel = label
         
         //View Constraints
         let metrics = ["margin" : 15]
@@ -51,7 +52,6 @@ import UIKit
                                                           views: ["view" : label])
         self.addConstraints(hConstraints)
         self.addConstraints(vConstraints)
-        
     }
     
     override var tintColor: UIColor! {
