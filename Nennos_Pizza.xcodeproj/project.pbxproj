@@ -243,6 +243,7 @@
 			children = (
 				9765E8981E85E06B0019C772 /* MainTableViewCell.swift */,
 				9765E8991E85E06B0019C772 /* MainTableViewCell.xib */,
+				97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */,
 			);
 			name = MainTableCell;
 			path = MainTableViewCell;
@@ -272,9 +273,8 @@
 			children = (
 				97ADD50F1E8854E80030B622 /* BaseDataSource.swift */,
 				97692B6D1E86EE72005DAF71 /* MainTableView */,
-				97692B6B1E86E92A005DAF71 /* IngredientDataSource.swift */,
-				97ADD5111E8858990030B622 /* CartDatasource.swift */,
 				97692B6E1E86EE7A005DAF71 /* PizzaDetail */,
+				97ADD5111E8858990030B622 /* CartDatasource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -284,7 +284,6 @@
 			children = (
 				97692B651E86BF35005DAF71 /* PizzaDataSource.swift */,
 				97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */,
-				97692B671E86DE7A005DAF71 /* MainPizzaCell.swift */,
 			);
 			name = MainTableView;
 			sourceTree = "<group>";
@@ -292,6 +291,7 @@
 		97692B6E1E86EE7A005DAF71 /* PizzaDetail */ = {
 			isa = PBXGroup;
 			children = (
+				97692B6B1E86E92A005DAF71 /* IngredientDataSource.swift */,
 				97692B741E86F697005DAF71 /* DetailIngredientCell.swift */,
 			);
 			name = PizzaDetail;
