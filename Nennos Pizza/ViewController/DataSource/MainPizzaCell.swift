@@ -27,6 +27,6 @@ extension MainTableViewCell: PizzaCell {
     
     func set(price: Double) {
         
-        self.buyButton.price = price
+        self.buyButton.set(price: price)
     }
 }

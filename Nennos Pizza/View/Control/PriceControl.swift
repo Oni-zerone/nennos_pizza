@@ -11,16 +11,9 @@ import UIKit
 @IBDesignable class PriceControl: UIControl {
 
     private weak var cartImageView: UIImageView!
-    private weak var priceLabel: UILabel!
-    
-    override var tintColor: UIColor! {
-        didSet {
-            self.priceLabel.textColor = self.tintColor
-        }
-    }
-    
-    @IBInspectable var currency : String?
+    fileprivate weak var priceLabel: UILabel!
 
+    @IBInspectable var currency: String?
     @IBInspectable var cartImage: UIImage? {
         
         didSet {
@@ -28,23 +21,6 @@ import UIKit
         }
     }
 
-    var price: Double? {
-        
-        didSet {
-
-            guard let price = self.price else {
-                
-                self.priceLabel.text = ""
-                return
-            }
-            
-            var priceString = currency ?? String()
-            priceString += String(format: " %.2f", price)
-            
-            self.priceLabel.text = priceString
-        }
-    }
-    
     required override init(frame: CGRect) {
 
         super.init(frame: frame);
@@ -55,6 +31,12 @@ import UIKit
 
         super.init(coder: aDecoder);
         setupLayout()
+    }
+
+    override var tintColor: UIColor! {
+        didSet {
+            self.priceLabel.textColor = self.tintColor
+        }
     }
     
     private func setupLayout() {
@@ -97,5 +79,13 @@ import UIKit
         priceLabel.font = UIFont.buttonFont
         self.addSubview(priceLabel)
         self.priceLabel = priceLabel
+    }
+}
+
+extension PriceControl: PriceableItem {
+    
+    func setPrice(with string: String) {
+        
+        self.priceLabel.text = string
     }
 }
