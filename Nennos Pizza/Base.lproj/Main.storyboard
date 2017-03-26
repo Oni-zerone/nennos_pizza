@@ -161,14 +161,33 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="583"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4YK-Ua-Tca" customClass="PriceControl" customModule="Nennos_Pizza" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="538" width="375" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YK-Ua-Tca" customClass="PriceControl" customModule="Nennos_Pizza" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="559" width="375" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="checkoutAction:" destination="0zG-AV-AjG" eventType="touchUpInside" id="paJ-as-hQM"/>
+                                </connections>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f4C-Ul-m88">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4YK-Ua-Tca" firstAttribute="leading" secondItem="hPy-rC-vqR" secondAttribute="leading" id="47x-Kk-3BI"/>
+                            <constraint firstAttribute="trailing" secondItem="4YK-Ua-Tca" secondAttribute="trailing" id="Dws-bW-qcW"/>
+                            <constraint firstItem="4YK-Ua-Tca" firstAttribute="top" secondItem="f4C-Ul-m88" secondAttribute="bottom" id="HLa-dy-7RN"/>
+                            <constraint firstItem="f4C-Ul-m88" firstAttribute="top" secondItem="okV-OU-5Uf" secondAttribute="bottom" id="Psx-ic-bya"/>
+                            <constraint firstItem="tdB-20-3YD" firstAttribute="top" secondItem="4YK-Ua-Tca" secondAttribute="bottom" id="erd-ja-r1Y"/>
+                            <constraint firstAttribute="trailing" secondItem="f4C-Ul-m88" secondAttribute="trailing" id="p8g-sg-Hu5"/>
+                            <constraint firstItem="f4C-Ul-m88" firstAttribute="leading" secondItem="hPy-rC-vqR" secondAttribute="leading" id="uXg-uU-ptp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkoutControl" destination="4YK-Ua-Tca" id="30O-pi-eY7"/>
+                        <outlet property="tableView" destination="f4C-Ul-m88" id="Ybz-Gy-QES"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlQ-og-3N5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

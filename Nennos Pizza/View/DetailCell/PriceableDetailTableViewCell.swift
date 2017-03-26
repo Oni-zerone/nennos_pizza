@@ -21,5 +21,5 @@ extension PriceableDetailTableViewCell: PriceableItem {
     func setPrice(with string: String) {
         self.detailLabel.text = string
     }
-    
+
 }
