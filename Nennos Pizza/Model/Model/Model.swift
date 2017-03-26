@@ -17,13 +17,27 @@ class Model: NSObject {
         return Model()
     }()
     
-    private var ingredients: Array<Ingredient>?
-    private var pizzas: Array<Pizza>?
-    private var drinks: Array<Drink>?
+    //MARK: Cart properties
+    lazy var cart: Cart = {
+        
+        return Cart()
+    }()
     
-    private var pizzaIngredients = Dictionary<Pizza, Array<Ingredient>>()
-    private var pizzaPrices = Dictionary<Pizza, Double>()
+    //MARK: Caching properties
     
+    fileprivate var ingredients: Array<Ingredient>?
+    fileprivate var pizzas: Array<Pizza>?
+    fileprivate var drinks: Array<Drink>?
+    
+    fileprivate var pizzaIngredients = Dictionary<Pizza, Array<Ingredient>>()
+    fileprivate var pizzaPrices = Dictionary<Pizza, Double>()
+    
+}
+
+fileprivate typealias ModelCache = Model
+
+extension ModelCache {
+
     internal func getCachedPizzas(completion: @escaping (Array<Pizza>) -> ()) {
         
         if let pizzas = self.pizzas {
