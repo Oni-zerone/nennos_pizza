@@ -40,26 +40,14 @@ import UIKit
     }
     
     private func setupLayout() {
-        
-        setupCartImageView()
-        setupPriceLabel()
-        
-        //Setup constaints
-        let views = ["cartImageView" : cartImageView, "priceLabel" : priceLabel] as Dictionary<String, UIView>
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat:"H:|-8-[cartImageView(24)]-4-[priceLabel(>=30)]-8-|",
-                                                          options: NSLayoutFormatOptions(rawValue: 0),
-                                                          metrics: nil,
-                                                          views:views)
-        let vCartConstraints = NSLayoutConstraint.constraints(withVisualFormat:"V:|-0-[cartImageView(24)]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
-        let priceLabelConstraint = NSLayoutConstraint(item: priceLabel, attribute: .bottom, relatedBy: .equal, toItem: cartImageView, attribute: .bottom, multiplier: 1, constant: 0)
-        
-        self.addConstraint(priceLabelConstraint)
-        self.addConstraints(vCartConstraints)
-        self.addConstraints(hConstraints)
-        
+
         //Setup background radius
         self.clipsToBounds = true
         self.layer.cornerRadius = 4
+        
+        self.setupCartImageView()
+        self.setupPriceLabel()
+        self.setupConstraints()
     }
     
     private func setupCartImageView() {
@@ -79,6 +67,21 @@ import UIKit
         priceLabel.font = UIFont.buttonFont
         self.addSubview(priceLabel)
         self.priceLabel = priceLabel
+    }
+    
+    private func setupConstraints() {
+
+        let views = ["cartImageView" : cartImageView, "priceLabel" : priceLabel] as Dictionary<String, UIView>
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat:"H:|-8-[cartImageView(24)]-4-[priceLabel(>=30)]-8-|",
+                                                          options: NSLayoutFormatOptions(rawValue: 0),
+                                                          metrics: nil,
+                                                          views:views)
+        let vCartConstraints = NSLayoutConstraint.constraints(withVisualFormat:"V:|-0-[cartImageView(24)]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        let priceLabelConstraint = NSLayoutConstraint(item: priceLabel, attribute: .bottom, relatedBy: .equal, toItem: cartImageView, attribute: .bottom, multiplier: 1, constant: 0)
+        
+        self.addConstraint(priceLabelConstraint)
+        self.addConstraints(vCartConstraints)
+        self.addConstraints(hConstraints)
     }
 }
 
