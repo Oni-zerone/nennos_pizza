@@ -10,11 +10,37 @@ import Foundation
 
 struct Cart {
     
+    internal static let queue = DispatchQueue(label: "it.studiout.nenno.modelQueue")
+
     var items = Array<ShippableItem>()
     
     struct Notifications {
         
         static let didAddItem = Notification.Name("it.studiout.NennosPizza.Cart.didAddItem")
+    }
+    
+    func getPrice(completion: @escaping (Double) -> ()) {
+        
+        var totalPrice: Double = 0
+        let dispatchGroup = DispatchGroup()
+        
+        Cart.queue.async {
+            self.items.forEach({ (item) in
+                
+                dispatchGroup.enter()
+                item.getPrice(completion: { (price) in
+                    
+                    totalPrice += price
+                    dispatchGroup.leave()
+                })
+            })
+
+            dispatchGroup.wait()
+            DispatchQueue.main.async {
+                
+                completion(totalPrice)
+            }
+        }
     }
 }
 
