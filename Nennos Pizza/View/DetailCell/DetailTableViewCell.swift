@@ -27,7 +27,7 @@ class DetailTableViewCell: UITableViewCell {
         self.setupSubViews()
     }
 
-    func setupSubViews() {
+    private func setupSubViews() {
      
         guard let containedView = Bundle.main.loadNibNamed(String(describing: DetailTableViewCell.self), owner: self, options: nil)?.first as? UIView else {
             return
@@ -47,6 +47,28 @@ class DetailTableViewCell: UITableViewCell {
                                                           views: ["view" : containedView]);
         self.addConstraints(hConstraints);
         self.addConstraints(vConstraints);
+        
+        self.setupLabels()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.setupLabels()
+    }
+    
+    private func setupLabels() {
+        
+        self.titleLabel.text = ""
+        self.titleLabel.font = UIFont.detailFont
+        self.titleLabel.textColor = UIColor.textColor
+        
+        self.detailLabel.text = ""
+        self.titleLabel.font = UIFont.detailFont
+        self.titleLabel.textColor = UIColor.textColor
+        
+        self.itemImageView.tintColor = UIColor.primaryColor
+    }
+
     
 }
