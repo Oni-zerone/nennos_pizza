@@ -115,6 +115,16 @@ class PizzaViewController: UIViewController {
             self.addToCartButton.set(price: price)
         }
     }
+    
+    @IBAction func addToCartAction(_ sender: Any) {
+        
+        guard let pizza = self.pizza else {
+            
+            return
+        }
+        
+        Model.shared.cart.insert(pizza: pizza)
+    }
 }
 
 extension PizzaViewController: UITableViewDelegate {
