@@ -14,9 +14,4 @@ extension IngredientTableViewCell: IngredientCell {
         
         self.titleLabel.text = name
     }
-    
-    func set(price: Double) {
-        
-        self.detailLabel.text = "$ \(String(format:"%.2f", price))"
-    }
 }
