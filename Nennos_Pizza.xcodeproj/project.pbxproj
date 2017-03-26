@@ -281,7 +281,7 @@
 				9765E8901E85CDDA0019C772 /* Model.swift */,
 				97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
