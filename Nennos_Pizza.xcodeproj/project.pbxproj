@@ -36,6 +36,7 @@
 		97692B751E86F697005DAF71 /* DetailIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97692B741E86F697005DAF71 /* DetailIngredientCell.swift */; };
 		9780CE8D1E868266001EF13E /* PriceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780CE8C1E868266001EF13E /* PriceControl.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
+		97BFCCFB1E880EC300E00EA5 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		97692B741E86F697005DAF71 /* DetailIngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailIngredientCell.swift; sourceTree = "<group>"; };
 		9780CE8C1E868266001EF13E /* PriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceControl.swift; sourceTree = "<group>"; };
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				9765E8771E859FE80019C772 /* API */,
-				9765E8901E85CDDA0019C772 /* Model.swift */,
+				97BFCCF91E880EB200E00EA5 /* Model */,
 				97BFCCF71E87E03F00E00EA5 /* Cart.swift */,
 			);
 			path = Model;
@@ -271,6 +273,15 @@
 				97692B711E86EFA0005DAF71 /* IngredientTableViewCell.xib */,
 			);
 			name = IngredientCell;
+			sourceTree = "<group>";
+		};
+		97BFCCF91E880EB200E00EA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9765E8901E85CDDA0019C772 /* Model.swift */,
+				97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +423,7 @@
 				9765E8941E85D7410019C772 /* MainViewController.swift in Sources */,
 				9765E87E1E85A2470019C772 /* Pizza.swift in Sources */,
 				9765E8871E85B6D10019C772 /* IngredientsManager.swift in Sources */,
+				97BFCCFB1E880EC300E00EA5 /* ModelInterface.swift in Sources */,
 				9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */,
 				97692B611E86B250005DAF71 /* NennoColors.swift in Sources */,
 				9765E8821E85ADEE0019C772 /* Drink.swift in Sources */,

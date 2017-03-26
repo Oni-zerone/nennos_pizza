@@ -24,7 +24,7 @@ class Model: NSObject {
     private var pizzaIngredients = Dictionary<Pizza, Array<Ingredient>>()
     private var pizzaPrices = Dictionary<Pizza, Double>()
     
-    fileprivate func getCachedPizzas(completion: @escaping (Array<Pizza>) -> ()) {
+    internal func getCachedPizzas(completion: @escaping (Array<Pizza>) -> ()) {
         
         if let pizzas = self.pizzas {
             
@@ -45,7 +45,7 @@ class Model: NSObject {
         })
     }
     
-    fileprivate func getCachedIngredients(completion: @escaping (Array<Ingredient>) -> ()) {
+    internal func getCachedIngredients(completion: @escaping (Array<Ingredient>) -> ()) {
         
         if let ingredients = self.ingredients {
             
@@ -66,7 +66,7 @@ class Model: NSObject {
         })
     }
     
-    func getCachedDrinks(completion: @escaping (Array<Drink>) -> ()) {
+    internal func getCachedDrinks(completion: @escaping (Array<Drink>) -> ()) {
         
         if let drinks = self.drinks {
             
@@ -87,7 +87,7 @@ class Model: NSObject {
         })
     }
     
-    fileprivate func  getCachedIngredients(for pizza:Pizza, completion: @escaping (Array<Ingredient>) -> ()) {
+    internal func  getCachedIngredients(for pizza:Pizza, completion: @escaping (Array<Ingredient>) -> ()) {
         
         if let ingredients = self.pizzaIngredients[pizza] {
             
@@ -108,7 +108,7 @@ class Model: NSObject {
         })
     }
     
-    fileprivate func getCachedPrice(for pizza:Pizza, completion: @escaping (Double) -> ()) {
+    internal func getCachedPrice(for pizza:Pizza, completion: @escaping (Double) -> ()) {
         
         if let price = self.pizzaPrices[pizza] {
             completion(price)
@@ -126,7 +126,7 @@ class Model: NSObject {
         }
     }
     
-    func calculatePrice(with ingredients:Array<Ingredient>) -> Double {
+    private func calculatePrice(with ingredients:Array<Ingredient>) -> Double {
         
         var price = Pizza.basePrice
         
@@ -136,74 +136,5 @@ class Model: NSObject {
         }
         
         return price
-    }
-}
-
-fileprivate typealias ModelInterface = Model
-
-extension ModelInterface {
-    
-    func getPizzas(completion: @escaping (Array<Pizza>) -> ()) {
-        
-        Model.queue.async {
-            
-            self.getCachedPizzas { (ingredients) in
-                
-                DispatchQueue.main.async {
-                    completion(ingredients)
-                }
-            }
-        }
-    }
-    
-    func getIngredients(completion: @escaping (Array<Ingredient>) -> ()) {
-        
-        Model.queue.async {
-            
-            self.getCachedIngredients(completion: { (ingredients) in
-                
-                DispatchQueue.main.async {
-                    completion(ingredients)
-                }
-            })
-        }
-    }
-    
-    func getIngredients(for pizza:Pizza, completion: @escaping (Array<Ingredient>) -> ()) {
-        
-        Model.queue.async {
-            
-            self.getCachedIngredients(for: pizza) { (ingredients) in
-                
-                DispatchQueue.main.async {
-                    completion(ingredients)
-                }
-            }
-        }
-    }
-    
-    func getPrice(for pizza: Pizza, completion: @escaping(Double) -> ()) {
-        
-        Model.queue.async {
-            
-            self.getCachedPrice(for: pizza, completion: { (ingredients) in
-                
-                DispatchQueue.main.async {
-                    completion(ingredients)
-                }
-            })
-        }
-    }
-    
-    func getDrinks(completion: @escaping (Array<Drink>) -> ()) {
-        
-        Model.queue.async {
-            
-            self.getCachedDrinks(completion: { (drinks) in
-                DispatchQueue.main.async {
-                    completion(drinks)
-                }
-            })
-        }
     }
 }
