@@ -39,7 +39,6 @@
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
 		97BFCCFB1E880EC300E00EA5 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */; };
-		97BFCCFD1E880F4900E00EA5 /* ModelCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFC1E880F4900E00EA5 /* ModelCart.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +79,6 @@
 		97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceableItem.swift; sourceTree = "<group>"; };
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
-		97BFCCFC1E880F4900E00EA5 /* ModelCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelCart.swift; sourceTree = "<group>"; };
 		BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos_Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos_Pizza/Pods-Nennos_Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -288,7 +286,6 @@
 			children = (
 				9765E8901E85CDDA0019C772 /* Model.swift */,
 				97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */,
-				97BFCCFC1E880F4900E00EA5 /* ModelCart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -425,7 +422,6 @@
 				97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */,
 				9765E89A1E85E06B0019C772 /* MainTableViewCell.swift in Sources */,
 				97692B721E86EFA0005DAF71 /* IngredientTableViewCell.swift in Sources */,
-				97BFCCFD1E880F4900E00EA5 /* ModelCart.swift in Sources */,
 				9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */,
 				9765E8651E8599410019C772 /* AppDelegate.swift in Sources */,
 				97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */,

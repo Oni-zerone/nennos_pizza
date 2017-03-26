@@ -83,6 +83,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="currency" value="$"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addToCartAction:" destination="hLI-s3-dhY" eventType="touchUpInside" id="qcc-Wc-3nz"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="16w-C3-eMv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="553.5"/>
