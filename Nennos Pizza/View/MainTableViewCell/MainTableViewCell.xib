@@ -42,7 +42,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-Vg-Ocq" customClass="PriceControl" customModule="Nennos_Pizza" customModuleProvider="target">
+                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-Vg-Ocq" customClass="PriceControl" customModule="Nennos_Pizza" customModuleProvider="target">
                                 <rect key="frame" x="234" y="34" width="74" height="24"/>
                                 <color key="backgroundColor" red="1" green="0.80392156862745101" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
