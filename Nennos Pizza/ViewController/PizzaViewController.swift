@@ -108,8 +108,7 @@ class PizzaViewController: UIViewController {
     
     func setPrice(for pizza:Pizza) {
         
-        
-        Model.shared.getPrice(for: pizza) { (price) in
+        pizza.getPrice { (price) in
             
             self.addToCartButton.set(price: price)
         }

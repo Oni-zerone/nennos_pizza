@@ -83,14 +83,13 @@ fileprivate extension PizzaTable {
     
     func setPrice(for pizza: Pizza, at indexPath: IndexPath) {
         
-        Model.shared.getPrice(for: pizza) { (pizzaPrice) in
-            
+        pizza.getPrice { (price) in
             guard let cell = self.cellForRow(at: indexPath) as? PizzaCell else {
                 
                 return
             }
             
-            cell.set(price: pizzaPrice)
+            cell.set(price: price)
             self.setNeedsUpdateConstraints()
         }
     }
