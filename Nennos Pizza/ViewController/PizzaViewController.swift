@@ -23,11 +23,13 @@ class PizzaViewController: UIViewController {
             
             self.title = pizza.name
             self.selectIngredients()
+            self.setHeaderImage()
         }
     }
     
     
     //View
+    weak var header: PizzaHeader?
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var pizzaLabel: UILabel!
@@ -36,9 +38,10 @@ class PizzaViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         self.setupTableView()
+        self.setupHeader()
         
+        //Load contents
         Model.shared.getIngredients { (ingredients) in
             
             self.ingredientDataSource?.ingredients = ingredients
@@ -60,6 +63,27 @@ class PizzaViewController: UIViewController {
                                 forCellReuseIdentifier: cellName)
         
         self.ingredientDataSource = IngredientDataSource(with: cellName, tableView: self.tableView)
+    }
+    
+    func setupHeader() {
+        
+        let header = PizzaHeader(frame: CGRect.zero)
+        header.backgroundImageView.image = #imageLiteral(resourceName: "Backgound")
+        header.insert(in: self.tableView)
+        self.header = header
+        
+        self.setHeaderImage()
+    }
+    
+    func setHeaderImage() {
+        
+        guard let header = self.header,
+            let pizzaUrl = self.pizza?.imageUrl,
+            let imageURL = URL(string:pizzaUrl) else {
+            return
+        }
+        
+        header.pizzaImageView.af_setImage(withURL: imageURL)
     }
     
     func selectIngredients() {
