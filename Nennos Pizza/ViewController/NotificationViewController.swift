@@ -111,12 +111,12 @@ class NotificationViewController: UIViewController {
         
         UIView.animateKeyframes(withDuration: 3.2, delay: 0, options: .allowUserInteraction, animations: {
             
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.03, animations: {
                 
                 notificationView.transform = CGAffineTransform(translationX: 0, y: notificationView.frame.height)
             })
             
-            UIView.addKeyframe(withRelativeStartTime: 0.96, relativeDuration: 0.1, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.96, relativeDuration: 0.03, animations: {
                 notificationView.transform = CGAffineTransform.identity
             })
             
