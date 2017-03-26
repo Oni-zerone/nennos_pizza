@@ -42,6 +42,7 @@
 		97ADD5201E8866E10030B622 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD51F1E8866E10030B622 /* CartCell.swift */; };
 		97ADD5221E8867140030B622 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5211E8867140030B622 /* IngredientCell.swift */; };
 		97ADD5241E8867450030B622 /* DetailCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5231E8867450030B622 /* DetailCartCell.swift */; };
+		97ADD5261E887A990030B622 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5251E887A990030B622 /* DrinksViewController.swift */; };
 		97BFCCF31E87BD1A00E00EA5 /* BigPriceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */; };
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
@@ -95,6 +96,7 @@
 		97ADD51F1E8866E10030B622 /* CartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		97ADD5211E8867140030B622 /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		97ADD5231E8867450030B622 /* DetailCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCartCell.swift; sourceTree = "<group>"; };
+		97ADD5251E887A990030B622 /* DrinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigPriceControl.swift; sourceTree = "<group>"; };
 		97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceableItem.swift; sourceTree = "<group>"; };
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				9765E8931E85D7410019C772 /* MainViewController.swift */,
 				97692B691E86E510005DAF71 /* PizzaViewController.swift */,
 				97BFCD0D1E884E1400E00EA5 /* CartViewController.swift */,
+				97ADD5251E887A990030B622 /* DrinksViewController.swift */,
 				97692B641E86BEEA005DAF71 /* DataSource */,
 			);
 			path = ViewController;
@@ -505,6 +508,7 @@
 				97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */,
 				97692B631E86B37A005DAF71 /* NennoFonts.swift in Sources */,
 				9765E8911E85CDDA0019C772 /* Model.swift in Sources */,
+				97ADD5261E887A990030B622 /* DrinksViewController.swift in Sources */,
 				9765E8941E85D7410019C772 /* MainViewController.swift in Sources */,
 				9765E87E1E85A2470019C772 /* Pizza.swift in Sources */,
 				9765E8871E85B6D10019C772 /* IngredientsManager.swift in Sources */,
