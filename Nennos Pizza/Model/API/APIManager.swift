@@ -10,6 +10,21 @@ import Foundation
 
 struct APIManager {
     
+    struct Config {
+        
+        //MARK: URL parameters
+        
+        public static var scheme: String!
+        public static var host: String!
+        public static var basePath: String!
+        
+        static let session = {
+            
+            return URLSession(configuration: URLSessionConfiguration.default)
+        }()
+    }
+
+    
     static public let ErrorDomain = "NENNO_API_DOMAIN"
     
     static internal func responseDictionaryCheck(_ completion:@escaping (Dictionary<String, Any>?, Error?) -> Void) -> (Data?, URLResponse?, Error?) -> Void {
@@ -66,7 +81,7 @@ struct APIManager {
     
     static internal func URLForResource(resourcePath: String) -> URL? {
         
-        let fullPath = "\(APIConfig.scheme!)://\(APIConfig.host!)/\(APIConfig.basePath!)/\(resourcePath)"
+        let fullPath = "\(Config.scheme!)://\(Config.host!)/\(Config.basePath!)/\(resourcePath)"
         return URL(string:fullPath)
     }
 }

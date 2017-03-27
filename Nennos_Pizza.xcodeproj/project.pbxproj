@@ -12,7 +12,6 @@
 		9765E86A1E8599410019C772 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9765E8681E8599410019C772 /* Main.storyboard */; };
 		9765E86C1E8599410019C772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86B1E8599410019C772 /* Assets.xcassets */; };
 		9765E86F1E8599410019C772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9765E86D1E8599410019C772 /* LaunchScreen.storyboard */; };
-		9765E8791E85A0100019C772 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8781E85A0100019C772 /* APIConfig.swift */; };
 		9765E87B1E85A09E0019C772 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87A1E85A09E0019C772 /* APIManager.swift */; };
 		9765E87E1E85A2470019C772 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87D1E85A2470019C772 /* Pizza.swift */; };
 		9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87F1E85A2A70019C772 /* Ingredient.swift */; };
@@ -58,7 +57,6 @@
 		97ADD55B1E89A2820030B622 /* CheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54C1E898EED0030B622 /* CheckoutRequest.swift */; };
 		97ADD5651E89A28D0030B622 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
 		97ADD5661E89A28D0030B622 /* ShippableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5131E8859400030B622 /* ShippableItem.swift */; };
-		97ADD5671E89A28D0030B622 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8781E85A0100019C772 /* APIConfig.swift */; };
 		97ADD5681E89A28D0030B622 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87A1E85A09E0019C772 /* APIManager.swift */; };
 		97ADD5691E89A28D0030B622 /* IngredientsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8861E85B6D10019C772 /* IngredientsManager.swift */; };
 		97ADD56A1E89A28D0030B622 /* PizzasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8881E85B77A0019C772 /* PizzasManager.swift */; };
@@ -106,7 +104,6 @@
 		9765E86B1E8599410019C772 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9765E86E1E8599410019C772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9765E8701E8599410019C772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9765E8781E85A0100019C772 /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		9765E87A1E85A09E0019C772 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		9765E87D1E85A2470019C772 /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
 		9765E87F1E85A2A70019C772 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
@@ -250,7 +247,6 @@
 		9765E8771E859FE80019C772 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9765E8781E85A0100019C772 /* APIConfig.swift */,
 				9765E87A1E85A09E0019C772 /* APIManager.swift */,
 				9765E8851E85B6710019C772 /* API Manager */,
 				9765E87C1E85A1F20019C772 /* API Models */,
@@ -677,7 +673,6 @@
 				97ADD5331E8880A40030B622 /* PricedItem.swift in Sources */,
 				9765E8891E85B77A0019C772 /* PizzasManager.swift in Sources */,
 				97ADD51D1E8862220030B622 /* CartTableViewCell.swift in Sources */,
-				9765E8791E85A0100019C772 /* APIConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,7 +685,6 @@
 				97ADD56D1E89A28D0030B622 /* Ingredient.swift in Sources */,
 				97ADD5651E89A28D0030B622 /* Cart.swift in Sources */,
 				97ADD56C1E89A28D0030B622 /* PricedItem.swift in Sources */,
-				97ADD5671E89A28D0030B622 /* APIConfig.swift in Sources */,
 				97ADD5681E89A28D0030B622 /* APIManager.swift in Sources */,
 				97ADD5691E89A28D0030B622 /* IngredientsManager.swift in Sources */,
 				97ADD5741E89A28D0030B622 /* ShippableDrink.swift in Sources */,
