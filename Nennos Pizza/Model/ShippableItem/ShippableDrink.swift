@@ -20,6 +20,11 @@ extension Drink: ShippableItem {
     
     func serialize() -> (String, Dictionary<String, Any>)? {
         
-        return nil
+        var serializedItem = Dictionary<String, Any>()
+        serializedItem["id"] = self.id
+        serializedItem["name"] = self.name
+        serializedItem["price"] = self.price
+        
+        return ("drinks", serializedItem)
     }
 }
