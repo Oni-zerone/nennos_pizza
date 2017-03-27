@@ -87,6 +87,10 @@ class MainViewController: UIViewController {
         
     }
     
+    @IBAction func createCustomPizza(_ sender: Any) {
+
+        self.performSegue(withIdentifier: MainViewController.segue.showPizza, sender: Pizza())
+    }
 }
 
 extension MainViewController: UITableViewDelegate {
