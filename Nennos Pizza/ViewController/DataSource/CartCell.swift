@@ -8,8 +8,16 @@
 
 import Foundation
 
+enum CartCellMode {
+
+    case item
+    case total
+}
+
 protocol CartCell {
     
     func set(name: String)
     func set(price: Double)
+    
+    func setup(_ mode: CartCellMode)
 }

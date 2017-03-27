@@ -39,6 +39,7 @@ class CartDatasource: BaseDataSource<ShippableItem> {
         if indexPath.section == 0 {
 
             let item = self.items[indexPath.row]
+            cartCell.setup(.item)
             tableView.prepare(cartCell, with: item, at: indexPath)
             
             cell.isUserInteractionEnabled = true
@@ -47,6 +48,7 @@ class CartDatasource: BaseDataSource<ShippableItem> {
         
         
         cartCell.set(name: "TOTAL")
+        cartCell.setup(.total)
         tableView.setTotal(for: Model.shared.cart, at: indexPath)
         
         cell.isUserInteractionEnabled = false
