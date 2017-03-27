@@ -10,6 +10,8 @@ import Foundation
 
 struct CheckoutManager {
     
+    static public let ErrorDomain = "NENNO_CHECKOUT_DOMAIN"
+    
     struct Config {
 
         public static var scheme: String!
@@ -23,8 +25,13 @@ struct CheckoutManager {
     }
     
     static func send(_ cart: Cart, success: @escaping(Bool, Error?) -> ()) {
+     
+        guard let url = self.prepareURL(for: "post.php") else {
+            
+            return success(false, NSError.invalidPath(ErrorDomain))
+        }
         
-        let task = Config.session.dataTask(with: URL(string:"http://www.google.com")!) { (responseData, response, error) in
+        let task = Config.session.dataTask(with: url) { (responseData, response, error) in
             
             if let error = error {
                 success(false, error)
