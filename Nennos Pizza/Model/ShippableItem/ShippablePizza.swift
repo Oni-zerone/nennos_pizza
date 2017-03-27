@@ -23,6 +23,11 @@ extension ShippablePizza: ShippableItem {
     
     func serialize() -> (String, Dictionary<String, Any>)? {
         
-        return nil
+        var serializedItem = Dictionary<String, Any>()
+        serializedItem["name"] = self.name
+        serializedItem["ingredients"] = Array<Int>(self.ingredientIds)
+        serializedItem["imageUrl"] = self.imageUrl
+        
+        return ("pizzas", serializedItem)
     }
 }
