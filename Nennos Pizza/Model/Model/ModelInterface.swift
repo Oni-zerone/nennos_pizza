@@ -75,4 +75,16 @@ extension ModelInterface {
             })
         }
     }
+    
+    func send(_ cart: Cart, completion: @escaping (Bool) -> ()) {
+        
+        Model.queue.async {
+            self.internalSend(cart, completion: { (success) in
+                
+                DispatchQueue.main.async {
+                    completion(success)
+                }
+            })
+        }
+    }
 }
