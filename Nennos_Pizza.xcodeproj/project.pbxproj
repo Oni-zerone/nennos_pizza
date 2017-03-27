@@ -47,7 +47,8 @@
 		97ADD5301E887FD90030B622 /* PricedDrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD52F1E887FD90030B622 /* PricedDrinkCell.swift */; };
 		97ADD5331E8880A40030B622 /* PricedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5321E8880A40030B622 /* PricedItem.swift */; };
 		97ADD5351E8886640030B622 /* ShippableDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5341E8886640030B622 /* ShippableDrink.swift */; };
-		97BFCCF31E87BD1A00E00EA5 /* BigPriceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */; };
+		97ADD5371E888E890030B622 /* LabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5361E888E890030B622 /* LabelControl.swift */; };
+		97BFCCF31E87BD1A00E00EA5 /* PriceLabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */; };
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
 		97BFCCFB1E880EC300E00EA5 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */; };
@@ -105,8 +106,9 @@
 		97ADD52F1E887FD90030B622 /* PricedDrinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricedDrinkCell.swift; sourceTree = "<group>"; };
 		97ADD5321E8880A40030B622 /* PricedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PricedItem.swift; path = ../../PriceableItem/PricedItem.swift; sourceTree = "<group>"; };
 		97ADD5341E8886640030B622 /* ShippableDrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippableDrink.swift; sourceTree = "<group>"; };
-		97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigPriceControl.swift; sourceTree = "<group>"; };
-		97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceableItem.swift; sourceTree = "<group>"; };
+		97ADD5361E888E890030B622 /* LabelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelControl.swift; sourceTree = "<group>"; };
+		97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceLabelControl.swift; sourceTree = "<group>"; };
+		97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceableItem.swift; path = Control/PriceableItem.swift; sourceTree = "<group>"; };
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		97BFCCFE1E8816E200E00EA5 /* PizzaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaCell.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		9765E8951E85D8A20019C772 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */,
 				9765E89C1E85ED280019C772 /* Control */,
 				9765E8961E85E02B0019C772 /* TableViewCell */,
 				9723D8141E871324008C9AB6 /* PizzaHeader.swift */,
@@ -272,9 +275,9 @@
 		9765E89C1E85ED280019C772 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */,
+				97ADD5361E888E890030B622 /* LabelControl.swift */,
+				97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */,
 				9780CE8C1E868266001EF13E /* PriceControl.swift */,
-				97BFCCF21E87BD1A00E00EA5 /* BigPriceControl.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -537,8 +540,9 @@
 				9765E8801E85A2A70019C772 /* Ingredient.swift in Sources */,
 				97692B611E86B250005DAF71 /* NennoColors.swift in Sources */,
 				97BFCD0C1E8840F000E00EA5 /* DetailTableViewCell.swift in Sources */,
+				97ADD5371E888E890030B622 /* LabelControl.swift in Sources */,
 				97ADD5121E8858990030B622 /* CartDatasource.swift in Sources */,
-				97BFCCF31E87BD1A00E00EA5 /* BigPriceControl.swift in Sources */,
+				97BFCCF31E87BD1A00E00EA5 /* PriceLabelControl.swift in Sources */,
 				97ADD5301E887FD90030B622 /* PricedDrinkCell.swift in Sources */,
 				97ADD52E1E887EE40030B622 /* DrinkTableViewCell.swift in Sources */,
 				9765E8821E85ADEE0019C772 /* Drink.swift in Sources */,
