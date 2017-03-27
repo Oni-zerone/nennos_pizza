@@ -34,10 +34,12 @@ class CheckoutManager_Tests: XCTestCase {
         }
         waitForExpectations(timeout: 10) { error in
             
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
+            guard let error = error else {
+                XCTFail()
+                return
             }
             
+            XCTFail(error.localizedDescription)
         }
 
     }
