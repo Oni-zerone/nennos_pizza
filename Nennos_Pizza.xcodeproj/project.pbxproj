@@ -60,6 +60,7 @@
 		97ADD5541E899F390030B622 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87F1E85A2A70019C772 /* Ingredient.swift */; };
 		97ADD5551E899F5D0030B622 /* PricedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5321E8880A40030B622 /* PricedItem.swift */; };
 		97ADD5561E899F6A0030B622 /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54E1E8992950030B622 /* ModelError.swift */; };
+		97ADD5571E89A0DD0030B622 /* ShippablePizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5191E885AC50030B622 /* ShippablePizza.swift */; };
 		97BFCCF31E87BD1A00E00EA5 /* PriceLabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */; };
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
@@ -676,6 +677,7 @@
 				97ADD5531E899C620030B622 /* Pizza.swift in Sources */,
 				97ADD5561E899F6A0030B622 /* ModelError.swift in Sources */,
 				97ADD54A1E897E490030B622 /* Cart.swift in Sources */,
+				97ADD5571E89A0DD0030B622 /* ShippablePizza.swift in Sources */,
 				97ADD5491E897E470030B622 /* CheckoutManager.swift in Sources */,
 				97ADD5521E899B300030B622 /* Pizza_Tests.swift in Sources */,
 			);

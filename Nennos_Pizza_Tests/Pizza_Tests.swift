@@ -11,6 +11,7 @@ import XCTest
 class Pizza_Tests: XCTestCase {
     
     var pizzaDictionary: Dictionary<String, Any>!
+    var extendedPizzaDictionary: Dictionary<String, Any>!
     
     override func setUp() {
         super.setUp()
@@ -18,6 +19,9 @@ class Pizza_Tests: XCTestCase {
         pizzaDictionary = ["name" : "Pizza",
                            "ingredients" : [1, 2, 4, 5]]
         
+        extendedPizzaDictionary = ["name" : "Pizza",
+                                   "ingredients" : [1, 2, 4, 5],
+                                   "imageUrl" : "http://www.google.com"]
     }
     
     override func tearDown() {
@@ -33,31 +37,41 @@ class Pizza_Tests: XCTestCase {
             return XCTFail("Pizza not initialized.")
         }
      
-        self.basePizzaTests(for: pizza)
+        self.basePizzaTests(for: pizza, with: self.pizzaDictionary)
     }
     
     func testFullPizza() {
         
-        guard var extendedPizza = self.pizzaDictionary else {
-            
-            return XCTFail("Invalid base dictionary.")
-        }
-        extendedPizza["imageUrl"] = "http://www.google.com"
         
-        guard let pizza = Pizza(resource: extendedPizza) else {
+        guard let pizza = Pizza(resource: self.extendedPizzaDictionary) else {
             
             return XCTFail("Pizza not initialized.")
         }
         
-        basePizzaTests(for: pizza)
+        basePizzaTests(for: pizza, with: extendedPizzaDictionary)
         
         XCTAssert(pizza.imageUrl == extendedPizza["imageUrl"] as? String)
         
     }
     
-    func basePizzaTests(for pizza: Pizza) {
+    func basePizzaTests(for pizza: Pizza, with dictionary: Dictionary<String, Any>) {
         
         XCTAssert(pizza.name == self.pizzaDictionary["name"] as? String, "Invalid name parameter.")
         XCTAssert(pizza.ingredientIds == Set(self.pizzaDictionary["ingredients"] as! Array<Int>), "Invalid ingredients array.")
+    }
+    
+    func testSerializePizza() {
+        
+        guard let pizza = Pizza(resource: self.extendedPizzaDictionary) else {
+
+            return XCTFail("Pizza not initialized.")
+        }
+        
+        guard let serializedPizza = pizza.serialize() else {
+        
+            return XCTFail("Serialization failed.")
+        }
+        XCTAssert(serializedPizza.0 == "pizzas", "Serialization error invalid key")
+        XCTAssert(serializedPizza.1 == self.extendedPizzaDictionary, "Serialization error invalid value")
     }
 }
