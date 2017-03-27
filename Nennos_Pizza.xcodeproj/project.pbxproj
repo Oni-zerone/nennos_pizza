@@ -49,6 +49,7 @@
 		97ADD5351E8886640030B622 /* ShippableDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5341E8886640030B622 /* ShippableDrink.swift */; };
 		97ADD5371E888E890030B622 /* LabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5361E888E890030B622 /* LabelControl.swift */; };
 		97ADD53F1E88E4830030B622 /* Nennos_Pizza_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD53E1E88E4830030B622 /* Nennos_Pizza_Tests.swift */; };
+		97ADD5481E897CBD0030B622 /* CheckoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5471E897CBD0030B622 /* CheckoutManager.swift */; };
 		97BFCCF31E87BD1A00E00EA5 /* PriceLabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */; };
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
@@ -121,6 +122,7 @@
 		97ADD53C1E88E4830030B622 /* Nennos_Pizza_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nennos_Pizza_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97ADD53E1E88E4830030B622 /* Nennos_Pizza_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nennos_Pizza_Tests.swift; sourceTree = "<group>"; };
 		97ADD5401E88E4830030B622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97ADD5471E897CBD0030B622 /* CheckoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutManager.swift; sourceTree = "<group>"; };
 		97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceLabelControl.swift; sourceTree = "<group>"; };
 		97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceableItem.swift; path = Control/PriceableItem.swift; sourceTree = "<group>"; };
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		9765E8761E859A5E0019C772 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				97ADD5461E897BB00030B622 /* Checkout */,
 				9765E8771E859FE80019C772 /* API */,
 				97BFCCF91E880EB200E00EA5 /* Model */,
 				97BFCCF71E87E03F00E00EA5 /* Cart.swift */,
@@ -398,6 +401,14 @@
 			path = Nennos_Pizza_Tests;
 			sourceTree = "<group>";
 		};
+		97ADD5461E897BB00030B622 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				97ADD5471E897CBD0030B622 /* CheckoutManager.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
 		97BFCCF91E880EB200E00EA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +596,7 @@
 				97ADD5101E8854E80030B622 /* BaseDataSource.swift in Sources */,
 				97ADD5221E8867140030B622 /* PriceableCell.swift in Sources */,
 				9723D8151E871324008C9AB6 /* PizzaHeader.swift in Sources */,
+				97ADD5481E897CBD0030B622 /* CheckoutManager.swift in Sources */,
 				97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */,
 				97BFCD0E1E884E1400E00EA5 /* CartViewController.swift in Sources */,
 				97BFCCFF1E8816E200E00EA5 /* PizzaCell.swift in Sources */,
