@@ -46,6 +46,9 @@ class CartViewController: UIViewController {
     
     @IBAction func checkoutAction(_ sender: Any) {
         
+        Model.shared.sendCart { (success) in
+            print(success)
+        }
     }
 }
 
