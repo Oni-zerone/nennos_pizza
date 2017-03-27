@@ -30,17 +30,26 @@ struct CheckoutManager {
             
             return success(false, NSError.invalidPath(ErrorDomain))
         }
+        let request = CheckoutRequest(url: url)
         
-        let task = Config.session.dataTask(with: url) { (responseData, response, error) in
-            
-            if let error = error {
+        do  {
+        
+            try request.register(cart: cart)
+
+            let task = Config.session.dataTask(with: request as URLRequest) { (responseData, response, error) in
+                
+                if let error = error {
+                    success(false, error)
+                    return
+                }
+                
                 success(false, error)
-                return
             }
-            
+            task.resume()
+        
+        } catch let error {
             success(false, error)
         }
-        task.resume()
     }
     
     static func prepareURL(for resource: String) -> URL? {
