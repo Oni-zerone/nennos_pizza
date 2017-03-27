@@ -35,7 +35,6 @@ class CheckoutManager_Tests: XCTestCase {
         waitForExpectations(timeout: 10) { error in
             
             guard let error = error else {
-                XCTFail()
                 return
             }
             

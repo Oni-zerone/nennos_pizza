@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Nennos_Pizza
 
 class Pizza_Tests: XCTestCase {
     
@@ -66,22 +67,17 @@ class Pizza_Tests: XCTestCase {
 
             return XCTFail("Pizza not initialized.")
         }
-        
-        guard let serializedPizza = pizza.serialize() else {
-        
-            return XCTFail("Serialization failed.")
-        }
-        XCTAssert(serializedPizza.0 == "pizzas", "Serialization error invalid key")
+        let serializedPizza = pizza.serialize()
         
         self.extendedPizzaDictionary.forEach { (key, value) in
             
             if let value = value as? String {
             
-                XCTAssert(value == serializedPizza.1[key] as? String, "Serialization error invalid value \(key)")
+                XCTAssert(value == serializedPizza[key] as? String, "Serialization error invalid value \(key)")
                 
             } else if let value = value as? Array<Int> {
             
-                guard let serializedValue = serializedPizza.1[key] as? Array<Int> else {
+                guard let serializedValue = serializedPizza[key] as? Array<Int> else {
                     
                     return XCTFail("Serialization error invalid value \(key)")
                 }
