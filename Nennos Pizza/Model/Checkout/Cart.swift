@@ -67,3 +67,30 @@ extension MutableCart {
         return true
     }
 }
+
+fileprivate typealias SerializedCart = Cart
+
+extension SerializedCart {
+    
+    func serialize() -> Dictionary<String, Array<Dictionary<String, Any>>> {
+        
+        var cartStructure = Dictionary<String, Array<Dictionary<String, Any>>>()
+        
+        self.items.forEach { (item) in
+            
+            guard let (key, serializedItem) = item.serialize() else {
+                return
+            }
+            
+            if cartStructure[key] == nil {
+                
+                cartStructure[key] = Array<Dictionary<String, Any>>()
+            }
+            
+            cartStructure[key]?.append(serializedItem)
+        }
+        
+        return cartStructure
+    }
+
+}

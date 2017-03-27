@@ -31,4 +31,11 @@ class CheckoutRequest: NSMutableURLRequest {
         self.httpMethod = "POST"
     }
 
+    public func register(cart: Cart) throws {
+        
+        let jsonData = try JSONSerialization.data(withJSONObject: cart.serialize(),
+                                                  options: .prettyPrinted)
+        self.httpBody = jsonData
+    }
+    
 }

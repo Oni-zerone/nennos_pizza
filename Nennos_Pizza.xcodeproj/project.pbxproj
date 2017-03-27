@@ -55,6 +55,11 @@
 		97ADD54B1E897ED30030B622 /* ShippableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5131E8859400030B622 /* ShippableItem.swift */; };
 		97ADD54D1E898EED0030B622 /* CheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54C1E898EED0030B622 /* CheckoutRequest.swift */; };
 		97ADD54F1E8992950030B622 /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54E1E8992950030B622 /* ModelError.swift */; };
+		97ADD5521E899B300030B622 /* Pizza_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5511E899B300030B622 /* Pizza_Tests.swift */; };
+		97ADD5531E899C620030B622 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87D1E85A2470019C772 /* Pizza.swift */; };
+		97ADD5541E899F390030B622 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87F1E85A2A70019C772 /* Ingredient.swift */; };
+		97ADD5551E899F5D0030B622 /* PricedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5321E8880A40030B622 /* PricedItem.swift */; };
+		97ADD5561E899F6A0030B622 /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54E1E8992950030B622 /* ModelError.swift */; };
 		97BFCCF31E87BD1A00E00EA5 /* PriceLabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */; };
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
@@ -112,7 +117,7 @@
 		9780CE8C1E868266001EF13E /* PriceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceControl.swift; sourceTree = "<group>"; };
 		97ADD50F1E8854E80030B622 /* BaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		97ADD5111E8858990030B622 /* CartDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartDatasource.swift; sourceTree = "<group>"; };
-		97ADD5131E8859400030B622 /* ShippableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippableItem.swift; sourceTree = "<group>"; };
+		97ADD5131E8859400030B622 /* ShippableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShippableItem.swift; path = ../ShippableItem/ShippableItem.swift; sourceTree = "<group>"; };
 		97ADD5191E885AC50030B622 /* ShippablePizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippablePizza.swift; sourceTree = "<group>"; };
 		97ADD51C1E8862220030B622 /* CartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		97ADD51F1E8866E10030B622 /* CartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 		97ADD5471E897CBD0030B622 /* CheckoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutManager.swift; sourceTree = "<group>"; };
 		97ADD54C1E898EED0030B622 /* CheckoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutRequest.swift; sourceTree = "<group>"; };
 		97ADD54E1E8992950030B622 /* ModelError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelError.swift; sourceTree = "<group>"; };
+		97ADD5511E899B300030B622 /* Pizza_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza_Tests.swift; sourceTree = "<group>"; };
 		97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceLabelControl.swift; sourceTree = "<group>"; };
 		97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceableItem.swift; path = Control/PriceableItem.swift; sourceTree = "<group>"; };
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -366,7 +372,6 @@
 		97ADD5161E885A3B0030B622 /* ShippableItem */ = {
 			isa = PBXGroup;
 			children = (
-				97ADD5131E8859400030B622 /* ShippableItem.swift */,
 				97ADD5191E885AC50030B622 /* ShippablePizza.swift */,
 				97ADD5341E8886640030B622 /* ShippableDrink.swift */,
 			);
@@ -403,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				97ADD53E1E88E4830030B622 /* CheckoutManager_Tests.swift */,
+				97ADD5511E899B300030B622 /* Pizza_Tests.swift */,
 				97ADD5401E88E4830030B622 /* Info.plist */,
 			);
 			path = Nennos_Pizza_Tests;
@@ -413,9 +419,18 @@
 			children = (
 				97ADD5471E897CBD0030B622 /* CheckoutManager.swift */,
 				97ADD54C1E898EED0030B622 /* CheckoutRequest.swift */,
-				97BFCCF71E87E03F00E00EA5 /* Cart.swift */,
+				97ADD5501E8995E90030B622 /* Models */,
 			);
 			path = Checkout;
+			sourceTree = "<group>";
+		};
+		97ADD5501E8995E90030B622 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97BFCCF71E87E03F00E00EA5 /* Cart.swift */,
+				97ADD5131E8859400030B622 /* ShippableItem.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		97BFCCF91E880EB200E00EA5 /* Model */ = {
@@ -655,9 +670,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				97ADD53F1E88E4830030B622 /* CheckoutManager_Tests.swift in Sources */,
+				97ADD5551E899F5D0030B622 /* PricedItem.swift in Sources */,
 				97ADD54B1E897ED30030B622 /* ShippableItem.swift in Sources */,
+				97ADD5541E899F390030B622 /* Ingredient.swift in Sources */,
+				97ADD5531E899C620030B622 /* Pizza.swift in Sources */,
+				97ADD5561E899F6A0030B622 /* ModelError.swift in Sources */,
 				97ADD54A1E897E490030B622 /* Cart.swift in Sources */,
 				97ADD5491E897E470030B622 /* CheckoutManager.swift in Sources */,
+				97ADD5521E899B300030B622 /* Pizza_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,6 +806,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCA9F88B5A082443BE79BE3 /* Pods-Nennos_Pizza.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6RS7DS4QV5;
 				INFOPLIST_FILE = "Nennos Pizza/Info.plist";
@@ -800,6 +821,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 613B549F56FB5090C519857B /* Pods-Nennos_Pizza.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6RS7DS4QV5;
 				INFOPLIST_FILE = "Nennos Pizza/Info.plist";

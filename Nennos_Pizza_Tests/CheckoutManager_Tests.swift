@@ -58,7 +58,7 @@ class CheckoutManager_Tests: XCTestCase {
             XCTAssert(resourceUrl.lastPathComponent == resourceName, "invalid URL resource name")
             return
         }
-        XCTAssert(resourceUrl.path == "basePath/\(resourceName)" , "invalid URL baseUrl")
+        XCTAssert(resourceUrl.path == "\(basePath)/\(resourceName)" , "invalid URL baseUrl")
     }
-    
+
 }
