@@ -38,12 +38,12 @@ struct CheckoutManager {
 
             let task = Config.session.dataTask(with: request as URLRequest) { (responseData, response, error) in
                 
-                if let error = error {
+                guard let httpResponse = response as? HTTPURLResponse, error == nil else {
                     success(false, error)
                     return
                 }
                 
-                success(false, error)
+                success(httpResponse.statusCode == 200, error)
             }
             task.resume()
         
