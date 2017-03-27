@@ -12,11 +12,11 @@ fileprivate typealias IngredientsManager = APIManager
 
 extension IngredientsManager {
     
-    static func getIngredients(session: URLSession = APIConfig.session, completion: @escaping(Array<Ingredient>?, Error?) -> ()) {
+    static func getIngredients(session: URLSession = Config.session, completion: @escaping(Array<Ingredient>?, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "EkTFDCdsG") else {
             
-            return completion(nil, NSError.invalidPath())
+            return completion(nil, NSError.invalidPath(ErrorDomain))
         }
         
         let task = session.dataTask(with: APIRequest(url: URL) as URLRequest, completionHandler: APIManager.responseArrayCheck({ (response, error) in
@@ -28,7 +28,7 @@ extension IngredientsManager {
             
             guard let items = response as? Array<Dictionary<String, Any>> else {
                 
-                return completion(nil, NSError.invalidContent())
+                return completion(nil, NSError.invalidContent(ErrorDomain))
             }
             
             let ingredients = items.flatMap({ (item) -> Ingredient? in

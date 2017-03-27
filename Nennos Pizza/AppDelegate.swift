@@ -17,11 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Setup APIManager Config
+        APIManager.Config.scheme = "http"
+        APIManager.Config.host = "beta.json-generator.com"
+        APIManager.Config.basePath = "api/json/get"
         
-        //Setup APIConfig
-        APIConfig.scheme = "http"
-        APIConfig.host = "beta.json-generator.com"
-        APIConfig.basePath = "api/json/get"
+        //Setup Checkout Config
+        CheckoutManager.Config.scheme = "http"
+        CheckoutManager.Config.host = "posttestserver.com"
+        CheckoutManager.Config.basePath = nil
         
         return true
     }

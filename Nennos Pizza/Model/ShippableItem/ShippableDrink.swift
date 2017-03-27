@@ -8,10 +8,18 @@
 
 import Foundation
 
-extension Drink: ShippableItem {
+extension Drink: ShippableReference {
     
     func getPrice(completion: @escaping (Double) -> ()) {
         
-        return completion(self.price)
-    }    
+        DispatchQueue.main.async {
+            completion(self.price)
+        }
+        return
+    }
+    
+    func serialize() -> Int {
+        
+        return self.id
+    }
 }

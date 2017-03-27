@@ -12,11 +12,11 @@ fileprivate typealias PizzasManager = APIManager
 
 extension PizzasManager {
 
-    static func getPizzas(session: URLSession = APIConfig.session, completion: @escaping(Array<Pizza>?, Error?) -> ()) {
+    static func getPizzas(session: URLSession = Config.session, completion: @escaping(Array<Pizza>?, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "NybelGcjz") else {
             
-            return completion(nil, NSError.invalidPath())
+            return completion(nil, NSError.invalidPath(ErrorDomain))
         }
         
         let task = session.dataTask(with: APIRequest(url: URL) as URLRequest, completionHandler: APIManager.responseDictionaryCheck({ (response, error) in
@@ -28,7 +28,7 @@ extension PizzasManager {
 
             guard let resources = response else {
                 
-                return completion(nil, NSError.invalidContent())
+                return completion(nil, NSError.invalidContent(ErrorDomain))
             }
             
             guard let basePrice = resources["basePrice"] as? Double else {
@@ -41,7 +41,7 @@ extension PizzasManager {
             
             guard let items = resources["pizzas"] as? Array<Dictionary<String, Any>>  else {
                 
-                return completion(nil, NSError.invalidContent())
+                return completion(nil, NSError.invalidContent(ErrorDomain))
             }
             
             let pizzas = items.flatMap({ (item) -> Pizza? in

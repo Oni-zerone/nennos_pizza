@@ -67,3 +67,29 @@ extension MutableCart {
         return true
     }
 }
+
+fileprivate typealias SerializedCart = Cart
+
+extension SerializedCart {
+    
+    func serialize() -> Dictionary<String, Array<Any>> {
+        
+        var shippableObjectItems = Array<Dictionary<String, Any>>()
+        var shippableReferenceItems = Array<Int>()
+        
+        self.items.forEach { (item) in
+            
+            if let referenceItem = item as? ShippableReference {
+                shippableReferenceItems.append(referenceItem.serialize())
+                return
+            }
+            
+            if let objectItem = item as? ShippableObject {
+                shippableObjectItems.append(objectItem.serialize())
+            }
+        }
+        
+        return ["pizzas" : shippableObjectItems, "drinks" : shippableReferenceItems]
+    }
+
+}

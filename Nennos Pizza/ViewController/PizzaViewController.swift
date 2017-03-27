@@ -24,7 +24,7 @@ class PizzaViewController: UIViewController {
     //View
     weak var header: PizzaHeader?
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addToCartButton: BigPriceControl!
+    @IBOutlet weak var addToCartButton: PriceLabelControl!
     
     @IBOutlet weak var pizzaLabel: UILabel!
     

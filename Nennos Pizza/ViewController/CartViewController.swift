@@ -15,7 +15,7 @@ class CartViewController: UIViewController {
     
     //View
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var checkoutControl: PriceControl!
+    @IBOutlet weak var checkoutControl: LabelControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,27 @@ class CartViewController: UIViewController {
     
     @IBAction func checkoutAction(_ sender: Any) {
         
+        let control = sender as? UIControl
+        control?.isEnabled = false
+        
+        Model.shared.sendCart { (success) in
+            
+            if !success {
+                
+                return
+            }
+            let alert = UIAlertController(title: "Thank You!",
+                                          message: "Completed successfully!",
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok",
+                                          style: .default,
+                                          handler: { (action) in
+                                            
+                                            _ = self.navigationController?.popViewController(animated: true)
+            }))
+            self.present(alert, animated: true)
+        }
     }
 }
 
