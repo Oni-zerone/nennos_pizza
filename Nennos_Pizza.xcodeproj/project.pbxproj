@@ -81,6 +81,7 @@
 		97BFCD0C1E8840F000E00EA5 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD0B1E8840F000E00EA5 /* DetailTableViewCell.swift */; };
 		97BFCD0E1E884E1400E00EA5 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD0D1E884E1400E00EA5 /* CartViewController.swift */; };
 		97BFCD101E884F5C00E00EA5 /* PriceableDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD0F1E884F5C00E00EA5 /* PriceableDetailTableViewCell.swift */; };
+		97C2104A1E89DC70008D2DA5 /* ModelCheckout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5751E89AB270030B622 /* ModelCheckout.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
 
@@ -519,6 +520,7 @@
 				TargetAttributes = {
 					9765E8601E8599410019C772 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6RS7DS4QV5;
 						ProvisioningStyle = Automatic;
 					};
 					97ADD53B1E88E4830030B622 = {
@@ -694,6 +696,7 @@
 				97ADD5561E899F6A0030B622 /* ModelError.swift in Sources */,
 				97ADD55B1E89A2820030B622 /* CheckoutRequest.swift in Sources */,
 				97ADD5661E89A28D0030B622 /* ShippableItem.swift in Sources */,
+				97C2104A1E89DC70008D2DA5 /* ModelCheckout.swift in Sources */,
 				97ADD5701E89A28D0030B622 /* APIRequest.swift in Sources */,
 				97ADD56F1E89A28D0030B622 /* Drink.swift in Sources */,
 				97ADD5731E89A28D0030B622 /* ShippablePizza.swift in Sources */,
@@ -829,7 +832,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6RS7DS4QV5;
 				INFOPLIST_FILE = "Nennos Pizza/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.studiout.streamago.NennosPizza;
@@ -844,7 +847,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6RS7DS4QV5;
 				INFOPLIST_FILE = "Nennos Pizza/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.studiout.streamago.NennosPizza;
