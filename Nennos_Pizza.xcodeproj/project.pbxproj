@@ -48,6 +48,7 @@
 		97ADD5331E8880A40030B622 /* PricedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5321E8880A40030B622 /* PricedItem.swift */; };
 		97ADD5351E8886640030B622 /* ShippableDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5341E8886640030B622 /* ShippableDrink.swift */; };
 		97ADD5371E888E890030B622 /* LabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5361E888E890030B622 /* LabelControl.swift */; };
+		97ADD53F1E88E4830030B622 /* Nennos_Pizza_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD53E1E88E4830030B622 /* Nennos_Pizza_Tests.swift */; };
 		97BFCCF31E87BD1A00E00EA5 /* PriceLabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */; };
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
@@ -60,6 +61,16 @@
 		97BFCD101E884F5C00E00EA5 /* PriceableDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCD0F1E884F5C00E00EA5 /* PriceableDetailTableViewCell.swift */; };
 		A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97ADD5411E88E4830030B622 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9765E8591E8599410019C772 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9765E8601E8599410019C772;
+			remoteInfo = Nennos_Pizza;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5113526F592B1E2F7829CF75 /* Pods_Nennos_Pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_Pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +118,9 @@
 		97ADD5321E8880A40030B622 /* PricedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PricedItem.swift; path = ../../PriceableItem/PricedItem.swift; sourceTree = "<group>"; };
 		97ADD5341E8886640030B622 /* ShippableDrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippableDrink.swift; sourceTree = "<group>"; };
 		97ADD5361E888E890030B622 /* LabelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelControl.swift; sourceTree = "<group>"; };
+		97ADD53C1E88E4830030B622 /* Nennos_Pizza_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nennos_Pizza_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		97ADD53E1E88E4830030B622 /* Nennos_Pizza_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nennos_Pizza_Tests.swift; sourceTree = "<group>"; };
+		97ADD5401E88E4830030B622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceLabelControl.swift; sourceTree = "<group>"; };
 		97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceableItem.swift; path = Control/PriceableItem.swift; sourceTree = "<group>"; };
 		97BFCCF71E87E03F00E00EA5 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -126,6 +140,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9E53108A3C67EFFB7DF2CB0 /* Pods_Nennos_Pizza.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97ADD5391E88E4830030B622 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				9765E8631E8599410019C772 /* Nennos Pizza */,
+				97ADD53D1E88E4830030B622 /* Nennos_Pizza_Tests */,
 				9765E8621E8599410019C772 /* Products */,
 				80A7F2A872FE250C3EF94E79 /* Pods */,
 				8B384650EF3273DB9F8176EF /* Frameworks */,
@@ -163,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				9765E8611E8599410019C772 /* Nennos_Pizza.app */,
+				97ADD53C1E88E4830030B622 /* Nennos_Pizza_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,6 +389,15 @@
 			path = DrinkCell;
 			sourceTree = "<group>";
 		};
+		97ADD53D1E88E4830030B622 /* Nennos_Pizza_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				97ADD53E1E88E4830030B622 /* Nennos_Pizza_Tests.swift */,
+				97ADD5401E88E4830030B622 /* Info.plist */,
+			);
+			path = Nennos_Pizza_Tests;
+			sourceTree = "<group>";
+		};
 		97BFCCF91E880EB200E00EA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +443,24 @@
 			productReference = 9765E8611E8599410019C772 /* Nennos_Pizza.app */;
 			productType = "com.apple.product-type.application";
 		};
+		97ADD53B1E88E4830030B622 /* Nennos_Pizza_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97ADD5451E88E4830030B622 /* Build configuration list for PBXNativeTarget "Nennos_Pizza_Tests" */;
+			buildPhases = (
+				97ADD5381E88E4830030B622 /* Sources */,
+				97ADD5391E88E4830030B622 /* Frameworks */,
+				97ADD53A1E88E4830030B622 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97ADD5421E88E4830030B622 /* PBXTargetDependency */,
+			);
+			name = Nennos_Pizza_Tests;
+			productName = Nennos_Pizza_Tests;
+			productReference = 97ADD53C1E88E4830030B622 /* Nennos_Pizza_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -425,6 +475,12 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 6RS7DS4QV5;
 						ProvisioningStyle = Automatic;
+					};
+					97ADD53B1E88E4830030B622 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6RS7DS4QV5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9765E8601E8599410019C772;
 					};
 				};
 			};
@@ -442,6 +498,7 @@
 			projectRoot = "";
 			targets = (
 				9765E8601E8599410019C772 /* Nennos_Pizza */,
+				97ADD53B1E88E4830030B622 /* Nennos_Pizza_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -456,6 +513,13 @@
 				9765E89B1E85E06B0019C772 /* MainTableViewCell.xib in Resources */,
 				9765E86A1E8599410019C772 /* Main.storyboard in Resources */,
 				97BFCD0A1E88407D00E00EA5 /* DetailTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97ADD53A1E88E4830030B622 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +627,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		97ADD5381E88E4830030B622 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97ADD53F1E88E4830030B622 /* Nennos_Pizza_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97ADD5421E88E4830030B622 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9765E8601E8599410019C772 /* Nennos_Pizza */;
+			targetProxy = 97ADD5411E88E4830030B622 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9765E8681E8599410019C772 /* Main.storyboard */ = {
@@ -704,6 +784,34 @@
 			};
 			name = Release;
 		};
+		97ADD5431E88E4830030B622 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6RS7DS4QV5;
+				INFOPLIST_FILE = Nennos_Pizza_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.studiout.streamago.Nennos-Pizza-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nennos_Pizza.app/Nennos_Pizza";
+			};
+			name = Debug;
+		};
+		97ADD5441E88E4830030B622 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6RS7DS4QV5;
+				INFOPLIST_FILE = Nennos_Pizza_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.studiout.streamago.Nennos-Pizza-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nennos_Pizza.app/Nennos_Pizza";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -724,6 +832,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		97ADD5451E88E4830030B622 /* Build configuration list for PBXNativeTarget "Nennos_Pizza_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97ADD5431E88E4830030B622 /* Debug */,
+				97ADD5441E88E4830030B622 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
