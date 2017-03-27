@@ -50,7 +50,7 @@ class Pizza_Tests: XCTestCase {
         
         basePizzaTests(for: pizza, with: extendedPizzaDictionary)
         
-        XCTAssert(pizza.imageUrl == extendedPizza["imageUrl"] as? String)
+        XCTAssert(pizza.imageUrl == self.extendedPizzaDictionary["imageUrl"] as? String)
         
     }
     
@@ -72,6 +72,6 @@ class Pizza_Tests: XCTestCase {
             return XCTFail("Serialization failed.")
         }
         XCTAssert(serializedPizza.0 == "pizzas", "Serialization error invalid key")
-        XCTAssert(serializedPizza.1 == self.extendedPizzaDictionary, "Serialization error invalid value")
+        XCTAssert(NSDictionary(dictionary:serializedPizza.1).isEqual(to: self.extendedPizzaDictionary), "Serialization error invalid value")
     }
 }

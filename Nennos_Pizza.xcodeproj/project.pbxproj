@@ -50,17 +50,28 @@
 		97ADD5371E888E890030B622 /* LabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5361E888E890030B622 /* LabelControl.swift */; };
 		97ADD53F1E88E4830030B622 /* CheckoutManager_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD53E1E88E4830030B622 /* CheckoutManager_Tests.swift */; };
 		97ADD5481E897CBD0030B622 /* CheckoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5471E897CBD0030B622 /* CheckoutManager.swift */; };
-		97ADD5491E897E470030B622 /* CheckoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5471E897CBD0030B622 /* CheckoutManager.swift */; };
-		97ADD54A1E897E490030B622 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
-		97ADD54B1E897ED30030B622 /* ShippableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5131E8859400030B622 /* ShippableItem.swift */; };
 		97ADD54D1E898EED0030B622 /* CheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54C1E898EED0030B622 /* CheckoutRequest.swift */; };
 		97ADD54F1E8992950030B622 /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54E1E8992950030B622 /* ModelError.swift */; };
 		97ADD5521E899B300030B622 /* Pizza_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5511E899B300030B622 /* Pizza_Tests.swift */; };
-		97ADD5531E899C620030B622 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87D1E85A2470019C772 /* Pizza.swift */; };
-		97ADD5541E899F390030B622 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87F1E85A2A70019C772 /* Ingredient.swift */; };
-		97ADD5551E899F5D0030B622 /* PricedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5321E8880A40030B622 /* PricedItem.swift */; };
 		97ADD5561E899F6A0030B622 /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54E1E8992950030B622 /* ModelError.swift */; };
-		97ADD5571E89A0DD0030B622 /* ShippablePizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5191E885AC50030B622 /* ShippablePizza.swift */; };
+		97ADD55A1E89A2820030B622 /* CheckoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5471E897CBD0030B622 /* CheckoutManager.swift */; };
+		97ADD55B1E89A2820030B622 /* CheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD54C1E898EED0030B622 /* CheckoutRequest.swift */; };
+		97ADD5651E89A28D0030B622 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
+		97ADD5661E89A28D0030B622 /* ShippableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5131E8859400030B622 /* ShippableItem.swift */; };
+		97ADD5671E89A28D0030B622 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8781E85A0100019C772 /* APIConfig.swift */; };
+		97ADD5681E89A28D0030B622 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87A1E85A09E0019C772 /* APIManager.swift */; };
+		97ADD5691E89A28D0030B622 /* IngredientsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8861E85B6D10019C772 /* IngredientsManager.swift */; };
+		97ADD56A1E89A28D0030B622 /* PizzasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8881E85B77A0019C772 /* PizzasManager.swift */; };
+		97ADD56B1E89A28D0030B622 /* DrinksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E88A1E85BC490019C772 /* DrinksManager.swift */; };
+		97ADD56C1E89A28D0030B622 /* PricedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5321E8880A40030B622 /* PricedItem.swift */; };
+		97ADD56D1E89A28D0030B622 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87F1E85A2A70019C772 /* Ingredient.swift */; };
+		97ADD56E1E89A28D0030B622 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E87D1E85A2470019C772 /* Pizza.swift */; };
+		97ADD56F1E89A28D0030B622 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8811E85ADEE0019C772 /* Drink.swift */; };
+		97ADD5701E89A28D0030B622 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8831E85B3260019C772 /* APIRequest.swift */; };
+		97ADD5711E89A28D0030B622 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765E8901E85CDDA0019C772 /* Model.swift */; };
+		97ADD5721E89A28D0030B622 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCFA1E880EC300E00EA5 /* ModelInterface.swift */; };
+		97ADD5731E89A28D0030B622 /* ShippablePizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5191E885AC50030B622 /* ShippablePizza.swift */; };
+		97ADD5741E89A28D0030B622 /* ShippableDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADD5341E8886640030B622 /* ShippableDrink.swift */; };
 		97BFCCF31E87BD1A00E00EA5 /* PriceLabelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF21E87BD1A00E00EA5 /* PriceLabelControl.swift */; };
 		97BFCCF51E87BD5B00E00EA5 /* PriceableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF41E87BD5B00E00EA5 /* PriceableItem.swift */; };
 		97BFCCF81E87E03F00E00EA5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFCCF71E87E03F00E00EA5 /* Cart.swift */; };
@@ -670,16 +681,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97ADD56B1E89A28D0030B622 /* DrinksManager.swift in Sources */,
 				97ADD53F1E88E4830030B622 /* CheckoutManager_Tests.swift in Sources */,
-				97ADD5551E899F5D0030B622 /* PricedItem.swift in Sources */,
-				97ADD54B1E897ED30030B622 /* ShippableItem.swift in Sources */,
-				97ADD5541E899F390030B622 /* Ingredient.swift in Sources */,
-				97ADD5531E899C620030B622 /* Pizza.swift in Sources */,
+				97ADD56D1E89A28D0030B622 /* Ingredient.swift in Sources */,
+				97ADD5651E89A28D0030B622 /* Cart.swift in Sources */,
+				97ADD56C1E89A28D0030B622 /* PricedItem.swift in Sources */,
+				97ADD5671E89A28D0030B622 /* APIConfig.swift in Sources */,
+				97ADD5681E89A28D0030B622 /* APIManager.swift in Sources */,
+				97ADD5691E89A28D0030B622 /* IngredientsManager.swift in Sources */,
+				97ADD5741E89A28D0030B622 /* ShippableDrink.swift in Sources */,
+				97ADD56E1E89A28D0030B622 /* Pizza.swift in Sources */,
+				97ADD5711E89A28D0030B622 /* Model.swift in Sources */,
+				97ADD56A1E89A28D0030B622 /* PizzasManager.swift in Sources */,
+				97ADD55A1E89A2820030B622 /* CheckoutManager.swift in Sources */,
 				97ADD5561E899F6A0030B622 /* ModelError.swift in Sources */,
-				97ADD54A1E897E490030B622 /* Cart.swift in Sources */,
-				97ADD5571E89A0DD0030B622 /* ShippablePizza.swift in Sources */,
-				97ADD5491E897E470030B622 /* CheckoutManager.swift in Sources */,
+				97ADD55B1E89A2820030B622 /* CheckoutRequest.swift in Sources */,
+				97ADD5661E89A28D0030B622 /* ShippableItem.swift in Sources */,
+				97ADD5701E89A28D0030B622 /* APIRequest.swift in Sources */,
+				97ADD56F1E89A28D0030B622 /* Drink.swift in Sources */,
+				97ADD5731E89A28D0030B622 /* ShippablePizza.swift in Sources */,
 				97ADD5521E899B300030B622 /* Pizza_Tests.swift in Sources */,
+				97ADD5721E89A28D0030B622 /* ModelInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
