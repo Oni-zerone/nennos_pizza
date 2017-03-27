@@ -19,6 +19,7 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "CART"
         
         self.setupTableView()
@@ -28,6 +29,7 @@ class CartViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.dataSource.items = Model.shared.cart.items
+        self.checkoutControl.isEnabled = !self.dataSource.items.isEmpty
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,7 +95,7 @@ extension CartViewController: UITableViewDelegate {
             
             self.tableView.reloadSections(IndexSet(integer: 1), with: .none)
             self.tableView.endUpdates()
+            self.checkoutControl.isEnabled = !self.dataSource.items.isEmpty
         }
     }
-    
 }

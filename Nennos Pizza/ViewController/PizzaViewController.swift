@@ -12,7 +12,7 @@ class PizzaViewController: UIViewController {
 
     //Model
     var ingredientDataSource: PricedItemDataSource<Ingredient>?
-    var pizza: Pizza? {
+    var pizza: Pizza! {
         
         didSet {
 
@@ -21,11 +21,8 @@ class PizzaViewController: UIViewController {
             }
 
             guard let pizza = self.pizza else {
-                
-                self.addToCartButton?.isEnabled = false
                 return;
             }
-            self.addToCartButton?.isEnabled = !pizza.isEmpty
             self.setPrice(for: pizza)
         }
     }
@@ -41,14 +38,13 @@ class PizzaViewController: UIViewController {
         super.viewDidLoad()
 
         self.addToCartButton.isEnabled = false
-        // Do any additional setup after loading the view.
+
         guard let pizza = self.pizza else {
             return
         }
         
-        let isEmptyPizza = pizza.ingredientIds.count < 1
-        
-        self.title = isEmptyPizza ? "CREATE A PIZZA" : pizza.name
+        self.title = pizza.isEmpty ? "CREATE A PIZZA" : pizza.name
+        self.addToCartButton?.isEnabled = !pizza.isEmpty
         
         self.setupTableView()
         self.setupHeader()
@@ -59,6 +55,7 @@ class PizzaViewController: UIViewController {
             self.ingredientDataSource?.items = ingredients
             self.selectIngredients()
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -170,6 +167,7 @@ extension PizzaViewController: UITableViewDelegate {
         
         let ingredient = dataSource.items[indexPath.row]
         self.pizza?.add(ingredient: ingredient)
+        self.addToCartButton.isEnabled = !(pizza?.isEmpty ?? true)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -181,6 +179,7 @@ extension PizzaViewController: UITableViewDelegate {
         
         let ingredient = dataSource.items[indexPath.row]
         self.pizza?.remove(ingredient: ingredient)
+        self.addToCartButton.isEnabled = !(pizza?.isEmpty ?? true)
     }
 }
 

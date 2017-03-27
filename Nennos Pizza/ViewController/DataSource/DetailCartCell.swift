@@ -6,7 +6,7 @@
 //  Copyright © 2017 StudiOUT. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension CartTableViewCell: CartCell {
     
@@ -14,4 +14,24 @@ extension CartTableViewCell: CartCell {
         
         self.titleLabel.text = name
     }
+    
+    func setup(_ mode: CartCellMode) {
+        
+        switch mode {
+            
+        case .item:
+            
+            self.titleLabel.font = UIFont.detailFont
+            self.itemImageView.isHidden = false
+            break
+            
+        case .total:
+
+            self.titleLabel.font = UIFont.detailBoldFont
+            self.itemImageView.isHidden = true
+            break
+            
+        }
+    }
+
 }
