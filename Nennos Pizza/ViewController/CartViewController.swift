@@ -46,8 +46,26 @@ class CartViewController: UIViewController {
     
     @IBAction func checkoutAction(_ sender: Any) {
         
+        let control = sender as? UIControl
+        control?.isEnabled = false
+        
         Model.shared.sendCart { (success) in
-            print(success)
+            
+            if !success {
+                
+                return
+            }
+            let alert = UIAlertController(title: "Thank You!",
+                                          message: "Completed successfully!",
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok",
+                                          style: .default,
+                                          handler: { (action) in
+                                            
+                                            _ = self.navigationController?.popViewController(animated: true)
+            }))
+            self.present(alert, animated: true)
         }
     }
 }
