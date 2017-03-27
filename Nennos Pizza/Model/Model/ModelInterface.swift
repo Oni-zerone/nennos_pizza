@@ -80,10 +80,12 @@ extension ModelInterface {
         
         Model.queue.async {
             self.send(self.cart, completion: { (success) in
-                
+        
                 DispatchQueue.main.async {
                     completion(success)
                 }
+                
+                self.cart = Cart()
             })
         }
     }
