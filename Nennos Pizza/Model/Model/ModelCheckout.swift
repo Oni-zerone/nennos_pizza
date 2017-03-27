@@ -20,6 +20,7 @@ extension ModelCheckout {
                 completion(false)
                 return
             }
+            self.cart = Cart()
             
             completion(success)
             return
