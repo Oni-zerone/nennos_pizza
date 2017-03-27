@@ -15,9 +15,18 @@ class PizzaViewController: UIViewController {
     var pizza: Pizza? {
         
         didSet {
-            if oldValue != nil {
-                self.setPrice(for: pizza!)
+
+            if oldValue == nil {
+                return
             }
+
+            guard let pizza = self.pizza else {
+                
+                self.addToCartButton?.isEnabled = false
+                return;
+            }
+            self.addToCartButton?.isEnabled = !pizza.isEmpty
+            self.setPrice(for: pizza)
         }
     }
     
@@ -31,13 +40,16 @@ class PizzaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        self.addToCartButton.isEnabled = false
         // Do any additional setup after loading the view.
         guard let pizza = self.pizza else {
             return
         }
         
-        self.title = pizza.name
+        let isEmptyPizza = pizza.ingredientIds.count < 1
+        
+        self.title = isEmptyPizza ? "CREATE A PIZZA" : pizza.name
+        
         self.setupTableView()
         self.setupHeader()
 
@@ -170,4 +182,15 @@ extension PizzaViewController: UITableViewDelegate {
         let ingredient = dataSource.items[indexPath.row]
         self.pizza?.remove(ingredient: ingredient)
     }
+}
+
+fileprivate extension Pizza  {
+    
+    var isEmpty: Bool {
+        
+        get {
+            return self.ingredientIds.count < 1
+        }
+    }
+    
 }
