@@ -12,7 +12,7 @@ fileprivate typealias PizzasManager = APIManager
 
 extension PizzasManager {
 
-    static func getPizzas(session: URLSession = APIConfig.session, completion: @escaping(Array<Pizza>?, Error?) -> ()) {
+    static func getPizzas(session: URLSession = Config.session, completion: @escaping(Array<Pizza>?, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "NybelGcjz") else {
             

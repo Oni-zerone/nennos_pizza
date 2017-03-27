@@ -12,7 +12,7 @@ fileprivate typealias IngredientsManager = APIManager
 
 extension IngredientsManager {
     
-    static func getIngredients(session: URLSession = APIConfig.session, completion: @escaping(Array<Ingredient>?, Error?) -> ()) {
+    static func getIngredients(session: URLSession = Config.session, completion: @escaping(Array<Ingredient>?, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "EkTFDCdsG") else {
             

@@ -12,7 +12,7 @@ fileprivate typealias DrinksManager = APIManager
 
 extension DrinksManager {
 
-    static func getDrinks(session: URLSession = APIConfig.session, completion: @escaping(Array<Drink>?, Error?) -> ()) {
+    static func getDrinks(session: URLSession = Config.session, completion: @escaping(Array<Drink>?, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "N1mnOA_oz") else {
             
