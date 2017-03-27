@@ -16,5 +16,10 @@ extension Drink: ShippableItem {
             completion(self.price)
         }
         return
-    }    
+    }
+    
+    func serialize() -> (String, Dictionary<String, Any>)? {
+        
+        return nil
+    }
 }

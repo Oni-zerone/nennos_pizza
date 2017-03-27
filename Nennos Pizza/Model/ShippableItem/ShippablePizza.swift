@@ -20,4 +20,9 @@ extension ShippablePizza: ShippableItem {
         }
         
     }
+    
+    func serialize() -> (String, Dictionary<String, Any>)? {
+        
+        return nil
+    }
 }
