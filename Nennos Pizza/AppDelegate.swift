@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         APIManager.Config.host = "beta.json-generator.com"
         APIManager.Config.basePath = "api/json/get"
         
+        //Setup Checkout Config
+        CheckoutManager.Config.scheme = "http"
+        CheckoutManager.Config.host = "posttestserver.com"
+        CheckoutManager.Config.basePath = nil
+        
         return true
     }
 
