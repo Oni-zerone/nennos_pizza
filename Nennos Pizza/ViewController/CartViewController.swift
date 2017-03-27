@@ -15,7 +15,7 @@ class CartViewController: UIViewController {
     
     //View
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var checkoutControl: PriceControl!
+    @IBOutlet weak var checkoutControl: LabelControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()

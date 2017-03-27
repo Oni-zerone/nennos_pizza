@@ -1,20 +1,24 @@
 //
-//  BigPriceControl.swift
+//  LabelControl.swift
 //  Nennos_Pizza
 //
-//  Created by Andrea Altea on 26/03/17.
+//  Created by Andrea Altea on 27/03/17.
 //  Copyright © 2017 StudiOUT. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class BigPriceControl: UIControl {
+@IBDesignable class LabelControl: UIControl {
 
-    fileprivate let baseString = "ADD TO CART"
-    fileprivate weak var priceLabel: UILabel!
+    var labelString: String  {
+        
+        get {
+            return "CHECKOUT"
+        }
+    }
     
-    @IBInspectable var currency: String?
-    
+    weak var label: UILabel!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -23,22 +27,22 @@ import UIKit
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
+        
         self.setupLayout()
     }
     
-    func setupLayout() {
-     
+    fileprivate func setupLayout() {
+        
         //Setup label
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = self.tintColor
         label.font = UIFont.buttonFont
         label.textAlignment = .center
-        label.text = self.baseString
+        label.text = self.labelString
         
         self.addSubview(label)
-        self.priceLabel = label
+        self.label = label
         
         //View Constraints
         let metrics = ["margin" : 15]
@@ -57,20 +61,7 @@ import UIKit
     override var tintColor: UIColor! {
         
         didSet {
-            self.priceLabel.textColor = self.tintColor
+            self.label.textColor = self.tintColor
         }
-    }
-}
-
-extension BigPriceControl: PriceableItem {
-    
-    func setPrice(with string: String) {
-        
-        if string.characters.count < 1 {
-            self.priceLabel.text = self.baseString
-            return
-        }
-        
-        self.priceLabel.text = String(format: "%@ (%@)", self.baseString, string)
     }
 }
