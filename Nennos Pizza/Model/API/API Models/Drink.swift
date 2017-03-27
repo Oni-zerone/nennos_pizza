@@ -10,13 +10,13 @@ import Foundation
 
 struct Drink: PricedItem {
     
-    let id: Double
+    let id: Int
     let name: String
     let price: Double
     
      init?(resource: Dictionary<String, Any>) {
         
-        guard let id = resource["id"] as? Double,
+        guard let id = resource["id"] as? Int,
             let name = resource["name"] as? String,
             let price = resource["price"] as? Double else {
             

@@ -26,7 +26,7 @@ struct APIManager {
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
                 
                 guard let dictionary = jsonObject as? Dictionary<String, Any> else {
-                    return completion(nil, NSError.invalidResponse())
+                    return completion(nil, NSError.invalidResponse(ErrorDomain))
                 }
                 
                 return completion(dictionary, nil)
@@ -52,7 +52,7 @@ struct APIManager {
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
                 
                 guard let array = jsonObject as? Array<Any> else {
-                    return completion(nil, NSError.invalidResponse())
+                    return completion(nil, NSError.invalidResponse(ErrorDomain))
                 }
                 
                 return completion(array, nil)
@@ -68,29 +68,5 @@ struct APIManager {
         
         let fullPath = "\(APIConfig.scheme!)://\(APIConfig.host!)/\(APIConfig.basePath!)/\(resourcePath)"
         return URL(string:fullPath)
-    }
-}
-
-extension NSError {
-
-    static internal func invalidPath() -> NSError {
-        
-        return NSError(domain: APIManager.ErrorDomain,
-                       code: 500,
-                       userInfo: [NSLocalizedDescriptionKey : "invalid path"])
-    }
-    
-    static internal func invalidContent() -> NSError {
-        
-        return NSError(domain: APIManager.ErrorDomain,
-                       code: 500,
-                       userInfo: [NSLocalizedDescriptionKey : "invalid content"])
-    }
-    
-    static internal func invalidResponse() -> NSError {
-    
-        return NSError(domain: APIManager.ErrorDomain,
-                       code: 500,
-                       userInfo: [NSLocalizedDescriptionKey : "invalid response"])
     }
 }

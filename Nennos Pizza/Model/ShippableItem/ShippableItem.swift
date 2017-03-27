@@ -12,4 +12,6 @@ protocol ShippableItem {
     
     var name: String { get }
     func getPrice(completion: @escaping (Double) -> ())
+    
+    func serialize() -> (String, Dictionary<String, Any>)?
 }
