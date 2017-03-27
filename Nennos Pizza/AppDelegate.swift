@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CheckoutManager.Config.host = "posttestserver.com"
         CheckoutManager.Config.basePath = nil
         
+        //Setup navigation bar appearance
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont.navigationTitleFont,
+                                                            NSForegroundColorAttributeName: UIColor.primaryColor]
+        
         return true
     }
 

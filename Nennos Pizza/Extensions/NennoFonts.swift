@@ -10,6 +10,8 @@ import UIKit
 
 extension UIFont {
     
+    static let navigationTitleFont = UIFont.systemFont(ofSize: 17, weight: UIFontWeightHeavy)
+    
     static let titleFont = UIFont.systemFont(ofSize: 24, weight: UIFontWeightBold)
     static let textFont = UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)
 
