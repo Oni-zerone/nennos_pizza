@@ -12,6 +12,10 @@ class CheckoutManager_Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        
+        CheckoutManager.Config.scheme = "http"
+        CheckoutManager.Config.host = "posttestserver.com"
+        CheckoutManager.Config.basePath = nil
     }
     
     override func tearDown() {
@@ -36,6 +40,25 @@ class CheckoutManager_Tests: XCTestCase {
             
         }
 
+    }
+
+    func testCheckoutURL() {
+        
+        let resourceName = "post.php"
+        
+        guard let resourceUrl = CheckoutManager.prepareURL(for: resourceName) else {
+        
+            return XCTFail("Undefined URL")
+        }
+        
+        XCTAssert(resourceUrl.scheme == CheckoutManager.Config.scheme, "invalid URL scheme")
+        XCTAssert(resourceUrl.host == CheckoutManager.Config.host, "invalid URL host")
+        
+        guard let basePath = CheckoutManager.Config.basePath else {
+            XCTAssert(resourceUrl.lastPathComponent == resourceName, "invalid URL resource name")
+            return
+        }
+        XCTAssert(resourceUrl.path == "basePath/\(resourceName)" , "invalid URL baseUrl")
     }
     
 }

@@ -11,14 +11,18 @@ import Foundation
 struct CheckoutManager {
     
     struct Config {
+
+        public static var scheme: String!
+        public static var host: String!
+        public static var basePath: String?
         
-        static let session = {
+        internal static let session = {
             
             return URLSession(configuration: URLSessionConfiguration.default)
         }()
     }
     
-    static func send(_ cart: Cart, success: @escaping (Bool, Error?) -> ()) {
+    static func send(_ cart: Cart, success: @escaping(Bool, Error?) -> ()) {
         
         let task = Config.session.dataTask(with: URL(string:"http://www.google.com")!) { (responseData, response, error) in
             
@@ -30,5 +34,18 @@ struct CheckoutManager {
             success(false, error)
         }
         task.resume()
+    }
+    
+    static func prepareURL(for resource: String) -> URL? {
+        
+        var fullUrl = "\(Config.scheme!)://\(Config.host!)/"
+        
+        if let basePath = Config.basePath {
+            fullUrl += "\(basePath)/"
+        }
+        
+        fullUrl += resource
+        
+        return URL(string: fullUrl)
     }
 }
