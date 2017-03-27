@@ -16,7 +16,7 @@ extension DrinksManager {
         
         guard let URL = APIManager.URLForResource(resourcePath: "N1mnOA_oz") else {
             
-            return completion(nil, NSError.invalidPath())
+            return completion(nil, NSError.invalidPath(ErrorDomain))
         }
         
         let task = session.dataTask(with: APIRequest(url: URL) as URLRequest, completionHandler: APIManager.responseArrayCheck({ (response, error) in
@@ -28,7 +28,7 @@ extension DrinksManager {
             
             guard let items = response as? Array<Dictionary<String, Any>> else {
                 
-                return completion(nil, NSError.invalidContent())
+                return completion(nil, NSError.invalidContent(ErrorDomain))
             }
             
             let ingredients = items.flatMap({ (item) -> Drink? in
