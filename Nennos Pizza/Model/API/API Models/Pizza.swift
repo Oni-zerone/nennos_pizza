@@ -40,6 +40,14 @@ struct Pizza {
         self.originalIngredients = Set((resource["ingredients"] as? Array<Int>) ?? Array<Int>())
         self.ingredientIds = self.originalIngredients
     }
+    
+    init() {
+        
+        _name = "Pizza"
+        self.imageUrl = "http://www.alimentipedia.it/files/images/pasta-pizza.jpg"
+        self.originalIngredients = Set<Int>()
+        self.ingredientIds = self.originalIngredients
+    }
 }
 
 extension Pizza: Hashable {
