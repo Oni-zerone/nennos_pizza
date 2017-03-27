@@ -222,7 +222,6 @@
 				97ADD5461E897BB00030B622 /* Checkout */,
 				9765E8771E859FE80019C772 /* API */,
 				97BFCCF91E880EB200E00EA5 /* Model */,
-				97BFCCF71E87E03F00E00EA5 /* Cart.swift */,
 				97ADD5161E885A3B0030B622 /* ShippableItem */,
 			);
 			path = Model;
@@ -414,6 +413,7 @@
 			children = (
 				97ADD5471E897CBD0030B622 /* CheckoutManager.swift */,
 				97ADD54C1E898EED0030B622 /* CheckoutRequest.swift */,
+				97BFCCF71E87E03F00E00EA5 /* Cart.swift */,
 			);
 			path = Checkout;
 			sourceTree = "<group>";
@@ -866,6 +866,7 @@
 				97ADD5441E88E4830030B622 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
