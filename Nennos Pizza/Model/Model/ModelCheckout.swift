@@ -12,7 +12,7 @@ fileprivate typealias ModelCheckout = Model
 
 extension ModelCheckout {
 
-    internal func internalSend(_ cart: Cart, completion: @escaping (Bool) -> ()) {
+    internal func send(_ cart: Cart, completion: @escaping (Bool) -> ()) {
         
         CheckoutManager.send(cart) { (success, error) in
             
