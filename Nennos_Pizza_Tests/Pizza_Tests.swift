@@ -72,6 +72,27 @@ class Pizza_Tests: XCTestCase {
             return XCTFail("Serialization failed.")
         }
         XCTAssert(serializedPizza.0 == "pizzas", "Serialization error invalid key")
-        XCTAssert(NSDictionary(dictionary:serializedPizza.1).isEqual(to: self.extendedPizzaDictionary), "Serialization error invalid value")
+        
+        self.extendedPizzaDictionary.forEach { (key, value) in
+            
+            if let value = value as? String {
+            
+                XCTAssert(value == serializedPizza.1[key] as? String, "Serialization error invalid value \(key)")
+                
+            } else if let value = value as? Array<Int> {
+            
+                guard let serializedValue = serializedPizza.1[key] as? Array<Int> else {
+                    
+                    return XCTFail("Serialization error invalid value \(key)")
+                }
+                
+                value.forEach({ (item) in
+                    XCTAssertNotNil(serializedValue.index(of: item), "Ingredient id not found \(item)")
+                })
+            }
+            
+        }
+        
+        
     }
 }
