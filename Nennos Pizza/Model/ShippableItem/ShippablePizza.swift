@@ -10,7 +10,7 @@ import Foundation
 
 fileprivate typealias ShippablePizza = Pizza
 
-extension ShippablePizza: ShippableItem {
+extension ShippablePizza: ShippableObject {
     
     func getPrice(completion: @escaping (Double) -> ()) {
         
@@ -21,13 +21,13 @@ extension ShippablePizza: ShippableItem {
         
     }
     
-    func serialize() -> (String, Dictionary<String, Any>)? {
+    func serialize() -> Dictionary<String, Any> {
         
         var serializedItem = Dictionary<String, Any>()
         serializedItem["name"] = self.name
         serializedItem["ingredients"] = Array<Int>(self.ingredientIds)
         serializedItem["imageUrl"] = self.imageUrl
         
-        return ("pizzas", serializedItem)
+        return serializedItem
     }
 }

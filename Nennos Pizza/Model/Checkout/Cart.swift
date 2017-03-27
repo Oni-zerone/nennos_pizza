@@ -72,25 +72,24 @@ fileprivate typealias SerializedCart = Cart
 
 extension SerializedCart {
     
-    func serialize() -> Dictionary<String, Array<Dictionary<String, Any>>> {
+    func serialize() -> Dictionary<String, Array<Any>> {
         
-        var cartStructure = Dictionary<String, Array<Dictionary<String, Any>>>()
+        var shippableObjectItems = Array<Dictionary<String, Any>>()
+        var shippableReferenceItems = Array<Int>()
         
         self.items.forEach { (item) in
             
-            guard let (key, serializedItem) = item.serialize() else {
+            if let referenceItem = item as? ShippableReference {
+                shippableReferenceItems.append(referenceItem.serialize())
                 return
             }
             
-            if cartStructure[key] == nil {
-                
-                cartStructure[key] = Array<Dictionary<String, Any>>()
+            if let objectItem = item as? ShippableObject {
+                shippableObjectItems.append(objectItem.serialize())
             }
-            
-            cartStructure[key]?.append(serializedItem)
         }
         
-        return cartStructure
+        return ["pizzas" : shippableObjectItems, "drinks" : shippableReferenceItems]
     }
 
 }

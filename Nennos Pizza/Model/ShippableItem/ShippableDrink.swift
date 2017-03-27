@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Drink: ShippableItem {
+extension Drink: ShippableReference {
     
     func getPrice(completion: @escaping (Double) -> ()) {
         
@@ -18,13 +18,8 @@ extension Drink: ShippableItem {
         return
     }
     
-    func serialize() -> (String, Dictionary<String, Any>)? {
+    func serialize() -> Int {
         
-        var serializedItem = Dictionary<String, Any>()
-        serializedItem["id"] = self.id
-        serializedItem["name"] = self.name
-        serializedItem["price"] = self.price
-        
-        return ("drinks", serializedItem)
+        return self.id
     }
 }
