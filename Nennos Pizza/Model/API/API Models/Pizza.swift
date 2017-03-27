@@ -12,8 +12,22 @@ struct Pizza {
     
     static var basePrice: Double = 0
     
-    let name: String
+    private let _name: String
+    
+    var name: String {
+        
+        get {
+            
+            if self.originalIngredients == self.ingredientIds {
+                return _name
+            }
+            
+            return "Custom \(_name)"
+        }
+    }
+    
     fileprivate(set) var ingredientIds: Set<Int>
+    let originalIngredients: Set<Int>
     let imageUrl: String?
     
     init?(resource: Dictionary<String, Any>) {
@@ -21,9 +35,18 @@ struct Pizza {
         guard let name = resource["name"] as? String else {
             return nil
         }
-        self.name = name
+        _name = name
         self.imageUrl = resource["imageUrl"] as? String
-        self.ingredientIds = Set((resource["ingredients"] as? Array<Int>) ?? Array<Int>())
+        self.originalIngredients = Set((resource["ingredients"] as? Array<Int>) ?? Array<Int>())
+        self.ingredientIds = self.originalIngredients
+    }
+    
+    init() {
+        
+        _name = "Pizza"
+        self.imageUrl = "http://www.alimentipedia.it/files/images/pasta-pizza.jpg"
+        self.originalIngredients = Set<Int>()
+        self.ingredientIds = self.originalIngredients
     }
 }
 

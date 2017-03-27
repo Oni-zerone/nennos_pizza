@@ -93,6 +93,11 @@
                                 <segue destination="0zG-AV-AjG" kind="show" id="mmU-Aw-ct1"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Add" id="fjL-y7-j9a">
+                            <connections>
+                                <action selector="createCustomPizza:" destination="50G-qn-6TT" id="aaQ-YN-ZOR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ni6-jo-3uU" id="gey-eq-vFs"/>
@@ -249,6 +254,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="22" height="22"/>
         <image name="NavigationBar/Cart" width="24" height="24"/>
         <image name="NavigationBar/Drinks" width="24" height="24"/>
     </resources>

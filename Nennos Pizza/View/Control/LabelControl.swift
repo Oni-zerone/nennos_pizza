@@ -64,4 +64,12 @@ import UIKit
             self.label.textColor = self.tintColor
         }
     }
+    
+    override var isEnabled: Bool {
+        
+        didSet {
+            
+            self.alpha = self.isEnabled ? 1 : 0.6
+        }
+    }
 }
